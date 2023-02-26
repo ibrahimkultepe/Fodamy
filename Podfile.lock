@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (5.6.1)
+  - MobilliumBuilders (1.4.2)
+  - QuickLayout (3.0.0)
+  - SwiftEntryKit (1.2.7):
+    - QuickLayout (= 3.0.0)
+  - TinyConstraints (4.0.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4)
+  - MobilliumBuilders (~> 1.4)
+  - SwiftEntryKit (~> 1.2)
+  - TinyConstraints (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - MobilliumBuilders
+    - QuickLayout
+    - SwiftEntryKit
+    - TinyConstraints
+
+SPEC CHECKSUMS:
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  MobilliumBuilders: 48c29da981a9593ac7f7873d154f9a76b80ffcab
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
+  SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
+  TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
+
+PODFILE CHECKSUM: ca43dab7b28ec54fab834d3f6ff8f68b9b296d2d
+
+COCOAPODS: 1.11.3

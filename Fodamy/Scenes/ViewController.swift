@@ -7,13 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController<ViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
     }
-
-
 }
-
