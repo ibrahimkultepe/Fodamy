@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		311B6A76F5E1630457E17C21 /* Pods_Fodamy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A884E93E5616E66D2CDDCF /* Pods_Fodamy.framework */; };
-		9C35237E29B11E8400AEF895 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C35237D29B11E8400AEF895 /* UIComponents.framework */; };
-		9C35239429B121DD00AEF895 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C35239329B121DD00AEF895 /* Utilities.framework */; };
-		9C3523AE29B123A900AEF895 /* DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3523AD29B123A900AEF895 /* DataProvider.framework */; };
+		9C3523BA29B1273800AEF895 /* DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3523B929B1271F00AEF895 /* DataProvider.framework */; };
+		9C3523C429B1277600AEF895 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3523C329B1276F00AEF895 /* UIComponents.framework */; };
+		9C3523CE29B1278500AEF895 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3523CD29B1277F00AEF895 /* Utilities.framework */; };
 		9CAD3FA929ABE5E4006F499E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FA829ABE5E4006F499E /* AppDelegate.swift */; };
 		9CAD3FAB29ABE5E4006F499E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FAA29ABE5E4006F499E /* SceneDelegate.swift */; };
 		9CAD3FAD29ABE5E4006F499E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FAC29ABE5E4006F499E /* ViewController.swift */; };
@@ -39,12 +39,42 @@
 		9CAD3FEE29ABE9D5006F499E /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FED29ABE9D5006F499E /* DataProviderProtocol.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9C3523B829B1271F00AEF895 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C3523B429B1271E00AEF895 /* DataProvider.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9C3523A329B1233F00AEF895;
+			remoteInfo = DataProvider;
+		};
+		9C3523C229B1276F00AEF895 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C3523BC29B1276F00AEF895 /* UIComponents.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9C35236E29B11CE400AEF895;
+			remoteInfo = UIComponents;
+		};
+		9C3523CC29B1277F00AEF895 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C3523C629B1277F00AEF895 /* Utilities.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9C35238929B1214C00AEF895;
+			remoteInfo = Utilities;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		882D15E429B3124FAAF0B5C0 /* Pods-Fodamy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fodamy.release.xcconfig"; path = "Target Support Files/Pods-Fodamy/Pods-Fodamy.release.xcconfig"; sourceTree = "<group>"; };
 		9C35237829B11D9300AEF895 /* Fodamy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fodamy-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C35237D29B11E8400AEF895 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C35239329B121DD00AEF895 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3523AD29B123A900AEF895 /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C3523B329B1271E00AEF895 /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
+		9C3523B429B1271E00AEF895 /* DataProvider.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = DataProvider.xcodeproj; sourceTree = "<group>"; };
+		9C3523BC29B1276F00AEF895 /* UIComponents.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UIComponents.xcodeproj; sourceTree = "<group>"; };
+		9C3523C029B1276F00AEF895 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
+		9C3523C629B1277F00AEF895 /* Utilities.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Utilities.xcodeproj; sourceTree = "<group>"; };
+		9C3523CA29B1277F00AEF895 /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		9CAD3FA529ABE5E4006F499E /* Fodamy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fodamy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CAD3FA829ABE5E4006F499E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CAD3FAA29ABE5E4006F499E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,9 +112,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C3523AE29B123A900AEF895 /* DataProvider.framework in Frameworks */,
-				9C35237E29B11E8400AEF895 /* UIComponents.framework in Frameworks */,
-				9C35239429B121DD00AEF895 /* Utilities.framework in Frameworks */,
+				9C3523CE29B1278500AEF895 /* Utilities.framework in Frameworks */,
+				9C3523C429B1277600AEF895 /* UIComponents.framework in Frameworks */,
+				9C3523BA29B1273800AEF895 /* DataProvider.framework in Frameworks */,
 				311B6A76F5E1630457E17C21 /* Pods_Fodamy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +129,81 @@
 				882D15E429B3124FAAF0B5C0 /* Pods-Fodamy.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9C3523B129B1271E00AEF895 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				9C3523B229B1271E00AEF895 /* DataProvider */,
+				9C3523B429B1271E00AEF895 /* DataProvider.xcodeproj */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		9C3523B229B1271E00AEF895 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				9C3523B329B1271E00AEF895 /* DataProvider.h */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		9C3523B529B1271E00AEF895 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C3523B929B1271F00AEF895 /* DataProvider.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C3523BB29B1276F00AEF895 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				9C3523BC29B1276F00AEF895 /* UIComponents.xcodeproj */,
+				9C3523BF29B1276F00AEF895 /* UIComponents */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		9C3523BD29B1276F00AEF895 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C3523C329B1276F00AEF895 /* UIComponents.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C3523BF29B1276F00AEF895 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				9C3523C029B1276F00AEF895 /* UIComponents.h */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		9C3523C529B1277F00AEF895 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9C3523C629B1277F00AEF895 /* Utilities.xcodeproj */,
+				9C3523C929B1277F00AEF895 /* Utilities */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		9C3523C729B1277F00AEF895 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C3523CD29B1277F00AEF895 /* Utilities.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C3523C929B1277F00AEF895 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9C3523CA29B1277F00AEF895 /* Utilities.h */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		9CAD3F9C29ABE5E4006F499E = {
@@ -229,6 +334,9 @@
 		BCEE16FE7B24FBFDE8461817 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C3523C529B1277F00AEF895 /* Utilities */,
+				9C3523BB29B1276F00AEF895 /* UIComponents */,
+				9C3523B129B1271E00AEF895 /* DataProvider */,
 				9C3523AD29B123A900AEF895 /* DataProvider.framework */,
 				9C35239329B121DD00AEF895 /* Utilities.framework */,
 				9C35237D29B11E8400AEF895 /* UIComponents.framework */,
@@ -286,12 +394,50 @@
 			mainGroup = 9CAD3F9C29ABE5E4006F499E;
 			productRefGroup = 9CAD3FA629ABE5E4006F499E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9C3523B529B1271E00AEF895 /* Products */;
+					ProjectRef = 9C3523B429B1271E00AEF895 /* DataProvider.xcodeproj */;
+				},
+				{
+					ProductGroup = 9C3523BD29B1276F00AEF895 /* Products */;
+					ProjectRef = 9C3523BC29B1276F00AEF895 /* UIComponents.xcodeproj */;
+				},
+				{
+					ProductGroup = 9C3523C729B1277F00AEF895 /* Products */;
+					ProjectRef = 9C3523C629B1277F00AEF895 /* Utilities.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9CAD3FA429ABE5E4006F499E /* Fodamy */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9C3523B929B1271F00AEF895 /* DataProvider.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DataProvider.framework;
+			remoteRef = 9C3523B829B1271F00AEF895 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9C3523C329B1276F00AEF895 /* UIComponents.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UIComponents.framework;
+			remoteRef = 9C3523C229B1276F00AEF895 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9C3523CD29B1277F00AEF895 /* Utilities.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Utilities.framework;
+			remoteRef = 9C3523CC29B1277F00AEF895 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9CAD3FA329ABE5E4006F499E /* Resources */ = {
