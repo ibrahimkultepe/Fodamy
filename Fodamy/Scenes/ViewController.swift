@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UIComponents
 
 class ViewController: BaseViewController<ViewModel> {
 
