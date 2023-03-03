@@ -5,7 +5,7 @@
 //  Created by İbrahim Kültepe on 26.02.2023.
 //
 
-enum RequestMethod {
+public enum RequestMethod {
    /// `CONNECT` method.
    case connect
    /// `DELETE` method.

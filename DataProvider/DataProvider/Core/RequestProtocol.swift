@@ -5,7 +5,7 @@
 //  Created by İbrahim Kültepe on 26.02.2023.
 //
 
-protocol RequestProtocol {
+public protocol RequestProtocol {
    var path: String { get }
    var method: RequestMethod { get }
    var parameters: RequestParameters { get }

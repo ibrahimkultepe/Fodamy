@@ -5,9 +5,9 @@
 //  Created by İbrahim Kültepe on 26.02.2023.
 //
 
-typealias DataProviderResult<T: Decodable> = ((Result<T, Error>) -> Void)
+public typealias DataProviderResult<T: Decodable> = ((Result<T, Error>) -> Void)
 
-protocol DataProviderProtocol {
+public protocol DataProviderProtocol {
     
     func request<T: DecodableResponseRequest>(for request: T,
                                               result: DataProviderResult<T.ResponseType>?)
