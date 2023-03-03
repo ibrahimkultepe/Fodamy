@@ -7,12 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		888D3FEBB5FD987441CD536C /* Pods_UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D5719B184930981002EEE6 /* Pods_UIComponents.framework */; };
+		9C3753FA29B26CE30037EE08 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C3753F929B26CE30037EE08 /* Localizable.strings */; };
+		9C3753FC29B26DC80037EE08 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3753FB29B26DC80037EE08 /* Utilities.framework */; };
 		9C69FB6929B144A6000D17C3 /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C69FB6829B144A6000D17C3 /* UIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C69FBAC29B14C62000D17C3 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9C69FBAB29B14C62000D17C3 /* swiftgen.yml */; };
+		9C69FBC529B14D13000D17C3 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69FBB129B14D12000D17C3 /* UIFont+Extensions.swift */; };
+		9C69FBC629B14D13000D17C3 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C69FBB229B14D12000D17C3 /* Nunito-ExtraBold.ttf */; };
+		9C69FBC729B14D13000D17C3 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C69FBB329B14D12000D17C3 /* Nunito-SemiBold.ttf */; };
+		9C69FBC829B14D13000D17C3 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C69FBB429B14D12000D17C3 /* Nunito-Bold.ttf */; };
+		9C69FBC929B14D13000D17C3 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69FBB529B14D12000D17C3 /* Fonts.swift */; };
+		9C69FBCA29B14D13000D17C3 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69FBB729B14D13000D17C3 /* Assets.swift */; };
+		9C69FBCB29B14D13000D17C3 /* UIImage+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69FBB829B14D13000D17C3 /* UIImage+Icons.swift */; };
+		9C69FBCC29B14D13000D17C3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C69FBB929B14D13000D17C3 /* Colors.xcassets */; };
+		9C69FBCD29B14D13000D17C3 /* UIImage+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69FBBA29B14D13000D17C3 /* UIImage+Images.swift */; };
+		9C69FBCE29B14D13000D17C3 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C69FBBB29B14D13000D17C3 /* Icons.xcassets */; };
+		9C69FBCF29B14D13000D17C3 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69FBBC29B14D13000D17C3 /* UIColor+Colors.swift */; };
+		9C69FBD029B14D13000D17C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C69FBBD29B14D13000D17C3 /* Images.xcassets */; };
+		9C69FBD429B14D13000D17C3 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69FBC229B14D13000D17C3 /* StringConstants.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9C37540129B26E0E0037EE08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C3753FD29B26E0E0037EE08 /* DataProvider.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9C69FB9A29B14864000D17C3;
+			remoteInfo = DataProvider;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		18CC82AE9D210DF5AFDCA6AF /* Pods-UIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.release.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.release.xcconfig"; sourceTree = "<group>"; };
+		5D45E6D4355669FAFEB7BDB1 /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
+		74D5719B184930981002EEE6 /* Pods_UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C3753F929B26CE30037EE08 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		9C3753FB29B26DC80037EE08 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C3753FD29B26E0E0037EE08 /* DataProvider.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DataProvider.xcodeproj; path = ../DataProvider/DataProvider.xcodeproj; sourceTree = "<group>"; };
 		9C69FB6529B144A6000D17C3 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C69FB6829B144A6000D17C3 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
+		9C69FBAB29B14C62000D17C3 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		9C69FBB129B14D12000D17C3 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		9C69FBB229B14D12000D17C3 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		9C69FBB329B14D12000D17C3 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		9C69FBB429B14D12000D17C3 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		9C69FBB529B14D12000D17C3 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		9C69FBB729B14D13000D17C3 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		9C69FBB829B14D13000D17C3 /* UIImage+Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Icons.swift"; sourceTree = "<group>"; };
+		9C69FBB929B14D13000D17C3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		9C69FBBA29B14D13000D17C3 /* UIImage+Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Images.swift"; sourceTree = "<group>"; };
+		9C69FBBB29B14D13000D17C3 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		9C69FBBC29B14D13000D17C3 /* UIColor+Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
+		9C69FBBD29B14D13000D17C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9C69FBC229B14D13000D17C3 /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -20,17 +67,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C3753FC29B26DC80037EE08 /* Utilities.framework in Frameworks */,
+				888D3FEBB5FD987441CD536C /* Pods_UIComponents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73F4CD5103B8C8D5E7538810 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D45E6D4355669FAFEB7BDB1 /* Pods-UIComponents.debug.xcconfig */,
+				18CC82AE9D210DF5AFDCA6AF /* Pods-UIComponents.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		9C3753FE29B26E0E0037EE08 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C37540229B26E0E0037EE08 /* DataProvider.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9C69FB5B29B144A6000D17C3 = {
 			isa = PBXGroup;
 			children = (
+				9C3753FD29B26E0E0037EE08 /* DataProvider.xcodeproj */,
+				9C69FBAB29B14C62000D17C3 /* swiftgen.yml */,
 				9C69FB6729B144A6000D17C3 /* UIComponents */,
 				9C69FB6629B144A6000D17C3 /* Products */,
+				73F4CD5103B8C8D5E7538810 /* Pods */,
+				BD7FC3C45D5DC670DA28D0AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -45,9 +116,64 @@
 		9C69FB6729B144A6000D17C3 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				9C69FBAF29B14CEE000D17C3 /* Resources */,
 				9C69FB6829B144A6000D17C3 /* UIComponents.h */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		9C69FBAF29B14CEE000D17C3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C69FBB629B14D13000D17C3 /* Assets */,
+				9C69FBB029B14D12000D17C3 /* Fonts */,
+				9C69FBBE29B14D13000D17C3 /* Strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9C69FBB029B14D12000D17C3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9C69FBB129B14D12000D17C3 /* UIFont+Extensions.swift */,
+				9C69FBB229B14D12000D17C3 /* Nunito-ExtraBold.ttf */,
+				9C69FBB329B14D12000D17C3 /* Nunito-SemiBold.ttf */,
+				9C69FBB429B14D12000D17C3 /* Nunito-Bold.ttf */,
+				9C69FBB529B14D12000D17C3 /* Fonts.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9C69FBB629B14D13000D17C3 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9C69FBB729B14D13000D17C3 /* Assets.swift */,
+				9C69FBB829B14D13000D17C3 /* UIImage+Icons.swift */,
+				9C69FBB929B14D13000D17C3 /* Colors.xcassets */,
+				9C69FBBA29B14D13000D17C3 /* UIImage+Images.swift */,
+				9C69FBBB29B14D13000D17C3 /* Icons.xcassets */,
+				9C69FBBC29B14D13000D17C3 /* UIColor+Colors.swift */,
+				9C69FBBD29B14D13000D17C3 /* Images.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		9C69FBBE29B14D13000D17C3 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				9C69FBC229B14D13000D17C3 /* StringConstants.swift */,
+				9C3753F929B26CE30037EE08 /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		BD7FC3C45D5DC670DA28D0AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C3753FB29B26DC80037EE08 /* Utilities.framework */,
+				74D5719B184930981002EEE6 /* Pods_UIComponents.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -68,6 +194,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C69FB6C29B144A6000D17C3 /* Build configuration list for PBXNativeTarget "UIComponents" */;
 			buildPhases = (
+				6D254D4A90C9E482AA74835E /* [CP] Check Pods Manifest.lock */,
+				9C69FBAD29B14C80000D17C3 /* Swiftgen */,
 				9C69FB6029B144A6000D17C3 /* Headers */,
 				9C69FB6129B144A6000D17C3 /* Sources */,
 				9C69FB6229B144A6000D17C3 /* Frameworks */,
@@ -108,6 +236,12 @@
 			mainGroup = 9C69FB5B29B144A6000D17C3;
 			productRefGroup = 9C69FB6629B144A6000D17C3 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9C3753FE29B26E0E0037EE08 /* Products */;
+					ProjectRef = 9C3753FD29B26E0E0037EE08 /* DataProvider.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9C69FB6429B144A6000D17C3 /* UIComponents */,
@@ -115,21 +249,89 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		9C37540229B26E0E0037EE08 /* DataProvider.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DataProvider.framework;
+			remoteRef = 9C37540129B26E0E0037EE08 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		9C69FB6329B144A6000D17C3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C69FBCC29B14D13000D17C3 /* Colors.xcassets in Resources */,
+				9C69FBC729B14D13000D17C3 /* Nunito-SemiBold.ttf in Resources */,
+				9C69FBD029B14D13000D17C3 /* Images.xcassets in Resources */,
+				9C69FBAC29B14C62000D17C3 /* swiftgen.yml in Resources */,
+				9C69FBC829B14D13000D17C3 /* Nunito-Bold.ttf in Resources */,
+				9C3753FA29B26CE30037EE08 /* Localizable.strings in Resources */,
+				9C69FBCE29B14D13000D17C3 /* Icons.xcassets in Resources */,
+				9C69FBC629B14D13000D17C3 /* Nunito-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6D254D4A90C9E482AA74835E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UIComponents-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C69FBAD29B14C80000D17C3 /* Swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9C69FB6129B144A6000D17C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C69FBC929B14D13000D17C3 /* Fonts.swift in Sources */,
+				9C69FBCF29B14D13000D17C3 /* UIColor+Colors.swift in Sources */,
+				9C69FBCD29B14D13000D17C3 /* UIImage+Images.swift in Sources */,
+				9C69FBD429B14D13000D17C3 /* StringConstants.swift in Sources */,
+				9C69FBC529B14D13000D17C3 /* UIFont+Extensions.swift in Sources */,
+				9C69FBCB29B14D13000D17C3 /* UIImage+Icons.swift in Sources */,
+				9C69FBCA29B14D13000D17C3 /* Assets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +460,7 @@
 		};
 		9C69FB6D29B144A6000D17C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D45E6D4355669FAFEB7BDB1 /* Pods-UIComponents.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -290,6 +493,7 @@
 		};
 		9C69FB6E29B144A6000D17C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18CC82AE9D210DF5AFDCA6AF /* Pods-UIComponents.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

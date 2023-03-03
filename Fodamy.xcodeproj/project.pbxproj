@@ -101,6 +101,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9C69FBAA29B14A70000D17C3 /* BridgingHeader */ = {
+			isa = PBXGroup;
+			children = (
+				9C69FB7129B14692000D17C3 /* Fodamy-Bridging-Header.h */,
+			);
+			path = BridgingHeader;
+			sourceTree = "<group>";
+		};
 		9CAD3F9C29ABE5E4006F499E = {
 			isa = PBXGroup;
 			children = (
@@ -108,7 +116,6 @@
 				9CAD3FA629ABE5E4006F499E /* Products */,
 				031B009DC29B36563E603B7D /* Pods */,
 				BCEE16FE7B24FBFDE8461817 /* Frameworks */,
-				9C69FB7129B14692000D17C3 /* Fodamy-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +138,7 @@
 				9CAD3FBF29ABE732006F499E /* Scenes */,
 				9CAD3FC529ABE7A2006F499E /* UIComponent */,
 				9CAD3FCC29ABE80E006F499E /* Toast */,
+				9C69FBAA29B14A70000D17C3 /* BridgingHeader */,
 				9CAD3FB129ABE5EC006F499E /* Assets.xcassets */,
 				9CAD3FB329ABE5EC006F499E /* LaunchScreen.storyboard */,
 				9CAD3FB629ABE5EC006F499E /* Info.plist */,
@@ -532,7 +540,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibrahimkultepe.Fodamy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Fodamy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fodamy/BridgingHeader/Fodamy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -564,7 +572,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibrahimkultepe.Fodamy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Fodamy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fodamy/BridgingHeader/Fodamy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
