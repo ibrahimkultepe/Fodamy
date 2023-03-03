@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		311B6A76F5E1630457E17C21 /* Pods_Fodamy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A884E93E5616E66D2CDDCF /* Pods_Fodamy.framework */; };
+		9C37540D29B26F890037EE08 /* APIRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37540C29B26F890037EE08 /* APIRequestInterceptor.swift */; };
 		9C69FB7529B14732000D17C3 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69FB7429B14732000D17C3 /* UIComponents.framework */; };
 		9C69FB8D29B147F5000D17C3 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69FB8C29B147F5000D17C3 /* Utilities.framework */; };
 		9C69FBA529B14882000D17C3 /* DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69FBA429B14882000D17C3 /* DataProvider.framework */; };
@@ -30,17 +31,11 @@
 		9CAD3FDB29ABE905006F499E /* APIRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FDA29ABE905006F499E /* APIRequestAdapter.swift */; };
 		9CAD3FDD29ABE91D006F499E /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FDC29ABE91D006F499E /* APILogger.swift */; };
 		9CAD3FDF29ABE92F006F499E /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FDE29ABE92F006F499E /* DataProvider.swift */; };
-		9CAD3FE229ABE955006F499E /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FE129ABE955006F499E /* Typealias.swift */; };
-		9CAD3FE429ABE96A006F499E /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FE329ABE96A006F499E /* RequestProtocol.swift */; };
-		9CAD3FE629ABE983006F499E /* DecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FE529ABE983006F499E /* DecodableResponseRequest.swift */; };
-		9CAD3FE829ABE996006F499E /* APIDecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FE729ABE996006F499E /* APIDecodableResponseRequest.swift */; };
-		9CAD3FEA29ABE9AE006F499E /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FE929ABE9AE006F499E /* RequestMethod.swift */; };
-		9CAD3FEC29ABE9C4006F499E /* RequestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FEB29ABE9C4006F499E /* RequestEncoding.swift */; };
-		9CAD3FEE29ABE9D5006F499E /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FED29ABE9D5006F499E /* DataProviderProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		882D15E429B3124FAAF0B5C0 /* Pods-Fodamy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fodamy.release.xcconfig"; path = "Target Support Files/Pods-Fodamy/Pods-Fodamy.release.xcconfig"; sourceTree = "<group>"; };
+		9C37540C29B26F890037EE08 /* APIRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestInterceptor.swift; sourceTree = "<group>"; };
 		9C69FB7129B14692000D17C3 /* Fodamy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fodamy-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C69FB7429B14732000D17C3 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C69FB8C29B147F5000D17C3 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,13 +61,6 @@
 		9CAD3FDA29ABE905006F499E /* APIRequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestAdapter.swift; sourceTree = "<group>"; };
 		9CAD3FDC29ABE91D006F499E /* APILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
 		9CAD3FDE29ABE92F006F499E /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
-		9CAD3FE129ABE955006F499E /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
-		9CAD3FE329ABE96A006F499E /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
-		9CAD3FE529ABE983006F499E /* DecodableResponseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableResponseRequest.swift; sourceTree = "<group>"; };
-		9CAD3FE729ABE996006F499E /* APIDecodableResponseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDecodableResponseRequest.swift; sourceTree = "<group>"; };
-		9CAD3FE929ABE9AE006F499E /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
-		9CAD3FEB29ABE9C4006F499E /* RequestEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEncoding.swift; sourceTree = "<group>"; };
-		9CAD3FED29ABE9D5006F499E /* DataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
 		E5A884E93E5616E66D2CDDCF /* Pods_Fodamy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fodamy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3085BFF182E815078209B5D /* Pods-Fodamy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fodamy.debug.xcconfig"; path = "Target Support Files/Pods-Fodamy/Pods-Fodamy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				9CAD3FD729ABE8D0006F499E /* DataProvider */,
-				9CAD3FE029ABE943006F499E /* Core */,
 				9CAD3FBE29ABE71E006F499E /* Delegate */,
 				9CAD3FD129ABE860006F499E /* Constant */,
 				9CAD3FD429ABE894006F499E /* Protocol */,
@@ -216,22 +203,9 @@
 				9CAD3FDA29ABE905006F499E /* APIRequestAdapter.swift */,
 				9CAD3FDC29ABE91D006F499E /* APILogger.swift */,
 				9CAD3FDE29ABE92F006F499E /* DataProvider.swift */,
+				9C37540C29B26F890037EE08 /* APIRequestInterceptor.swift */,
 			);
 			path = DataProvider;
-			sourceTree = "<group>";
-		};
-		9CAD3FE029ABE943006F499E /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				9CAD3FE129ABE955006F499E /* Typealias.swift */,
-				9CAD3FE329ABE96A006F499E /* RequestProtocol.swift */,
-				9CAD3FE529ABE983006F499E /* DecodableResponseRequest.swift */,
-				9CAD3FE729ABE996006F499E /* APIDecodableResponseRequest.swift */,
-				9CAD3FE929ABE9AE006F499E /* RequestMethod.swift */,
-				9CAD3FEB29ABE9C4006F499E /* RequestEncoding.swift */,
-				9CAD3FED29ABE9D5006F499E /* DataProviderProtocol.swift */,
-			);
-			path = Core;
 			sourceTree = "<group>";
 		};
 		BCEE16FE7B24FBFDE8461817 /* Frameworks */ = {
@@ -364,23 +338,17 @@
 				9CAD3FAD29ABE5E4006F499E /* ViewController.swift in Sources */,
 				9CAD3FA929ABE5E4006F499E /* AppDelegate.swift in Sources */,
 				9CAD3FD929ABE8EB006F499E /* APIDataProvider.swift in Sources */,
-				9CAD3FEE29ABE9D5006F499E /* DataProviderProtocol.swift in Sources */,
 				9CAD3FDD29ABE91D006F499E /* APILogger.swift in Sources */,
 				9CAD3FBD29ABE668006F499E /* ViewModel.swift in Sources */,
 				9CAD3FCE29ABE824006F499E /* ToastPresenter.swift in Sources */,
 				9CAD3FDB29ABE905006F499E /* APIRequestAdapter.swift in Sources */,
 				9CAD3FD029ABE841006F499E /* TostWarningView.swift in Sources */,
-				9CAD3FEC29ABE9C4006F499E /* RequestEncoding.swift in Sources */,
 				9CAD3FD629ABE8AB006F499E /* LoadingProtocol.swift in Sources */,
-				9CAD3FE229ABE955006F499E /* Typealias.swift in Sources */,
 				9CAD3FC729ABE7C3006F499E /* ActivityIndicator.swift in Sources */,
-				9CAD3FE629ABE983006F499E /* DecodableResponseRequest.swift in Sources */,
 				9CAD3FAB29ABE5E4006F499E /* SceneDelegate.swift in Sources */,
 				9CAD3FCB29ABE7F1006F499E /* ActivityIndicatorView.swift in Sources */,
-				9CAD3FE429ABE96A006F499E /* RequestProtocol.swift in Sources */,
-				9CAD3FEA29ABE9AE006F499E /* RequestMethod.swift in Sources */,
-				9CAD3FE829ABE996006F499E /* APIDecodableResponseRequest.swift in Sources */,
 				9CAD3FDF29ABE92F006F499E /* DataProvider.swift in Sources */,
+				9C37540D29B26F890037EE08 /* APIRequestInterceptor.swift in Sources */,
 				9CAD3FC929ABE7DE006F499E /* ActivityIndicatorProtocol.swift in Sources */,
 				9CAD3FC429ABE782006F499E /* BaseViewModel.swift in Sources */,
 				9CAD3FD329ABE876006F499E /* Constant.swift in Sources */,
