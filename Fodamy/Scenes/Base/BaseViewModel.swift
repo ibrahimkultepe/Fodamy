@@ -19,16 +19,21 @@ protocol BaseViewModelEventSource: AnyObject {
 
 protocol BaseViewModelProtocol: BaseViewModelDataSource, BaseViewModelEventSource {}
 
-class BaseViewModel: BaseViewModelProtocol {
+class BaseViewModel<R: Router>: BaseViewModelProtocol {
+    
     var showActivityIndicatorView: VoidClosure?
     var hideActivityIndicatorView: VoidClosure?
+    
     var showLoading: VoidClosure?
     var hideLoading: VoidClosure?
+    
     var showWarningToast: StringClosure?
     
+    let router: R
     let dataProvider: DataProviderProtocol
     
-    init(dataProvider: DataProviderProtocol = apiDataProvider) {
+    init(router: R, dataProvider: DataProviderProtocol = apiDataProvider) {
+        self.router = router
         self.dataProvider = dataProvider
     }
     
