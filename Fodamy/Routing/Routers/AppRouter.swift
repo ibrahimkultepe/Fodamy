@@ -11,7 +11,7 @@ import UIKit
 
 final class AppRouter: Router, AppRouter.Routes {
     
-    typealias Routes = HomeRoute
+    typealias Routes = WalkthroughRoute
     
     static let shared = AppRouter()
     
