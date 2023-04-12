@@ -1,22 +1,22 @@
 //
-//  HomeRoute.swift
+//  WalkthroughRoute.swift
 //  Fodamy
 //
-//  Created by İbrahim Kültepe on 3.03.2023.
+//  Created by İbrahim Kültepe on 8.03.2023.
 //
 
 import UIKit
 
-protocol HomeRoute {
+protocol WalkthroughRoute {
     func placeOnWindowHome()
 }
 
-extension HomeRoute where Self: RouterProtocol {
+extension WalkthroughRoute where Self: RouterProtocol {
     
     func placeOnWindowHome() {
-        let router = HomeRouter()
-        let viewModel = HomeViewModel(router: router)
-        let viewController = HomeViewController(viewModel: viewModel)
+        let router = WalkthroughRouter()
+        let viewModel = WalkthroughViewModel(router: router)
+        let viewController = WalkthroughViewController(viewModel: viewModel)
         let navController = UINavigationController(rootViewController: viewController)
         
         let transition = PlaceOnWindowTransition()
