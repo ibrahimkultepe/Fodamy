@@ -14,6 +14,14 @@ public extension UIImage {
       return Asset.Images.imgLogoFodamy.image
   }
 
+  static var imgVector: UIImage {
+      return Asset.Images.imgVector.image
+  }
+
+  static var imgVector2: UIImage {
+      return Asset.Images.imgVector2.image
+  }
+
   static var imgWalkthrough1: UIImage {
       return Asset.Images.imgWalkthrough1.image
   }

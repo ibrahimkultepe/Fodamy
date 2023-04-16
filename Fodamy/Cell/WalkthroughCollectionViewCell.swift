@@ -7,32 +7,26 @@
 
 import UIKit
 import TinyConstraints
+import MobilliumBuilders
 
-class WalkthroughCollectionViewCell: UICollectionViewCell {
+class WalkthroughCollectionViewCell: UICollectionViewCell, ReusableView {
     
-    static let identifier = "CustomCollectionViewCell"
-    private var viewModel: WalkthroughCellModel?
+    weak var viewModel: WalkthroughCellModelProtocol?
     
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = .imgWalkthrough
-        return imageView
-    }()
+    private let imageView = UIImageViewBuilder()
+        .contentMode(.scaleAspectFit)
+        .image(.imgWalkthrough1)
+        .build()
     
-    private let titleLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.textColor = .appFocus
-        titleLabel.font = UIFont(name: "Nunito-Bold", size: 16)
-        return titleLabel
-    }()
+    private let titleLabel = UILabelBuilder()
+        .textColor(.appCinder)
+        .font(.nunitoBold(size: 16))
+        .build()
     
-    private let descriptionLabel: UILabel = {
-        let descriptionLabel = UILabel()
-        descriptionLabel.textColor = .appText
-        descriptionLabel.font = UIFont(name: "Nunito-Bold", size: 15)
-        return descriptionLabel
-    }()
+    private let descriptionLabel = UILabelBuilder()
+        .textColor(.appRaven)
+        .font(.nunitoBold(size: 15))
+        .build()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -75,7 +69,7 @@ extension WalkthroughCollectionViewCell {
 //MARK: - SetCellItem
 extension WalkthroughCollectionViewCell {
     
-    func setCellItem(viewModel: WalkthroughCellModel) {
+    func setCellItem(viewModel: WalkthroughCellModelProtocol) {
         self.viewModel = viewModel
         self.titleLabel.text = viewModel.title
         self.descriptionLabel.text = viewModel.description

@@ -14,13 +14,13 @@ protocol WalkthroughViewEventSource {}
 protocol WalkthroughViewProtocol: WalkthroughViewDataSource, WalkthroughViewEventSource {}
 
 final class WalkthroughViewModel: BaseViewModel<WalkthroughRouter>, WalkthroughViewProtocol {
-        
-    let items = [WalkthroughCellModel(image: .imgWalkthrough, title: firtsTitle, description: description),
-                 WalkthroughCellModel(image: .imgWalkthrough2, title: secondTitle, description: description),
-                 WalkthroughCellModel(image: .imgWalkthrough3, title: thirdTitle, description: description),
-                 WalkthroughCellModel(image: .imgWalkthrough4, title: fourthTitle, description: description)]
     
-    func cellItemForAt(indexPath: IndexPath) -> WalkthroughCellModel {
+    let items: [WalkthroughCellModelProtocol] = [WalkThroughCellModel(image: .imgWalkthrough1, title: L10n.WalkThrough.firtsTitle, description: L10n.WalkThrough.description),
+                                                 WalkThroughCellModel(image: .imgWalkthrough2, title: L10n.WalkThrough.secondTitle, description: L10n.WalkThrough.description),
+                                                 WalkThroughCellModel(image: .imgWalkthrough3, title: L10n.WalkThrough.thirdTitle, description: L10n.WalkThrough.description),
+                                                 WalkThroughCellModel(image: .imgWalkthrough4, title: L10n.WalkThrough.fourthTitle, description: L10n.WalkThrough.description)]
+    
+    func cellItemForAt(indexPath: IndexPath) -> WalkthroughCellModelProtocol {
         return items[indexPath.row]
     }
     

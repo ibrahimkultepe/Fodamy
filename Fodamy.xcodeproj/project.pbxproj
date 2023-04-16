@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		311B6A76F5E1630457E17C21 /* Pods_Fodamy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A884E93E5616E66D2CDDCF /* Pods_Fodamy.framework */; };
 		9C0ADA2729DEC33B00BD6825 /* WalkthroughCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0ADA2629DEC33B00BD6825 /* WalkthroughCellModel.swift */; };
-		9C0ADA2929DEC63900BD6825 /* StringConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0ADA2829DEC63900BD6825 /* StringConstant.swift */; };
 		9C37540D29B26F890037EE08 /* APIRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37540C29B26F890037EE08 /* APIRequestInterceptor.swift */; };
 		9C37542329B273140037EE08 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37542229B273140037EE08 /* AppRouter.swift */; };
 		9C37542629B273950037EE08 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37542529B273950037EE08 /* Animator.swift */; };
@@ -21,8 +20,14 @@
 		9C69FB7529B14732000D17C3 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69FB7429B14732000D17C3 /* UIComponents.framework */; };
 		9C69FB8D29B147F5000D17C3 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69FB8C29B147F5000D17C3 /* Utilities.framework */; };
 		9C69FBA529B14882000D17C3 /* DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69FBA429B14882000D17C3 /* DataProvider.framework */; };
+		9C6EAC8129E98A0700075FF7 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6EAC8029E98A0700075FF7 /* ReusableView.swift */; };
+		9C6EAC8329E98A3300075FF7 /* ReusableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6EAC8229E98A3300075FF7 /* ReusableView+Extensions.swift */; };
+		9C6EAC8529E98A6F00075FF7 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6EAC8429E98A6F00075FF7 /* UICollectionView+Extensions.swift */; };
+		9C6EAC8729E9937B00075FF7 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6EAC8629E9937B00075FF7 /* UIFont+Extensions.swift */; };
+		9C88365129EB4DB300597EC2 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C88365029EB4D6200597EC2 /* Nunito-Bold.ttf */; };
+		9C88365229EB4DB500597EC2 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C88364E29EB4D6200597EC2 /* Nunito-ExtraBold.ttf */; };
+		9C88365329EB4DB800597EC2 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C88364F29EB4D6200597EC2 /* Nunito-SemiBold.ttf */; };
 		9CAD3FA929ABE5E4006F499E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FA829ABE5E4006F499E /* AppDelegate.swift */; };
-		9CAD3FB229ABE5EC006F499E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD3FB129ABE5EC006F499E /* Assets.xcassets */; };
 		9CAD3FB529ABE5EC006F499E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD3FB329ABE5EC006F499E /* LaunchScreen.storyboard */; };
 		9CAD3FC229ABE765006F499E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FC129ABE765006F499E /* BaseViewController.swift */; };
 		9CAD3FC429ABE782006F499E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FC329ABE782006F499E /* BaseViewModel.swift */; };
@@ -42,14 +47,11 @@
 		9CE25C4829B912B7000DD905 /* WalkthroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4529B912B7000DD905 /* WalkthroughViewModel.swift */; };
 		9CE25C4A29B912D3000DD905 /* WalkthroughRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4929B912D3000DD905 /* WalkthroughRoute.swift */; };
 		9CE25C4E29B91C07000DD905 /* WalkthroughCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4D29B91C07000DD905 /* WalkthroughCollectionViewCell.swift */; };
-		9CE974BE29C79EA5005FA1F8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE974BD29C79EA5005FA1F8 /* UIImage+Extension.swift */; };
-		9CE974C029C7A1EF005FA1F8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE974BF29C7A1EF005FA1F8 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		882D15E429B3124FAAF0B5C0 /* Pods-Fodamy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fodamy.release.xcconfig"; path = "Target Support Files/Pods-Fodamy/Pods-Fodamy.release.xcconfig"; sourceTree = "<group>"; };
 		9C0ADA2629DEC33B00BD6825 /* WalkthroughCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughCellModel.swift; sourceTree = "<group>"; };
-		9C0ADA2829DEC63900BD6825 /* StringConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstant.swift; sourceTree = "<group>"; };
 		9C37540C29B26F890037EE08 /* APIRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestInterceptor.swift; sourceTree = "<group>"; };
 		9C37542229B273140037EE08 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		9C37542529B273950037EE08 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
@@ -62,9 +64,15 @@
 		9C69FB7429B14732000D17C3 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C69FB8C29B147F5000D17C3 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C69FBA429B14882000D17C3 /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C6EAC8029E98A0700075FF7 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		9C6EAC8229E98A3300075FF7 /* ReusableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableView+Extensions.swift"; sourceTree = "<group>"; };
+		9C6EAC8429E98A6F00075FF7 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		9C6EAC8629E9937B00075FF7 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		9C88364E29EB4D6200597EC2 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		9C88364F29EB4D6200597EC2 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		9C88365029EB4D6200597EC2 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		9CAD3FA529ABE5E4006F499E /* Fodamy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fodamy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CAD3FA829ABE5E4006F499E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9CAD3FB129ABE5EC006F499E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CAD3FB429ABE5EC006F499E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CAD3FB629ABE5EC006F499E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CAD3FC129ABE765006F499E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -85,8 +93,6 @@
 		9CE25C4529B912B7000DD905 /* WalkthroughViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewModel.swift; sourceTree = "<group>"; };
 		9CE25C4929B912D3000DD905 /* WalkthroughRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughRoute.swift; sourceTree = "<group>"; };
 		9CE25C4D29B91C07000DD905 /* WalkthroughCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughCollectionViewCell.swift; sourceTree = "<group>"; };
-		9CE974BD29C79EA5005FA1F8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		9CE974BF29C7A1EF005FA1F8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		E5A884E93E5616E66D2CDDCF /* Pods_Fodamy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fodamy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3085BFF182E815078209B5D /* Pods-Fodamy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fodamy.debug.xcconfig"; path = "Target Support Files/Pods-Fodamy/Pods-Fodamy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +178,16 @@
 			path = BridgingHeader;
 			sourceTree = "<group>";
 		};
+		9C88364729EB4A9200597EC2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9C88365029EB4D6200597EC2 /* Nunito-Bold.ttf */,
+				9C88364E29EB4D6200597EC2 /* Nunito-ExtraBold.ttf */,
+				9C88364F29EB4D6200597EC2 /* Nunito-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		9CAD3F9C29ABE5E4006F499E = {
 			isa = PBXGroup;
 			children = (
@@ -201,10 +217,9 @@
 				9CAD3FBF29ABE732006F499E /* Scenes */,
 				9CE25C4C29B91BC5000DD905 /* Cell */,
 				9CAD3FC529ABE7A2006F499E /* UIComponent */,
-				9CE974BC29C79E88005FA1F8 /* Resources */,
+				9CE974BC29C79E88005FA1F8 /* Extensions */,
 				9CAD3FCC29ABE80E006F499E /* Toast */,
 				9C69FBAA29B14A70000D17C3 /* BridgingHeader */,
-				9CAD3FB129ABE5EC006F499E /* Assets.xcassets */,
 				9CAD3FB329ABE5EC006F499E /* LaunchScreen.storyboard */,
 				9CAD3FB629ABE5EC006F499E /* Info.plist */,
 			);
@@ -259,7 +274,6 @@
 		9CAD3FD129ABE860006F499E /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				9C0ADA2829DEC63900BD6825 /* StringConstant.swift */,
 				9CAD3FD229ABE876006F499E /* Constant.swift */,
 			);
 			path = Constant;
@@ -269,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				9CAD3FD529ABE8AB006F499E /* LoadingProtocol.swift */,
+				9C6EAC8029E98A0700075FF7 /* ReusableView.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -294,13 +309,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		9CE974BC29C79E88005FA1F8 /* Resources */ = {
+		9CE974BC29C79E88005FA1F8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9CE974BD29C79EA5005FA1F8 /* UIImage+Extension.swift */,
-				9CE974BF29C7A1EF005FA1F8 /* UIColor+Extension.swift */,
+				9C6EAC8629E9937B00075FF7 /* UIFont+Extensions.swift */,
+				9C6EAC8229E98A3300075FF7 /* ReusableView+Extensions.swift */,
+				9C6EAC8429E98A6F00075FF7 /* UICollectionView+Extensions.swift */,
+				9C88364729EB4A9200597EC2 /* Fonts */,
 			);
-			path = Resources;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BCEE16FE7B24FBFDE8461817 /* Frameworks */ = {
@@ -376,7 +393,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CAD3FB529ABE5EC006F499E /* LaunchScreen.storyboard in Resources */,
-				9CAD3FB229ABE5EC006F499E /* Assets.xcassets in Resources */,
+				9C88365129EB4DB300597EC2 /* Nunito-Bold.ttf in Resources */,
+				9C88365229EB4DB500597EC2 /* Nunito-ExtraBold.ttf in Resources */,
+				9C88365329EB4DB800597EC2 /* Nunito-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,20 +461,21 @@
 				9CAD3FCE29ABE824006F499E /* ToastPresenter.swift in Sources */,
 				9CAD3FDB29ABE905006F499E /* APIRequestAdapter.swift in Sources */,
 				9C37543129B274240037EE08 /* Transition.swift in Sources */,
+				9C6EAC8729E9937B00075FF7 /* UIFont+Extensions.swift in Sources */,
 				9C37542F29B274080037EE08 /* PushTransition.swift in Sources */,
-				9C0ADA2929DEC63900BD6825 /* StringConstant.swift in Sources */,
 				9C0ADA2729DEC33B00BD6825 /* WalkthroughCellModel.swift in Sources */,
 				9C37542829B273AB0037EE08 /* Router.swift in Sources */,
-				9CE974BE29C79EA5005FA1F8 /* UIImage+Extension.swift in Sources */,
+				9C6EAC8529E98A6F00075FF7 /* UICollectionView+Extensions.swift in Sources */,
 				9CAD3FD029ABE841006F499E /* TostWarningView.swift in Sources */,
 				9CAD3FD629ABE8AB006F499E /* LoadingProtocol.swift in Sources */,
 				9CAD3FC729ABE7C3006F499E /* ActivityIndicator.swift in Sources */,
-				9CE974C029C7A1EF005FA1F8 /* UIColor+Extension.swift in Sources */,
 				9C37542B29B273D90037EE08 /* ModalTransition.swift in Sources */,
 				9CAD3FCB29ABE7F1006F499E /* ActivityIndicatorView.swift in Sources */,
 				9CAD3FDF29ABE92F006F499E /* DataProvider.swift in Sources */,
 				9C37540D29B26F890037EE08 /* APIRequestInterceptor.swift in Sources */,
 				9CE25C4629B912B7000DD905 /* WalkthroughRouter.swift in Sources */,
+				9C6EAC8329E98A3300075FF7 /* ReusableView+Extensions.swift in Sources */,
+				9C6EAC8129E98A0700075FF7 /* ReusableView.swift in Sources */,
 				9CAD3FC929ABE7DE006F499E /* ActivityIndicatorProtocol.swift in Sources */,
 				9CAD3FC429ABE782006F499E /* BaseViewModel.swift in Sources */,
 				9CAD3FD329ABE876006F499E /* Constant.swift in Sources */,
