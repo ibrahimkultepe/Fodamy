@@ -1,8 +1,8 @@
 //
 //  ReusableView.swift
-//  Fodamy
+//  UIComponents
 //
-//  Created by İbrahim Kültepe on 14.04.2023.
+//  Created by İbrahim Kültepe on 17.04.2023.
 //
 
 import UIKit

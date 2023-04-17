@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIComponents
 
 protocol WalkthroughViewDataSource {}
 
@@ -15,10 +16,18 @@ protocol WalkthroughViewProtocol: WalkthroughViewDataSource, WalkthroughViewEven
 
 final class WalkthroughViewModel: BaseViewModel<WalkthroughRouter>, WalkthroughViewProtocol {
     
-    let items: [WalkthroughCellModelProtocol] = [WalkThroughCellModel(image: .imgWalkthrough1, title: L10n.WalkThrough.firtsTitle, description: L10n.WalkThrough.description),
-                                                 WalkThroughCellModel(image: .imgWalkthrough2, title: L10n.WalkThrough.secondTitle, description: L10n.WalkThrough.description),
-                                                 WalkThroughCellModel(image: .imgWalkthrough3, title: L10n.WalkThrough.thirdTitle, description: L10n.WalkThrough.description),
-                                                 WalkThroughCellModel(image: .imgWalkthrough4, title: L10n.WalkThrough.fourthTitle, description: L10n.WalkThrough.description)]
+    let items: [WalkthroughCellModelProtocol] = [WalkThroughCellModel(image: .imgWalkthrough1,
+                                                                      title: L10n.WalkThrough.firtsTitle,
+                                                                      description: L10n.WalkThrough.description),
+                                                 WalkThroughCellModel(image: .imgWalkthrough2,
+                                                                      title: L10n.WalkThrough.secondTitle,
+                                                                      description: L10n.WalkThrough.description),
+                                                 WalkThroughCellModel(image: .imgWalkthrough3,
+                                                                      title: L10n.WalkThrough.thirdTitle,
+                                                                      description: L10n.WalkThrough.description),
+                                                 WalkThroughCellModel(image: .imgWalkthrough4,
+                                                                      title: L10n.WalkThrough.fourthTitle,
+                                                                      description: L10n.WalkThrough.description)]
     
     func cellItemForAt(indexPath: IndexPath) -> WalkthroughCellModelProtocol {
         return items[indexPath.row]
@@ -26,5 +35,14 @@ final class WalkthroughViewModel: BaseViewModel<WalkthroughRouter>, WalkthroughV
     
     var numberOfItems: Int {
         return items.count
+    }
+}
+
+extension WalkthroughViewModel {
+    
+    func didFinishWalkthrough() {
+        let isWalkthroughFinished = UserDefaults.standard
+        isWalkthroughFinished.set(true, forKey: L10n.UserDefaultsKeys.didFinishWalkthrough)
+        router.placeOnWindowTabBar()
     }
 }

@@ -35,7 +35,7 @@ final class WalkthroughViewController: BaseViewController<WalkthroughViewModel> 
     private let nextButton = UIButtonBuilder()
         .backgroundColor(.appRed)
         .titleColor(.appWhite)
-        .titleFont(.nunitoBold(size: 16))
+        .titleFont(.font(.nunitoBold, size: .xxLarge))
         .build()
     
     override func viewDidLoad() {
@@ -95,6 +95,10 @@ extension WalkthroughViewController {
     
     @objc
     private func nextButtonAction() {
+        if pageControl.currentPage == viewModel.numberOfItems - 1 {
+            viewModel.didFinishWalkthrough()
+        }
+        
         let nextIndex = pageControl.currentPage + 1
         let indexPath = IndexPath(item: nextIndex, section: 0)
         if nextIndex < viewModel.numberOfItems {

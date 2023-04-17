@@ -8,6 +8,7 @@
 import UIKit
 import TinyConstraints
 import MobilliumBuilders
+import UIComponents
 
 class WalkthroughCollectionViewCell: UICollectionViewCell, ReusableView {
     
@@ -20,12 +21,12 @@ class WalkthroughCollectionViewCell: UICollectionViewCell, ReusableView {
     
     private let titleLabel = UILabelBuilder()
         .textColor(.appCinder)
-        .font(.nunitoBold(size: 16))
+        .font(.font(.nunitoBold, size: .xxLarge))
         .build()
     
     private let descriptionLabel = UILabelBuilder()
         .textColor(.appRaven)
-        .font(.nunitoBold(size: 15))
+        .font(.font(.nunitoBold, size: .xLarge))
         .build()
     
     override init(frame: CGRect) {

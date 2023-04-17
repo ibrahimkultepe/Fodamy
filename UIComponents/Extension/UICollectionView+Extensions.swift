@@ -1,8 +1,8 @@
 //
 //  UICollectionView+Extensions.swift
-//  Fodamy
+//  UIComponents
 //
-//  Created by İbrahim Kültepe on 14.04.2023.
+//  Created by İbrahim Kültepe on 17.04.2023.
 //
 
 import UIKit
@@ -38,5 +38,6 @@ public extension UICollectionView {
             fatalError("Could not dequeue cell with identifier: \(T.defaultReuseIdentifier)")
         }
         return cell
-    }    
+    }
+    // swiftlint:enable fatal_error
 }

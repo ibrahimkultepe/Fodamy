@@ -13,3 +13,7 @@
 "WalkThrough.description" = "Fodamy is the best place to find your favorite recipes in all around the word.";
 "WalkThrough.nextButtonTitle" = "Next";
 "WalkThrough.startButtonTitle" = "Start";
+
+//MARK: - UserDefaultsKeys
+"UserDefaultsKeys.didFinishWalkthrough" = "WalkthroughFinished";
+
