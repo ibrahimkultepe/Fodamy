@@ -1,0 +1,19 @@
+/* 
+  Modules.strings
+  UIComponents
+
+  Created by İbrahim Kültepe on 16.04.2023.
+  
+*/
+// MARK: - WalkThrough
+"WalkThrough.firtsTitle" = "Welcome to Fodamy Network!";
+"WalkThrough.secondTitle" = "Finding recipes were not that easy.";
+"WalkThrough.thirdTitle" = "Add new recipe.";
+"WalkThrough.fourthTitle" = "Share recipes with others.";
+"WalkThrough.description" = "Fodamy is the best place to find your favorite recipes in all around the word.";
+"WalkThrough.nextButtonTitle" = "Next";
+"WalkThrough.startButtonTitle" = "Start";
+
+//MARK: - UserDefaultsKeys
+"UserDefaultsKeys.didFinishWalkthrough" = "WalkthroughFinished";
+

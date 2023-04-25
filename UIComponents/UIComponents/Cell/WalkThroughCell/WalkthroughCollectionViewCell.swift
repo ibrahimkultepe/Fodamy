@@ -1,38 +1,30 @@
 //
 //  WalkthroughCollectionViewCell.swift
-//  Fodamy
+//  UIComponents
 //
-//  Created by İbrahim Kültepe on 8.03.2023.
+//  Created by İbrahim Kültepe on 20.04.2023.
 //
 
 import UIKit
-import TinyConstraints
 
-class WalkthroughCollectionViewCell: UICollectionViewCell {
+public class WalkthroughCollectionViewCell: UICollectionViewCell, ReusableView {
     
-    static let identifier = "CustomCollectionViewCell"
-    private var viewModel: WalkthroughCellModel?
+    weak var viewModel: WalkthroughCellModelProtocol?
     
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = .imgWalkthrough
-        return imageView
-    }()
+    private let imageView = UIImageViewBuilder()
+        .contentMode(.scaleAspectFit)
+        .image(.imgWalkthrough1)
+        .build()
     
-    private let titleLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.textColor = .appFocus
-        titleLabel.font = UIFont(name: "Nunito-Bold", size: 16)
-        return titleLabel
-    }()
+    private let titleLabel = UILabelBuilder()
+        .textColor(.appCinder)
+        .font(.font(.nunitoBold, size: .xxLarge))
+        .build()
     
-    private let descriptionLabel: UILabel = {
-        let descriptionLabel = UILabel()
-        descriptionLabel.textColor = .appText
-        descriptionLabel.font = UIFont(name: "Nunito-Bold", size: 15)
-        return descriptionLabel
-    }()
+    private let descriptionLabel = UILabelBuilder()
+        .textColor(.appRaven)
+        .font(.font(.nunitoBold, size: .xLarge))
+        .build()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -73,9 +65,9 @@ extension WalkthroughCollectionViewCell {
 }
 
 //MARK: - SetCellItem
-extension WalkthroughCollectionViewCell {
+public extension WalkthroughCollectionViewCell {
     
-    func setCellItem(viewModel: WalkthroughCellModel) {
+    func setCellItem(viewModel: WalkthroughCellModelProtocol) {
         self.viewModel = viewModel
         self.titleLabel.text = viewModel.title
         self.descriptionLabel.text = viewModel.description

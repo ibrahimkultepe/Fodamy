@@ -1,3 +1,4 @@
+
 //
 //  UIFont+Extensions.swift
 //  UIComponents
@@ -63,5 +64,4 @@ public extension UIFont {
         }
         return font
     }
-    
 }

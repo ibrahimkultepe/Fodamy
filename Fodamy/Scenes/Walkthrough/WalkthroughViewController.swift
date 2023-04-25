@@ -6,40 +6,34 @@
 //
 
 import UIKit
-import TinyConstraints
 
 final class WalkthroughViewController: BaseViewController<WalkthroughViewModel> {
     
-    private let vectorButton: UIButton = {
-        let vectorButton = UIButton()
-        vectorButton.setImage(UIImage(named: "imgVector"), for: .normal)
-        vectorButton.setBackgroundImage(UIImage(named: "imgVector2"), for: .normal)
-        return vectorButton
-    }()
+    private let vectorButton = UIButtonBuilder()
+        .image(.imgVector)
+        .backgroundImage(.imgVector2)
+        .build()
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(WalkthroughCollectionViewCell.self, forCellWithReuseIdentifier: WalkthroughCollectionViewCell.identifier)
+        collectionView.register(WalkthroughCollectionViewCell.self)
         return collectionView
     }()
     
-    private let pageControl: UIPageControl = {
-        let pageControl = UIPageControl()
-        pageControl.pageIndicatorTintColor = .appRed.withAlphaComponent(0.2)
-        pageControl.currentPageIndicatorTintColor = UIColor.appRed
-        return pageControl
-    }()
+    private let pageControl = UIPageControlBuilder()
+        .pageIndicatorTintColor(.appRed.withAlphaComponent(0.2))
+        .currentPageIndicatorTintColor(.appRed)
+        .numberOfPages(4)
+        .isUserInteractionEnabled(false)
+        .build()
     
-    private let nextButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .appButtonRed
-        button.setTitleColor(.appWhite, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Nunito-Bold", size: 16)
-        return button
-    }()
+    private let nextButton = UIButtonBuilder()
+        .backgroundColor(.appRed)
+        .titleColor(.appWhite)
+        .titleFont(.font(.nunitoBold, size: .xxLarge))
+        .build()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,8 +75,6 @@ extension WalkthroughViewController {
         collectionView.delegate = self
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
-        pageControl.numberOfPages = 4
-        pageControl.isUserInteractionEnabled = false
         nextButton.addTarget(self, action: #selector(nextButtonAction), for: .touchUpInside)
     }
 }
@@ -91,7 +83,7 @@ extension WalkthroughViewController {
 extension WalkthroughViewController {
     
     private func setLocalize() {
-        nextButton.setTitle("Next", for: .normal)
+        nextButton.setTitle(L10n.WalkThrough.nextButtonTitle, for: .normal)
     }
 }
 
@@ -100,6 +92,10 @@ extension WalkthroughViewController {
     
     @objc
     private func nextButtonAction() {
+        if pageControl.currentPage == viewModel.numberOfItems - 1 {
+            viewModel.didFinishWalkthrough()
+        }
+        
         let nextIndex = pageControl.currentPage + 1
         let indexPath = IndexPath(item: nextIndex, section: 0)
         if nextIndex < viewModel.numberOfItems {
@@ -118,10 +114,10 @@ extension WalkthroughViewController {
         pageControl.currentPage = Int(offSet + horizontalCenter) / Int(width)
         
         if pageControl.currentPage == viewModel.numberOfItems - 1 {
-            nextButton.setTitle("Start", for: .normal)
+            nextButton.setTitle(L10n.WalkThrough.startButtonTitle, for: .normal)
             vectorButton.isHidden = true
         } else {
-            nextButton.setTitle("Next", for: .normal)
+            nextButton.setTitle(L10n.WalkThrough.nextButtonTitle, for: .normal)
             vectorButton.isHidden = false
         }
     }
@@ -135,12 +131,10 @@ extension WalkthroughViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WalkthroughCollectionViewCell.identifier, for: indexPath) as? WalkthroughCollectionViewCell {
-            let cellItem = viewModel.cellItemForAt(indexPath: indexPath)
-            cell.setCellItem(viewModel: cellItem)
-            return cell
-        }
-        return UICollectionViewCell()
+        let cell: WalkthroughCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        let cellItem = viewModel.cellItemForAt(indexPath: indexPath)
+        cell.setCellItem(viewModel: cellItem)
+        return cell
     }
 }
 

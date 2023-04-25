@@ -8,12 +8,12 @@
 import UIKit
 
 protocol WalkthroughRoute {
-    func placeOnWindowHome()
+    func placeOnWindowWalkthrough()
 }
 
 extension WalkthroughRoute where Self: RouterProtocol {
     
-    func placeOnWindowHome() {
+    func placeOnWindowWalkthrough() {
         let router = WalkthroughRouter()
         let viewModel = WalkthroughViewModel(router: router)
         let viewController = WalkthroughViewController(viewModel: viewModel)

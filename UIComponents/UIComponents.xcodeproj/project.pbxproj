@@ -8,14 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		888D3FEBB5FD987441CD536C /* Pods_UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D5719B184930981002EEE6 /* Pods_UIComponents.framework */; };
-		9C3753FA29B26CE30037EE08 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C3753F929B26CE30037EE08 /* Localizable.strings */; };
 		9C3753FC29B26DC80037EE08 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3753FB29B26DC80037EE08 /* Utilities.framework */; };
 		9C69FB6929B144A6000D17C3 /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C69FB6829B144A6000D17C3 /* UIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C69FBAC29B14C62000D17C3 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9C69FBAB29B14C62000D17C3 /* swiftgen.yml */; };
-		9C69FBC529B14D13000D17C3 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69FBB129B14D12000D17C3 /* UIFont+Extensions.swift */; };
-		9C69FBC629B14D13000D17C3 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C69FBB229B14D12000D17C3 /* Nunito-ExtraBold.ttf */; };
-		9C69FBC729B14D13000D17C3 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C69FBB329B14D12000D17C3 /* Nunito-SemiBold.ttf */; };
-		9C69FBC829B14D13000D17C3 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C69FBB429B14D12000D17C3 /* Nunito-Bold.ttf */; };
 		9C69FBC929B14D13000D17C3 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69FBB529B14D12000D17C3 /* Fonts.swift */; };
 		9C69FBCA29B14D13000D17C3 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69FBB729B14D13000D17C3 /* Assets.swift */; };
 		9C69FBCB29B14D13000D17C3 /* UIImage+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69FBB829B14D13000D17C3 /* UIImage+Icons.swift */; };
@@ -25,6 +20,16 @@
 		9C69FBCF29B14D13000D17C3 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69FBBC29B14D13000D17C3 /* UIColor+Colors.swift */; };
 		9C69FBD029B14D13000D17C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C69FBBD29B14D13000D17C3 /* Images.xcassets */; };
 		9C69FBD429B14D13000D17C3 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69FBC229B14D13000D17C3 /* StringConstants.swift */; };
+		9C88366429EB582000597EC2 /* Modules.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C88366329EB582000597EC2 /* Modules.strings */; };
+		9CB8007029F17D4D0014E95C /* WalkthroughCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8006F29F17D4D0014E95C /* WalkthroughCellModel.swift */; };
+		9CB8007429F17FA30014E95C /* WalkthroughCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8007329F17FA30014E95C /* WalkthroughCollectionViewCell.swift */; };
+		9CBB69EF29EDD2AD00E6AF95 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB69EC29EDD25E00E6AF95 /* UIFont+Extensions.swift */; };
+		9CBB69FA29EDD7D900E6AF95 /* ReusableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB69F929EDD7D900E6AF95 /* ReusableView+Extensions.swift */; };
+		9CBB69FF29EDD92D00E6AF95 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB69FE29EDD92D00E6AF95 /* ReusableView.swift */; };
+		9CBB6A0129EDDA7300E6AF95 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBB6A0029EDDA7300E6AF95 /* UICollectionView+Extensions.swift */; };
+		9CBB6A0229EDDBA600E6AF95 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CBB69F129EDD31E00E6AF95 /* Nunito-Bold.ttf */; };
+		9CBB6A0329EDDBAA00E6AF95 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CBB69F229EDD31E00E6AF95 /* Nunito-ExtraBold.ttf */; };
+		9CBB6A0429EDDBAD00E6AF95 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CBB69F029EDD31E00E6AF95 /* Nunito-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,16 +46,11 @@
 		18CC82AE9D210DF5AFDCA6AF /* Pods-UIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.release.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.release.xcconfig"; sourceTree = "<group>"; };
 		5D45E6D4355669FAFEB7BDB1 /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
 		74D5719B184930981002EEE6 /* Pods_UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C3753F929B26CE30037EE08 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9C3753FB29B26DC80037EE08 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3753FD29B26E0E0037EE08 /* DataProvider.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DataProvider.xcodeproj; path = ../DataProvider/DataProvider.xcodeproj; sourceTree = "<group>"; };
 		9C69FB6529B144A6000D17C3 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C69FB6829B144A6000D17C3 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
 		9C69FBAB29B14C62000D17C3 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
-		9C69FBB129B14D12000D17C3 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
-		9C69FBB229B14D12000D17C3 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
-		9C69FBB329B14D12000D17C3 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
-		9C69FBB429B14D12000D17C3 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		9C69FBB529B14D12000D17C3 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		9C69FBB729B14D13000D17C3 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		9C69FBB829B14D13000D17C3 /* UIImage+Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Icons.swift"; sourceTree = "<group>"; };
@@ -60,6 +60,16 @@
 		9C69FBBC29B14D13000D17C3 /* UIColor+Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		9C69FBBD29B14D13000D17C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9C69FBC229B14D13000D17C3 /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		9C88366329EB582000597EC2 /* Modules.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Modules.strings; sourceTree = "<group>"; };
+		9CB8006F29F17D4D0014E95C /* WalkthroughCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughCellModel.swift; sourceTree = "<group>"; };
+		9CB8007329F17FA30014E95C /* WalkthroughCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughCollectionViewCell.swift; sourceTree = "<group>"; };
+		9CBB69EC29EDD25E00E6AF95 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		9CBB69F029EDD31E00E6AF95 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		9CBB69F129EDD31E00E6AF95 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		9CBB69F229EDD31E00E6AF95 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		9CBB69F929EDD7D900E6AF95 /* ReusableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableView+Extensions.swift"; sourceTree = "<group>"; };
+		9CBB69FE29EDD92D00E6AF95 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		9CBB6A0029EDDA7300E6AF95 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,8 @@
 				9C3753FD29B26E0E0037EE08 /* DataProvider.xcodeproj */,
 				9C69FBAB29B14C62000D17C3 /* swiftgen.yml */,
 				9C69FB6729B144A6000D17C3 /* UIComponents */,
+				9CBB69F329EDD6F800E6AF95 /* Extension */,
+				9CBB69FB29EDD81000E6AF95 /* Protocols */,
 				9C69FB6629B144A6000D17C3 /* Products */,
 				73F4CD5103B8C8D5E7538810 /* Pods */,
 				BD7FC3C45D5DC670DA28D0AE /* Frameworks */,
@@ -116,6 +128,7 @@
 		9C69FB6729B144A6000D17C3 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				9CB8006829F17CB90014E95C /* Cell */,
 				9C69FBAF29B14CEE000D17C3 /* Resources */,
 				9C69FB6829B144A6000D17C3 /* UIComponents.h */,
 			);
@@ -135,10 +148,10 @@
 		9C69FBB029B14D12000D17C3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				9C69FBB129B14D12000D17C3 /* UIFont+Extensions.swift */,
-				9C69FBB229B14D12000D17C3 /* Nunito-ExtraBold.ttf */,
-				9C69FBB329B14D12000D17C3 /* Nunito-SemiBold.ttf */,
-				9C69FBB429B14D12000D17C3 /* Nunito-Bold.ttf */,
+				9CBB69F129EDD31E00E6AF95 /* Nunito-Bold.ttf */,
+				9CBB69F229EDD31E00E6AF95 /* Nunito-ExtraBold.ttf */,
+				9CBB69F029EDD31E00E6AF95 /* Nunito-SemiBold.ttf */,
+				9CBB69EC29EDD25E00E6AF95 /* UIFont+Extensions.swift */,
 				9C69FBB529B14D12000D17C3 /* Fonts.swift */,
 			);
 			path = Fonts;
@@ -162,9 +175,43 @@
 			isa = PBXGroup;
 			children = (
 				9C69FBC229B14D13000D17C3 /* StringConstants.swift */,
-				9C3753F929B26CE30037EE08 /* Localizable.strings */,
+				9C88366329EB582000597EC2 /* Modules.strings */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		9CB8006829F17CB90014E95C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9CB8006A29F17CD50014E95C /* WalkThroughCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9CB8006A29F17CD50014E95C /* WalkThroughCell */ = {
+			isa = PBXGroup;
+			children = (
+				9CB8007329F17FA30014E95C /* WalkthroughCollectionViewCell.swift */,
+				9CB8006F29F17D4D0014E95C /* WalkthroughCellModel.swift */,
+			);
+			path = WalkThroughCell;
+			sourceTree = "<group>";
+		};
+		9CBB69F329EDD6F800E6AF95 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9CBB69F929EDD7D900E6AF95 /* ReusableView+Extensions.swift */,
+				9CBB6A0029EDDA7300E6AF95 /* UICollectionView+Extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9CBB69FB29EDD81000E6AF95 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9CBB69FE29EDD92D00E6AF95 /* ReusableView.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		BD7FC3C45D5DC670DA28D0AE /* Frameworks */ = {
@@ -264,14 +311,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CBB6A0429EDDBAD00E6AF95 /* Nunito-SemiBold.ttf in Resources */,
+				9C88366429EB582000597EC2 /* Modules.strings in Resources */,
 				9C69FBCC29B14D13000D17C3 /* Colors.xcassets in Resources */,
-				9C69FBC729B14D13000D17C3 /* Nunito-SemiBold.ttf in Resources */,
 				9C69FBD029B14D13000D17C3 /* Images.xcassets in Resources */,
 				9C69FBAC29B14C62000D17C3 /* swiftgen.yml in Resources */,
-				9C69FBC829B14D13000D17C3 /* Nunito-Bold.ttf in Resources */,
-				9C3753FA29B26CE30037EE08 /* Localizable.strings in Resources */,
+				9CBB6A0229EDDBA600E6AF95 /* Nunito-Bold.ttf in Resources */,
 				9C69FBCE29B14D13000D17C3 /* Icons.xcassets in Resources */,
-				9C69FBC629B14D13000D17C3 /* Nunito-ExtraBold.ttf in Resources */,
+				9CBB6A0329EDDBAA00E6AF95 /* Nunito-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,12 +373,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C69FBC929B14D13000D17C3 /* Fonts.swift in Sources */,
+				9CB8007429F17FA30014E95C /* WalkthroughCollectionViewCell.swift in Sources */,
+				9CBB69FF29EDD92D00E6AF95 /* ReusableView.swift in Sources */,
+				9CB8007029F17D4D0014E95C /* WalkthroughCellModel.swift in Sources */,
+				9CBB6A0129EDDA7300E6AF95 /* UICollectionView+Extensions.swift in Sources */,
 				9C69FBCF29B14D13000D17C3 /* UIColor+Colors.swift in Sources */,
 				9C69FBCD29B14D13000D17C3 /* UIImage+Images.swift in Sources */,
 				9C69FBD429B14D13000D17C3 /* StringConstants.swift in Sources */,
-				9C69FBC529B14D13000D17C3 /* UIFont+Extensions.swift in Sources */,
 				9C69FBCB29B14D13000D17C3 /* UIImage+Icons.swift in Sources */,
+				9CBB69FA29EDD7D900E6AF95 /* ReusableView+Extensions.swift in Sources */,
 				9C69FBCA29B14D13000D17C3 /* Assets.swift in Sources */,
+				9CBB69EF29EDD2AD00E6AF95 /* UIFont+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
