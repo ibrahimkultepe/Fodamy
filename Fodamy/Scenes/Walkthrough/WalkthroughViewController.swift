@@ -9,7 +9,6 @@ import UIKit
 
 final class WalkthroughViewController: BaseViewController<WalkthroughViewModel> {
      
-    
     private let vectorButton = UIButtonBuilder()
         .image(.imgVector)
         .backgroundImage(.imgVector2)
