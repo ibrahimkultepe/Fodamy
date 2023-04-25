@@ -1,16 +1,13 @@
 //
 //  WalkthroughCollectionViewCell.swift
-//  Fodamy
+//  UIComponents
 //
-//  Created by İbrahim Kültepe on 8.03.2023.
+//  Created by İbrahim Kültepe on 20.04.2023.
 //
 
 import UIKit
-import TinyConstraints
-import MobilliumBuilders
-import UIComponents
 
-class WalkthroughCollectionViewCell: UICollectionViewCell, ReusableView {
+public class WalkthroughCollectionViewCell: UICollectionViewCell, ReusableView {
     
     weak var viewModel: WalkthroughCellModelProtocol?
     
@@ -68,7 +65,7 @@ extension WalkthroughCollectionViewCell {
 }
 
 //MARK: - SetCellItem
-extension WalkthroughCollectionViewCell {
+public extension WalkthroughCollectionViewCell {
     
     func setCellItem(viewModel: WalkthroughCellModelProtocol) {
         self.viewModel = viewModel

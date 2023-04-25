@@ -6,9 +6,6 @@
 //
 
 import UIKit
-import TinyConstraints
-import UIComponents
-import MobilliumBuilders
 
 final class WalkthroughViewController: BaseViewController<WalkthroughViewModel> {
     

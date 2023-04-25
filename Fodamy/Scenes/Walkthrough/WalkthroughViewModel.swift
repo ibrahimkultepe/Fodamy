@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import UIComponents
+import MobilliumUserDefaults
 
 protocol WalkthroughViewDataSource {}
 
@@ -41,8 +41,7 @@ final class WalkthroughViewModel: BaseViewModel<WalkthroughRouter>, WalkthroughV
 extension WalkthroughViewModel {
     
     func didFinishWalkthrough() {
-        let isWalkthroughFinished = UserDefaults.standard
-        isWalkthroughFinished.set(true, forKey: L10n.UserDefaultsKeys.didFinishWalkthrough)
+        DefaultsKey.isWalkthroughFinished.value = true
         router.placeOnWindowTabBar()
     }
 }

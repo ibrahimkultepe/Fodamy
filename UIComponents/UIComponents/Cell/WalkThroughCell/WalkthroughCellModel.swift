@@ -1,8 +1,8 @@
 //
 //  WalkthroughCellModel.swift
-//  Fodamy
+//  UIComponents
 //
-//  Created by İbrahim Kültepe on 6.04.2023.
+//  Created by İbrahim Kültepe on 20.04.2023.
 //
 
 import UIKit
