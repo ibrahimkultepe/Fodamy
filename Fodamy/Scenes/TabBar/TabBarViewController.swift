@@ -5,8 +5,6 @@
 //  Created by İbrahim Kültepe on 20.04.2023.
 //
 
-import UIKit
-
 class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
@@ -17,19 +15,23 @@ class TabBarViewController: UITabBarController {
         viewControllers = [homeViewController, favoritesViewController]
     }
     
-    private func addHomeViewController() -> UIViewController {
+    private func addHomeViewController() -> UINavigationController {
         let homeRouter = HomeRouter()
         let homeViewModel = HomeViewModel(router: homeRouter)
         let homeViewController = HomeViewController(viewModel: homeViewModel)
+        let navController = UINavigationController(rootViewController: homeViewController)
+        homeRouter.viewController = homeViewController
         homeViewController.tabBarItem.image = .icHome
-        return homeViewController
+        return navController
     }
     
-    private func addFavoritesViewController() -> UIViewController {
+    private func addFavoritesViewController() -> UINavigationController {
         let favoritesRouter = FavoritesRouter()
         let favoritesViewModel = FavoritesViewModel(router: favoritesRouter)
         let favoritesViewController = FavoritesViewController(viewModel: favoritesViewModel)
+        let navController = UINavigationController(rootViewController: favoritesViewController)
+        favoritesRouter.viewController = favoritesViewController
         favoritesViewController.tabBarItem.image = .icHeart
-        return favoritesViewController
+        return navController
     }
 }
