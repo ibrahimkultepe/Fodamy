@@ -36,11 +36,9 @@
 		9CB8005129F17B040014E95C /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8004E29F17B040014E95C /* FavoritesRouter.swift */; };
 		9CB8005229F17B040014E95C /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8004F29F17B040014E95C /* FavoritesViewController.swift */; };
 		9CB8005329F17B040014E95C /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8005029F17B040014E95C /* FavoritesViewModel.swift */; };
-		9CB8005529F17B130014E95C /* FavoritesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8005429F17B130014E95C /* FavoritesRoute.swift */; };
 		9CB8005A29F17B280014E95C /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8005729F17B280014E95C /* HomeRouter.swift */; };
 		9CB8005B29F17B280014E95C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8005829F17B280014E95C /* HomeViewController.swift */; };
 		9CB8005C29F17B280014E95C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8005929F17B280014E95C /* HomeViewModel.swift */; };
-		9CB8005E29F17B330014E95C /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8005D29F17B330014E95C /* HomeRoute.swift */; };
 		9CB8006429F17B600014E95C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8006129F17B600014E95C /* TabBarViewController.swift */; };
 		9CB8006729F17B6C0014E95C /* TabBarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8006629F17B6B0014E95C /* TabBarRoute.swift */; };
 		9CE25C4629B912B7000DD905 /* WalkthroughRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4329B912B7000DD905 /* WalkthroughRouter.swift */; };
@@ -82,11 +80,9 @@
 		9CB8004E29F17B040014E95C /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRouter.swift; sourceTree = "<group>"; };
 		9CB8004F29F17B040014E95C /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		9CB8005029F17B040014E95C /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
-		9CB8005429F17B130014E95C /* FavoritesRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRoute.swift; sourceTree = "<group>"; };
 		9CB8005729F17B280014E95C /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		9CB8005829F17B280014E95C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9CB8005929F17B280014E95C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		9CB8005D29F17B330014E95C /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
 		9CB8006129F17B600014E95C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		9CB8006629F17B6B0014E95C /* TabBarRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRoute.swift; sourceTree = "<group>"; };
 		9CE25C4329B912B7000DD905 /* WalkthroughRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughRouter.swift; sourceTree = "<group>"; };
@@ -287,7 +283,6 @@
 				9CB8004F29F17B040014E95C /* FavoritesViewController.swift */,
 				9CB8005029F17B040014E95C /* FavoritesViewModel.swift */,
 				9CB8004E29F17B040014E95C /* FavoritesRouter.swift */,
-				9CB8005429F17B130014E95C /* FavoritesRoute.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -298,7 +293,6 @@
 				9CB8005829F17B280014E95C /* HomeViewController.swift */,
 				9CB8005929F17B280014E95C /* HomeViewModel.swift */,
 				9CB8005729F17B280014E95C /* HomeRouter.swift */,
-				9CB8005D29F17B330014E95C /* HomeRoute.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -454,7 +448,6 @@
 				9C37542F29B274080037EE08 /* PushTransition.swift in Sources */,
 				9C37542829B273AB0037EE08 /* Router.swift in Sources */,
 				9CB8005329F17B040014E95C /* FavoritesViewModel.swift in Sources */,
-				9CB8005529F17B130014E95C /* FavoritesRoute.swift in Sources */,
 				9CAD3FD029ABE841006F499E /* TostWarningView.swift in Sources */,
 				9CAD3FD629ABE8AB006F499E /* LoadingProtocol.swift in Sources */,
 				9CAD3FC729ABE7C3006F499E /* ActivityIndicator.swift in Sources */,
@@ -469,7 +462,6 @@
 				9CB8006429F17B600014E95C /* TabBarViewController.swift in Sources */,
 				9C37542D29B273F10037EE08 /* PlaceOnWindowTransition.swift in Sources */,
 				9CB8005229F17B040014E95C /* FavoritesViewController.swift in Sources */,
-				9CB8005E29F17B330014E95C /* HomeRoute.swift in Sources */,
 				9CB8005129F17B040014E95C /* FavoritesRouter.swift in Sources */,
 				9CB8006729F17B6C0014E95C /* TabBarRoute.swift in Sources */,
 			);
