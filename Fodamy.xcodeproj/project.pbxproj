@@ -19,6 +19,10 @@
 		9C69FB7529B14732000D17C3 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69FB7429B14732000D17C3 /* UIComponents.framework */; };
 		9C69FB8D29B147F5000D17C3 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69FB8C29B147F5000D17C3 /* Utilities.framework */; };
 		9C69FBA529B14882000D17C3 /* DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69FBA429B14882000D17C3 /* DataProvider.framework */; };
+		9C87CE1C2A014C53007FD4DC /* RecipesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87CE192A014C53007FD4DC /* RecipesRouter.swift */; };
+		9C87CE1D2A014C53007FD4DC /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87CE1A2A014C53007FD4DC /* RecipesViewController.swift */; };
+		9C87CE1E2A014C53007FD4DC /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87CE1B2A014C53007FD4DC /* RecipesViewModel.swift */; };
+		9C87CE202A014C64007FD4DC /* RecipeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87CE1F2A014C64007FD4DC /* RecipeRoute.swift */; };
 		9CAD3FA929ABE5E4006F499E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FA829ABE5E4006F499E /* AppDelegate.swift */; };
 		9CAD3FB529ABE5EC006F499E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD3FB329ABE5EC006F499E /* LaunchScreen.storyboard */; };
 		9CAD3FC229ABE765006F499E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD3FC129ABE765006F499E /* BaseViewController.swift */; };
@@ -61,6 +65,10 @@
 		9C69FB7429B14732000D17C3 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C69FB8C29B147F5000D17C3 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C69FBA429B14882000D17C3 /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C87CE192A014C53007FD4DC /* RecipesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRouter.swift; sourceTree = "<group>"; };
+		9C87CE1A2A014C53007FD4DC /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
+		9C87CE1B2A014C53007FD4DC /* RecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
+		9C87CE1F2A014C64007FD4DC /* RecipeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRoute.swift; sourceTree = "<group>"; };
 		9CAD3FA529ABE5E4006F499E /* Fodamy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fodamy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CAD3FA829ABE5E4006F499E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CAD3FB429ABE5EC006F499E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -174,6 +182,17 @@
 			path = BridgingHeader;
 			sourceTree = "<group>";
 		};
+		9C87CE182A014C2D007FD4DC /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				9C87CE1A2A014C53007FD4DC /* RecipesViewController.swift */,
+				9C87CE1B2A014C53007FD4DC /* RecipesViewModel.swift */,
+				9C87CE192A014C53007FD4DC /* RecipesRouter.swift */,
+				9C87CE1F2A014C64007FD4DC /* RecipeRoute.swift */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
 		9CAD3F9C29ABE5E4006F499E = {
 			isa = PBXGroup;
 			children = (
@@ -223,8 +242,9 @@
 				9CAD3FC029ABE74D006F499E /* Base */,
 				9C37543229B274F50037EE08 /* Walkthrough */,
 				9CB8005F29F17B3B0014E95C /* TabBar */,
-				9CB8005629F17B1B0014E95C /* Home */,
 				9CB8004D29F17AF10014E95C /* Favorites */,
+				9CB8005629F17B1B0014E95C /* Home */,
+				9C87CE182A014C2D007FD4DC /* Recipes */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -439,6 +459,7 @@
 				9C37542329B273140037EE08 /* AppRouter.swift in Sources */,
 				9CAD3FA929ABE5E4006F499E /* AppDelegate.swift in Sources */,
 				9CE25C4829B912B7000DD905 /* WalkthroughViewModel.swift in Sources */,
+				9C87CE1D2A014C53007FD4DC /* RecipesViewController.swift in Sources */,
 				9CAD3FD929ABE8EB006F499E /* APIDataProvider.swift in Sources */,
 				9CAD3FDD29ABE91D006F499E /* APILogger.swift in Sources */,
 				9CB8005A29F17B280014E95C /* HomeRouter.swift in Sources */,
@@ -454,11 +475,14 @@
 				9CB8005C29F17B280014E95C /* HomeViewModel.swift in Sources */,
 				9C37542B29B273D90037EE08 /* ModalTransition.swift in Sources */,
 				9CAD3FCB29ABE7F1006F499E /* ActivityIndicatorView.swift in Sources */,
+				9C87CE1E2A014C53007FD4DC /* RecipesViewModel.swift in Sources */,
 				9CAD3FDF29ABE92F006F499E /* DataProvider.swift in Sources */,
+				9C87CE202A014C64007FD4DC /* RecipeRoute.swift in Sources */,
 				9C37540D29B26F890037EE08 /* APIRequestInterceptor.swift in Sources */,
 				9CE25C4629B912B7000DD905 /* WalkthroughRouter.swift in Sources */,
 				9CAD3FC929ABE7DE006F499E /* ActivityIndicatorProtocol.swift in Sources */,
 				9CAD3FC429ABE782006F499E /* BaseViewModel.swift in Sources */,
+				9C87CE1C2A014C53007FD4DC /* RecipesRouter.swift in Sources */,
 				9CB8006429F17B600014E95C /* TabBarViewController.swift in Sources */,
 				9C37542D29B273F10037EE08 /* PlaceOnWindowTransition.swift in Sources */,
 				9CB8005229F17B040014E95C /* FavoritesViewController.swift in Sources */,

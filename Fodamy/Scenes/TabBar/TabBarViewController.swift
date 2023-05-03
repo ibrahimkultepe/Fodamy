@@ -10,6 +10,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.tintColor = .appRed
+        tabBar.backgroundColor = .appWhite
         let homeViewController = addHomeViewController()
         let favoritesViewController = addFavoritesViewController()
         viewControllers = [homeViewController, favoritesViewController]
