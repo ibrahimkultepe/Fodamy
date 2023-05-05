@@ -23,12 +23,11 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .appRed
+        addNavigationBarLogo()
         addSubviews()
         configureContent()
         setLocalize()
-        addNavigationBarLogo()
-    }
+  }
 }
 
 // MARK: - UILayout

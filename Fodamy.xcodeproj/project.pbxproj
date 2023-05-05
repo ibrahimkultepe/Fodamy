@@ -49,6 +49,8 @@
 		9CE25C4729B912B7000DD905 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4429B912B7000DD905 /* WalkthroughViewController.swift */; };
 		9CE25C4829B912B7000DD905 /* WalkthroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4529B912B7000DD905 /* WalkthroughViewModel.swift */; };
 		9CE25C4A29B912D3000DD905 /* WalkthroughRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4929B912D3000DD905 /* WalkthroughRoute.swift */; };
+		9CF10F372A042674009B75E8 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF10F362A042674009B75E8 /* MainNavigationController.swift */; };
+		9CF10F3D2A042C61009B75E8 /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF10F3C2A042C61009B75E8 /* HomeRoute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +99,8 @@
 		9CE25C4429B912B7000DD905 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		9CE25C4529B912B7000DD905 /* WalkthroughViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewModel.swift; sourceTree = "<group>"; };
 		9CE25C4929B912D3000DD905 /* WalkthroughRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughRoute.swift; sourceTree = "<group>"; };
+		9CF10F362A042674009B75E8 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		9CF10F3C2A042C61009B75E8 /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
 		E5A884E93E5616E66D2CDDCF /* Pods_Fodamy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fodamy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3085BFF182E815078209B5D /* Pods-Fodamy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fodamy.debug.xcconfig"; path = "Target Support Files/Pods-Fodamy/Pods-Fodamy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +178,14 @@
 			path = Walkthrough;
 			sourceTree = "<group>";
 		};
+		9C4E7C8C2A045A3700E81EFF /* MainNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				9CF10F362A042674009B75E8 /* MainNavigationController.swift */,
+			);
+			path = MainNavigationController;
+			sourceTree = "<group>";
+		};
 		9C69FBAA29B14A70000D17C3 /* BridgingHeader */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +251,7 @@
 		9CAD3FBF29ABE732006F499E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9C4E7C8C2A045A3700E81EFF /* MainNavigationController */,
 				9CAD3FC029ABE74D006F499E /* Base */,
 				9C37543229B274F50037EE08 /* Walkthrough */,
 				9CB8005F29F17B3B0014E95C /* TabBar */,
@@ -313,6 +326,7 @@
 				9CB8005829F17B280014E95C /* HomeViewController.swift */,
 				9CB8005929F17B280014E95C /* HomeViewModel.swift */,
 				9CB8005729F17B280014E95C /* HomeRouter.swift */,
+				9CF10F3C2A042C61009B75E8 /* HomeRoute.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -479,6 +493,7 @@
 				9CAD3FDF29ABE92F006F499E /* DataProvider.swift in Sources */,
 				9C87CE202A014C64007FD4DC /* RecipeRoute.swift in Sources */,
 				9C37540D29B26F890037EE08 /* APIRequestInterceptor.swift in Sources */,
+				9CF10F3D2A042C61009B75E8 /* HomeRoute.swift in Sources */,
 				9CE25C4629B912B7000DD905 /* WalkthroughRouter.swift in Sources */,
 				9CAD3FC929ABE7DE006F499E /* ActivityIndicatorProtocol.swift in Sources */,
 				9CAD3FC429ABE782006F499E /* BaseViewModel.swift in Sources */,
@@ -487,6 +502,7 @@
 				9C37542D29B273F10037EE08 /* PlaceOnWindowTransition.swift in Sources */,
 				9CB8005229F17B040014E95C /* FavoritesViewController.swift in Sources */,
 				9CB8005129F17B040014E95C /* FavoritesRouter.swift in Sources */,
+				9CF10F372A042674009B75E8 /* MainNavigationController.swift in Sources */,
 				9CB8006729F17B6C0014E95C /* TabBarRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
