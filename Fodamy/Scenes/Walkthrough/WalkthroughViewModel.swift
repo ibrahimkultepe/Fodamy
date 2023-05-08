@@ -5,7 +5,6 @@
 //  Created by İbrahim Kültepe on 8.03.2023.
 //
 
-import Foundation
 import MobilliumUserDefaults
 
 protocol WalkthroughViewDataSource {}

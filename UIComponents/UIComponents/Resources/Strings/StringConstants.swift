@@ -11,6 +11,13 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
 
+  public enum Home {
+    /// EDİTÖR SEÇİMİ
+    public static let segmentedControl0 = L10n.tr("Modules", "Home.segmentedControl0")
+    /// SON EKLENENLER
+    public static let segmentedControl1 = L10n.tr("Modules", "Home.segmentedControl1")
+  }
+
   public enum UserDefaultsKeys {
     /// WalkthroughFinished
     public static let didFinishWalkthrough = L10n.tr("Modules", "UserDefaultsKeys.didFinishWalkthrough")

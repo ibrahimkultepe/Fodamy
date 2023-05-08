@@ -19,7 +19,7 @@ class TabBarViewController: UITabBarController {
         let homeRouter = HomeRouter()
         let homeViewModel = HomeViewModel(router: homeRouter)
         let homeViewController = HomeViewController(viewModel: homeViewModel)
-        let navController = UINavigationController(rootViewController: homeViewController)
+        let navController = MainNavigationController(rootViewController: homeViewController)
         homeRouter.viewController = homeViewController
         homeViewController.tabBarItem.image = .icHome
         return navController
@@ -29,7 +29,7 @@ class TabBarViewController: UITabBarController {
         let favoritesRouter = FavoritesRouter()
         let favoritesViewModel = FavoritesViewModel(router: favoritesRouter)
         let favoritesViewController = FavoritesViewController(viewModel: favoritesViewModel)
-        let navController = UINavigationController(rootViewController: favoritesViewController)
+        let navController = MainNavigationController(rootViewController: favoritesViewController)
         favoritesRouter.viewController = favoritesViewController
         favoritesViewController.tabBarItem.image = .icHeart
         return navController
