@@ -26,7 +26,6 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         addNavigationBarLogo()
         addSubviews()
         configureContent()
-        setLocalize()
   }
 }
 
@@ -36,13 +35,13 @@ extension HomeViewController {
     private func addSubviews() {
         view.addSubview(segmentedControl)
         segmentedControl.height(48)
-        segmentedControl.edgesToSuperview(excluding: .bottom, insets: .init(top: 0, left: 0, bottom: 0, right: 0), usingSafeArea: true)
+        segmentedControl.edgesToSuperview(excluding: .bottom, usingSafeArea: true)
         
         view.addSubview(pageViewController.view)
         addChild(pageViewController)
         pageViewController.didMove(toParent: self)
         pageViewController.view.topToBottom(of: segmentedControl)
-        pageViewController.view.edgesToSuperview(excluding: .top, insets: .init(top: 0, left: 0, bottom: 0, right: 0), usingSafeArea: true)
+        pageViewController.view.edgesToSuperview(excluding: .top, usingSafeArea: true)
     }
 }
 
@@ -50,6 +49,8 @@ extension HomeViewController {
 extension HomeViewController {
     
     private func configureContent() {
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.appRed], for: .selected)
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.appRaven], for: .normal)
         segmentedControl.backgroundColor = .appWhite
         segmentedControl.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
         segmentedControl.selectedSegmentIndex = viewModel.selectedSegmentIndex
@@ -60,15 +61,6 @@ extension HomeViewController {
                                               direction: .forward,
                                               animated: true,
                                               completion: nil)
-    }
-}
-
-// MARK: - SetLocalize
-extension HomeViewController {
-    
-    private func setLocalize() {
-        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.appRed], for: .selected)
-        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.appRaven], for: .normal)
     }
 }
 
