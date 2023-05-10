@@ -15,7 +15,6 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .appSecondaryBackground
         addSubviews()
         configureContent()
     }
@@ -35,6 +34,7 @@ extension RecipesViewController {
 extension RecipesViewController {
     
     private func configureContent() {
+        view.backgroundColor = .appSecondaryBackground
         collectionView.register(RecipesCollectionViewCell.self)
         collectionView.dataSource = self
         collectionView.delegate = self

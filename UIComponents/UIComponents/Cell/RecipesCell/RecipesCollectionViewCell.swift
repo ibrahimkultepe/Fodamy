@@ -12,7 +12,7 @@ public class RecipesCollectionViewCell: UICollectionViewCell, ReusableView {
     private let userView = UserView()
     
     private let recipesTitleView = UIView()
-    private let verticalStackView = UIStackViewBuilder()
+    private let recipesTitlesStackView = UIStackViewBuilder()
         .axis(.vertical)
         .build()
     
@@ -36,7 +36,7 @@ public class RecipesCollectionViewCell: UICollectionViewCell, ReusableView {
         .build()
     
     private let commentAndLikeView = UIView()
-    private let horizontalStackView = UIStackViewBuilder()
+    private let commentAndLikeStackView = UIStackViewBuilder()
         .axis(.horizontal)
         .build()
     
@@ -69,11 +69,10 @@ extension RecipesCollectionViewCell {
         recipesTitleView.edgesToSuperview(excluding: [.top, .bottom], insets: .init(top: 0, left: 20, bottom: 0, right: 20))
         recipesTitleView.height(65)
         
-        recipesTitleView.addSubview(verticalStackView)
-        verticalStackView.centerYToSuperview()
-        verticalStackView.edgesToSuperview(excluding: [.top, .bottom])
-        verticalStackView.addArrangedSubview(recipeNameLabel)
-        verticalStackView.addArrangedSubview(recipeCategoryLabel)
+        recipesTitleView.addSubview(recipesTitlesStackView)
+        recipesTitlesStackView.edgesToSuperview(insets: .init(top: 12, left: 0, bottom: 12, right: 0))
+        recipesTitlesStackView.addArrangedSubview(recipeNameLabel)
+        recipesTitlesStackView.addArrangedSubview(recipeCategoryLabel)
         
         contentView.addSubview(recipeImageView)
         recipeImageView.topToBottom(of: recipesTitleView)
@@ -85,9 +84,8 @@ extension RecipesCollectionViewCell {
         commentAndLikeView.edgesToSuperview(excluding: .top, insets: .init(top: 0, left: 20, bottom: 0, right: 20))
         commentAndLikeView.height(45)
         
-        commentAndLikeView.addSubview(horizontalStackView)
-        horizontalStackView.centerYToSuperview()
-        horizontalStackView.edgesToSuperview(excluding: [.top, .bottom])
-        horizontalStackView.addArrangedSubview(commentAndLikeLabel)
+        commentAndLikeView.addSubview(commentAndLikeStackView)
+        commentAndLikeStackView.edgesToSuperview(insets: .init(top: 12, left: 0, bottom: 12, right: 0), relation: .equalOrLess)
+        commentAndLikeStackView.addArrangedSubview(commentAndLikeLabel)
     }
 }
