@@ -9,6 +9,8 @@ import UIKit
 
 public class RecipesCollectionViewCell: UICollectionViewCell, ReusableView {
     
+    weak var viewModel: RecipeCellModelProtocol?
+    
     private let userView = UserView()
     
     private let recipesTitleView = UIView()
@@ -19,13 +21,11 @@ public class RecipesCollectionViewCell: UICollectionViewCell, ReusableView {
     private let recipeNameLabel = UILabelBuilder()
         .textColor(.appCinder)
         .font(.font(.nunitoSemiBold, size: .xxLarge))
-        .text("Makarna Tarifi")
         .build()
     
     private let recipeCategoryLabel = UILabelBuilder()
         .textColor(.appRaven)
         .font(.font(.nunitoSemiBold, size: .large))
-        .text("Hamur İşi")
         .build()
     
     private let recipeImageView = UIImageViewBuilder()
@@ -43,7 +43,6 @@ public class RecipesCollectionViewCell: UICollectionViewCell, ReusableView {
     private let commentAndLikeLabel = UILabelBuilder()
         .textColor(.appRaven)
         .font(.font(.nunitoSemiBold, size: .large))
-        .text("15 yorum 30 Beğeni")
         .build()
     
     override init(frame: CGRect) {
@@ -87,5 +86,20 @@ extension RecipesCollectionViewCell {
         commentAndLikeView.addSubview(commentAndLikeStackView)
         commentAndLikeStackView.edgesToSuperview(insets: .init(top: 12, left: 0, bottom: 12, right: 0), relation: .equalOrLess)
         commentAndLikeStackView.addArrangedSubview(commentAndLikeLabel)
+    }
+}
+
+//MARK: - SetCellItem
+public extension RecipesCollectionViewCell {
+    
+    func setCellItem(viewModel: RecipeCellModelProtocol) {
+        self.viewModel = viewModel
+        userView.userNameAndSurname = viewModel.userNameAndSurname
+        userView.recipeAndFollower = viewModel.userRecipeAndFollowerCountText
+        userView.userImageURL = viewModel.userImageURL
+        recipeNameLabel.text = viewModel.recipeTitle
+        recipeCategoryLabel.text = viewModel.recipeCategory
+        recipeImageView.setImage(viewModel.recipeImageURL)
+        commentAndLikeLabel.text = viewModel.recipeCommentAndLikeCountText
     }
 }
