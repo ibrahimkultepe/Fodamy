@@ -31,7 +31,7 @@ extension RecipesViewModel {
     
     func getRecipeData() {
         self.showActivityIndicatorView?()
-        let request = RecipeRequest()
+        let request = RecipeRequest(listType: .recentlyAdded)
         dataProvider.request(for: request) { [weak self] (result) in
             guard let self = self else { return }
             self.hideActivityIndicatorView?()

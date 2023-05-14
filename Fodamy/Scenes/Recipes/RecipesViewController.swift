@@ -17,8 +17,8 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         super.viewDidLoad()
         addSubviews()
         configureContent()
-        viewModel.getRecipeData()
         subcribeViewModel()
+        viewModel.getRecipeData()
     }
 }
 
@@ -77,6 +77,7 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - SubcribeViewModel
 extension RecipesViewController {
     
     func subcribeViewModel() {

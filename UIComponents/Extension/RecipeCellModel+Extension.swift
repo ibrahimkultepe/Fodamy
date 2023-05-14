@@ -7,13 +7,13 @@
 
 public extension RecipeCellModel {
     
-    convenience init(recipe: Items) {
-        self.init(userNameAndSurname: "\(recipe.user.name ?? "İbrahim") \(recipe.user.surname ?? "Kültepe")",
-                  userImageURL: recipe.user.userImage.url,
+    convenience init(recipe: Recipe) {
+        self.init(userNameAndSurname: "\(recipe.user.name ?? "") \(recipe.user.surname ?? "")",
+                  userImageURL: recipe.user.image?.url,
                   userRecipeAndFollowerCountText: "\(recipe.user.recipeCount) Tarif \(recipe.user.followedCount) Takipçi",
                   recipeTitle: recipe.title,
                   recipeCategory: recipe.category.name,
-                  recipeImageURL: recipe.recipeImage.first?.url,
+                  recipeImageURL: recipe.images.first?.url,
                   recipeCommentAndLikeCountText: "\(recipe.commentCount) Yorum \(recipe.likeCount) Beğeni")
     }
 }

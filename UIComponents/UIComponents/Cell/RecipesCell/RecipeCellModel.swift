@@ -26,6 +26,7 @@ public protocol RecipeCellModelProtocol: RecipeCellModelDataSource, RecipeCellMo
 }
 
 public final class RecipeCellModel: RecipeCellModelProtocol {
+    
     public var userNameAndSurname: String?
     public var userImageURL: String?
     public var userRecipeAndFollowerCountText: String?

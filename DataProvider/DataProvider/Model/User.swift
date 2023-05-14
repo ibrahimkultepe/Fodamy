@@ -5,12 +5,12 @@
 //  Created by İbrahim Kültepe on 11.05.2023.
 //
 
-public struct User : Decodable {
+public struct User: Decodable {
     public let name: String?
     public let surname: String?
     public let followedCount: Int
     public let recipeCount: Int
-    public let userImage: UserImage
+    public let image: Image?
     public let username: String?
     
     enum CodingKeys: String, CodingKey {
@@ -18,7 +18,7 @@ public struct User : Decodable {
         case surname
         case followedCount = "followed_count"
         case recipeCount = "recipe_count"
-        case userImage = "image"
+        case image
         case username
     }
 }
