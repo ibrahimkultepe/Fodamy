@@ -19,8 +19,8 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         super.viewDidLoad()
         addSubviews()
         configureContent()
-        subcribeViewModel()
-        viewModel.getRecipeData()
+        subscribeViewModel()
+        viewModel.getRecipeData(isRefreshing: false)
     }
 }
 
@@ -52,9 +52,7 @@ extension RecipesViewController {
     
     @objc
     private func refreshData() {
-        viewModel.isRefreshing = true
-        viewModel.getRecipeData()
-        refreshControl.endRefreshing()
+        viewModel.getRecipeData(isRefreshing: true)
     }
 }
 
@@ -92,14 +90,15 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// MARK: - SubcribeViewModel
+// MARK: - SubscribeViewModel
 extension RecipesViewController {
     
-    func subcribeViewModel() {
-        viewModel.reloadData = { [weak self] in
+    func subscribeViewModel() {
+        viewModel.didSuccessGetRecipeData = { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
+                self.refreshControl.endRefreshing()
             }
         }
     }

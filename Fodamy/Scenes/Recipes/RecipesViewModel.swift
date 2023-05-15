@@ -15,9 +15,7 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     
     private var recipeListType: RecipeListType
     
-    var isRefreshing = false
-    
-    var reloadData: VoidClosure?
+    var didSuccessGetRecipeData: VoidClosure?
     
     var cellItems = [RecipeCellModelProtocol]()
     
@@ -43,7 +41,7 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
 // MARK: - Network
 extension RecipesViewModel {
     
-    func getRecipeData() {
+    func getRecipeData(isRefreshing: Bool) {
         var request: RecipeRequest
         switch recipeListType {
         case .recentlyAdded:
@@ -61,7 +59,7 @@ extension RecipesViewModel {
             switch result {
             case .success(let response):
                 self.cellItems = response.data.map({ RecipeCellModel(recipe: $0) })
-                self.reloadData?()
+                self.didSuccessGetRecipeData?()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }
