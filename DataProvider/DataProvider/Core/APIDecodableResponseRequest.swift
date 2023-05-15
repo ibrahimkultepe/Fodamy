@@ -22,7 +22,7 @@ public extension APIDecodableResponseRequest {
 // MARK: - url
 public extension APIDecodableResponseRequest {
     var url: String {
-        return "https://api.spacexdata.com/v4/launches/" + path
+        return "https://fodamy.mobillium.com/api/" + path
     }
 }
 

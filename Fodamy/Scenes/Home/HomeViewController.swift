@@ -26,7 +26,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         addNavigationBarLogo()
         addSubviews()
         configureContent()
-  }
+    }
 }
 
 // MARK: - UILayout
@@ -95,12 +95,12 @@ extension HomeViewController {
     
     private func preparedViewControllers() -> [UIViewController] {
         let editorChoiceRouter = RecipesRouter()
-        let editorChoiceViewModel = RecipesViewModel(router: editorChoiceRouter)
+        let editorChoiceViewModel = RecipesViewModel(recipeListType: .editorChoice, router: editorChoiceRouter)
         let editorChoiceViewController = RecipesViewController(viewModel: editorChoiceViewModel)
         editorChoiceRouter.viewController = editorChoiceViewController
         
         let recentlyAddedRouter = RecipesRouter()
-        let recentlyAddedViewModel = RecipesViewModel(router: recentlyAddedRouter)
+        let recentlyAddedViewModel = RecipesViewModel(recipeListType: .recentlyAdded, router: recentlyAddedRouter)
         let recentlyAddedViewController = RecipesViewController(viewModel: recentlyAddedViewModel)
         recentlyAddedRouter.viewController = recentlyAddedViewController
         

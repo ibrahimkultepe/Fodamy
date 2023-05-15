@@ -9,6 +9,8 @@ import UIKit
 
 final class RecipesViewController: BaseViewController<RecipesViewModel> {
     
+    private let refreshControl = UIRefreshControl()
+    
     private let collectionView = UICollectionViewBuilder()
         .backgroundColor(.appWhite)
         .build()
@@ -17,6 +19,8 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         super.viewDidLoad()
         addSubviews()
         configureContent()
+        subscribeViewModel()
+        viewModel.getRecipeData(isRefreshing: false)
     }
 }
 
@@ -38,6 +42,17 @@ extension RecipesViewController {
         collectionView.register(RecipesCollectionViewCell.self)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+    }
+}
+
+// MARK: - Actions
+extension RecipesViewController {
+    
+    @objc
+    private func refreshData() {
+        viewModel.getRecipeData(isRefreshing: true)
     }
 }
 
@@ -45,11 +60,13 @@ extension RecipesViewController {
 extension RecipesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return viewModel.numberOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: RecipesCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        let cellItem = viewModel.cellItemForAt(indexPath: indexPath)
+        cell.setCellItem(viewModel: cellItem)
         return cell
     }
 }
@@ -70,5 +87,19 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: 16, left: 0, bottom: 16, right: 0)
+    }
+}
+
+// MARK: - SubscribeViewModel
+extension RecipesViewController {
+    
+    func subscribeViewModel() {
+        viewModel.didSuccessGetRecipeData = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+                self.refreshControl.endRefreshing()
+            }
+        }
     }
 }

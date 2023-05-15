@@ -25,16 +25,24 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        subscribeViewModel()
+        subscribeActivityIndicatorView()
+        subscribeLoading()
+        subscribeToast()
     }
 }
 
 extension BaseViewController {
     
-    func subscribeViewModel() {
-        viewModel.showWarningToast = { message in
-            ToastPresenter.showWarningToast(text: message)
+    func subscribeActivityIndicatorView() {
+        viewModel.hideActivityIndicatorView = { [weak self] in
+            self?.hideActivityIndicator()
         }
+        viewModel.showActivityIndicatorView = { [weak self] in
+            self?.showActivityIndicator()
+        }
+    }
+    
+    func subscribeLoading() {
         viewModel.hideLoading = { [weak self] in
             DispatchQueue.main.async {
                 self?.dismissLoading()
@@ -45,11 +53,11 @@ extension BaseViewController {
                 self?.presentLoading()
             }
         }
-        viewModel.hideActivityIndicatorView = { [weak self] in
-            self?.hideActivityIndicator()
-        }
-        viewModel.showActivityIndicatorView = { [weak self] in
-            self?.showActivityIndicator()
+    }
+    
+    func subscribeToast() {
+        viewModel.showWarningToast = { message in
+            ToastPresenter.showWarningToast(text: message)
         }
     }
 }
