@@ -11,6 +11,11 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
 
+  public enum Base {
+    /// Try Again
+    public static let errorButtonTitle = L10n.tr("Modules", "Base.errorButtonTitle")
+  }
+
   public enum Home {
     /// EDİTÖR SEÇİMİ
     public static let segmentedControl0 = L10n.tr("Modules", "Home.segmentedControl0")

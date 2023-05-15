@@ -11,6 +11,11 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
     
     typealias LoadingProtocols = LoadingProtocol & ActivityIndicatorProtocol
     
+    var errorButton = UIButtonBuilder()
+        .titleColor(.appWhite)
+        .titleFont(.font(.nunitoBold, size: .xxLarge))
+        .build()
+    
     var viewModel: V
     
     init(viewModel: V) {
@@ -25,6 +30,7 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        addErrorButton()
         subscribeActivityIndicatorView()
         subscribeLoading()
         subscribeToast()
@@ -33,6 +39,14 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
 
 extension BaseViewController {
     
+    func addErrorButton() {
+        view.addSubview(errorButton)
+        errorButton.centerInSuperview()
+        errorButton.backgroundColor = .appRed
+        errorButton.size(CGSize(width: 200, height: 50))
+        errorButton.setTitle(L10n.Base.errorButtonTitle, for: .normal)
+    }
+
     func subscribeActivityIndicatorView() {
         viewModel.hideActivityIndicatorView = { [weak self] in
             self?.hideActivityIndicator()
