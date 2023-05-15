@@ -6,18 +6,18 @@
 //
 
 protocol RecipeRoute {
-    func placeOnWindowRecipes()
+    func pushRecipes()
 }
 
 extension RecipeRoute where Self: RouterProtocol {
     
-    func placeOnWindowRecipes() {
+    func pushRecipes() {
         let router = RecipesRouter()
-        let viewModel = RecipesViewModel(router: router)
+        let viewModel = RecipesViewModel(recipeListType: .recentlyAdded, router: router)
         let viewController = RecipesViewController(viewModel: viewModel)
         let navController = UINavigationController(rootViewController: viewController)
         
-        let transition = PlaceOnWindowTransition()
+        let transition = PushTransition()
         router.viewController = viewController
         router.openTransition = transition
         

@@ -13,6 +13,10 @@ protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {}
 
 final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
     
+    private var recipeListType: RecipeListType
+    
+    var isRefreshing = false
+    
     var reloadData: VoidClosure?
     
     var cellItems = [RecipeCellModelProtocol]()
@@ -24,14 +28,33 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     func cellItemForAt(indexPath: IndexPath) -> RecipeCellModelProtocol {
         return cellItems[indexPath.row]
     }
+    
+    enum RecipeListType {
+        case recentlyAdded
+        case editorChoice
+    }
+    
+    init(recipeListType: RecipeListType, router: RecipesRouter) {
+        self.recipeListType = recipeListType
+        super.init(router: router)
+    }
 }
 
 // MARK: - Network
 extension RecipesViewModel {
     
     func getRecipeData() {
+        var request: RecipeRequest
+        switch recipeListType {
+        case .recentlyAdded:
+            request = RecipeRequest(listType: .recentlyAdded)
+        case .editorChoice:
+            request = RecipeRequest(listType: .editorChoice)
+        }
+        if isRefreshing {
+            self.hideActivityIndicatorView?()
+        }
         self.showActivityIndicatorView?()
-        let request = RecipeRequest(listType: .recentlyAdded)
         dataProvider.request(for: request) { [weak self] (result) in
             guard let self = self else { return }
             self.hideActivityIndicatorView?()

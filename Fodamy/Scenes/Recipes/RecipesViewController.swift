@@ -9,6 +9,8 @@ import UIKit
 
 final class RecipesViewController: BaseViewController<RecipesViewModel> {
     
+    private let refreshControl = UIRefreshControl()
+    
     private let collectionView = UICollectionViewBuilder()
         .backgroundColor(.appWhite)
         .build()
@@ -40,6 +42,19 @@ extension RecipesViewController {
         collectionView.register(RecipesCollectionViewCell.self)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+    }
+}
+
+// MARK: - Actions
+extension RecipesViewController {
+    
+    @objc
+    private func refreshData() {
+        viewModel.isRefreshing = true
+        viewModel.getRecipeData()
+        refreshControl.endRefreshing()
     }
 }
 
