@@ -49,10 +49,7 @@ extension RecipesViewModel {
         case .editorChoice:
             request = RecipeRequest(listType: .editorChoice)
         }
-        if isRefreshing {
-            self.hideActivityIndicatorView?()
-        }
-        self.showActivityIndicatorView?()
+        if !isRefreshing { self.showActivityIndicatorView?() }
         dataProvider.request(for: request) { [weak self] (result) in
             guard let self = self else { return }
             self.hideActivityIndicatorView?()
