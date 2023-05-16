@@ -23,6 +23,11 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
         return cellItems.count
     }
     
+    override func tryAgainButtonTapped() {
+        self.hideTryAgainButton?()
+        getRecipeData(isRefreshing: false)
+    }
+    
     func cellItemForAt(indexPath: IndexPath) -> RecipeCellModelProtocol {
         return cellItems[indexPath.row]
     }
@@ -59,6 +64,7 @@ extension RecipesViewModel {
                 self.didSuccessGetRecipeData?()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
+                self.showTryAgainButton?()
             }
         }
     }

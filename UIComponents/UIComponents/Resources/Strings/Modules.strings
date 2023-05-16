@@ -5,6 +5,9 @@
   Created by İbrahim Kültepe on 16.04.2023.
   
 */
+// MARK: - Base
+"Base.errorButtonTitle" = "Try Again";
+
 // MARK: - WalkThrough
 "WalkThrough.firtsTitle" = "Welcome to Fodamy Network!";
 "WalkThrough.secondTitle" = "Finding recipes were not that easy.";
@@ -14,9 +17,9 @@
 "WalkThrough.nextButtonTitle" = "Next";
 "WalkThrough.startButtonTitle" = "Start";
 
-//MARK: - UserDefaultsKeys
-"UserDefaultsKeys.didFinishWalkthrough" = "WalkthroughFinished";
-
 // MARK: - Home
 "Home.segmentedControl0" = "EDİTÖR SEÇİMİ";
 "Home.segmentedControl1" = "SON EKLENENLER";
+
+//MARK: - UserDefaultsKeys
+"UserDefaultsKeys.didFinishWalkthrough" = "WalkthroughFinished";

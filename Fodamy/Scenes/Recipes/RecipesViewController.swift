@@ -54,6 +54,11 @@ extension RecipesViewController {
     private func refreshData() {
         viewModel.getRecipeData(isRefreshing: true)
     }
+    
+    @objc
+    private func errorButtonAction() {
+        viewModel.getRecipeData(isRefreshing: false)
+    }
 }
 
 // MARK: - UICollectionViewDataSource

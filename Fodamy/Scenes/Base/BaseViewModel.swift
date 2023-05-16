@@ -14,15 +14,25 @@ protocol BaseViewModelEventSource: AnyObject {
     var showLoading: VoidClosure? { get set }
     var hideLoading: VoidClosure? { get set }
     
+    var showTryAgainButton: VoidClosure? { get set }
+    var hideTryAgainButton: VoidClosure? { get set }
+    
     var showWarningToast: StringClosure? { get set }
 }
 
-protocol BaseViewModelProtocol: BaseViewModelDataSource, BaseViewModelEventSource {}
+protocol BaseViewModelProtocol: BaseViewModelDataSource, BaseViewModelEventSource {
+    func tryAgainButtonTapped()
+}
 
 class BaseViewModel<R: Router>: BaseViewModelProtocol {
     
+    func tryAgainButtonTapped() {}
+
     var showActivityIndicatorView: VoidClosure?
     var hideActivityIndicatorView: VoidClosure?
+    
+    var showTryAgainButton: VoidClosure?
+    var hideTryAgainButton: VoidClosure?
     
     var showLoading: VoidClosure?
     var hideLoading: VoidClosure?
