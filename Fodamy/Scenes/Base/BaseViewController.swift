@@ -11,12 +11,17 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
     
     typealias LoadingProtocols = LoadingProtocol & ActivityIndicatorProtocol
     
-    var errorButton = UIButtonBuilder()
+    var tryAgainErrorButton = UIButtonBuilder()
         .titleColor(.appWhite)
         .titleFont(.font(.nunitoBold, size: .xxLarge))
         .build()
     
     var viewModel: V
+    
+    @objc
+    func tryAgainButtonTapped() {
+        viewModel.tryAgainButtonTapped()
+    }
     
     init(viewModel: V) {
         self.viewModel = viewModel
@@ -30,7 +35,9 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        addErrorButton()
+        addTryAgainButton()
+        subscribeShowTryAgainButton()
+        subscribeHideTryAgainButton()
         subscribeActivityIndicatorView()
         subscribeLoading()
         subscribeToast()
@@ -39,12 +46,25 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
 
 extension BaseViewController {
     
-    func addErrorButton() {
-        view.addSubview(errorButton)
-        errorButton.centerInSuperview()
-        errorButton.backgroundColor = .appRed
-        errorButton.size(CGSize(width: 200, height: 50))
-        errorButton.setTitle(L10n.Base.errorButtonTitle, for: .normal)
+    func addTryAgainButton() {
+        view.addSubview(tryAgainErrorButton)
+        tryAgainErrorButton.centerInSuperview()
+        tryAgainErrorButton.backgroundColor = .appRed
+        tryAgainErrorButton.size(CGSize(width: 200, height: 50))
+        tryAgainErrorButton.setTitle(L10n.Base.errorButtonTitle, for: .normal)
+        tryAgainErrorButton.addTarget(self, action: #selector(tryAgainButtonTapped), for: .touchUpInside)
+    }
+    
+    func subscribeShowTryAgainButton() {
+        viewModel.showTryAgainButton = { [weak self] in
+            self?.addTryAgainButton()
+        }
+    }
+    
+    func subscribeHideTryAgainButton() {
+        viewModel.hideTryAgainButton = { [weak self] in
+            self?.tryAgainErrorButton.removeFromSuperview()
+        }
     }
 
     func subscribeActivityIndicatorView() {

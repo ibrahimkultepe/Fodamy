@@ -21,7 +21,6 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         configureContent()
         subscribeViewModel()
         viewModel.getRecipeData(isRefreshing: false)
-        errorHandling()
     }
 }
 
@@ -45,7 +44,6 @@ extension RecipesViewController {
         collectionView.delegate = self
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-        errorButton.addTarget(self, action: #selector(errorButtonAction), for: .touchUpInside)
     }
 }
 
@@ -106,22 +104,8 @@ extension RecipesViewController {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
                 self.refreshControl.endRefreshing()
-                self.errorButton.isHidden = true
+                self.tryAgainErrorButton.isHidden = true
             }
-        }
-    }
-}
-
-// MARK: - ErrorHandling
-extension RecipesViewController {
-    
-    func errorHandling() {
-        viewModel.errorHandling = { [weak self] in
-            guard let self = self else { return }
-            self.errorButton.isHidden = false
-            self.collectionView.reloadData()
-            self.refreshControl.endRefreshing()
-            self.addErrorButton()
         }
     }
 }

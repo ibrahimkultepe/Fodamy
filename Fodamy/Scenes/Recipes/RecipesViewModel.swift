@@ -16,12 +16,16 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     private var recipeListType: RecipeListType
     
     var didSuccessGetRecipeData: VoidClosure?
-    var errorHandling: VoidClosure?
     
     var cellItems = [RecipeCellModelProtocol]()
     
     var numberOfItems: Int {
         return cellItems.count
+    }
+    
+    override func tryAgainButtonTapped() {
+        self.hideTryAgainButton?()
+        getRecipeData(isRefreshing: false)
     }
     
     func cellItemForAt(indexPath: IndexPath) -> RecipeCellModelProtocol {
@@ -60,7 +64,7 @@ extension RecipesViewModel {
                 self.didSuccessGetRecipeData?()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
-                self.errorHandling?()
+                self.showTryAgainButton?()
             }
         }
     }
