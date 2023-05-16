@@ -104,7 +104,6 @@ extension RecipesViewController {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
                 self.refreshControl.endRefreshing()
-                self.tryAgainErrorButton.isHidden = true
             }
         }
     }

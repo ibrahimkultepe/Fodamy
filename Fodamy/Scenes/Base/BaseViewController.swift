@@ -11,17 +11,12 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
     
     typealias LoadingProtocols = LoadingProtocol & ActivityIndicatorProtocol
     
-    var tryAgainErrorButton = UIButtonBuilder()
+    private let tryAgainButton = UIButtonBuilder()
         .titleColor(.appWhite)
         .titleFont(.font(.nunitoBold, size: .xxLarge))
         .build()
     
     var viewModel: V
-    
-    @objc
-    func tryAgainButtonTapped() {
-        viewModel.tryAgainButtonTapped()
-    }
     
     init(viewModel: V) {
         self.viewModel = viewModel
@@ -35,24 +30,29 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        addTryAgainButton()
         subscribeShowTryAgainButton()
         subscribeHideTryAgainButton()
         subscribeActivityIndicatorView()
         subscribeLoading()
         subscribeToast()
     }
+    
+// MARK: - Actions
+    @objc
+    private func tryAgainButtonTapped() {
+        viewModel.tryAgainButtonTapped()
+    }
 }
 
 extension BaseViewController {
     
     func addTryAgainButton() {
-        view.addSubview(tryAgainErrorButton)
-        tryAgainErrorButton.centerInSuperview()
-        tryAgainErrorButton.backgroundColor = .appRed
-        tryAgainErrorButton.size(CGSize(width: 200, height: 50))
-        tryAgainErrorButton.setTitle(L10n.Base.errorButtonTitle, for: .normal)
-        tryAgainErrorButton.addTarget(self, action: #selector(tryAgainButtonTapped), for: .touchUpInside)
+        view.addSubview(tryAgainButton)
+        tryAgainButton.centerInSuperview()
+        tryAgainButton.backgroundColor = .appRed
+        tryAgainButton.size(CGSize(width: 200, height: 50))
+        tryAgainButton.setTitle(L10n.Base.errorButtonTitle, for: .normal)
+        tryAgainButton.addTarget(self, action: #selector(tryAgainButtonTapped), for: .touchUpInside)
     }
     
     func subscribeShowTryAgainButton() {
@@ -63,7 +63,7 @@ extension BaseViewController {
     
     func subscribeHideTryAgainButton() {
         viewModel.hideTryAgainButton = { [weak self] in
-            self?.tryAgainErrorButton.removeFromSuperview()
+            self?.tryAgainButton.removeFromSuperview()
         }
     }
 
