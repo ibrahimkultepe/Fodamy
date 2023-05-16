@@ -15,6 +15,9 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     
     private var recipeListType: RecipeListType
     
+    var page = 1
+    var isPagingEnabled = false
+    
     var didSuccessGetRecipeData: VoidClosure?
     
     var cellItems = [RecipeCellModelProtocol]()
@@ -50,9 +53,9 @@ extension RecipesViewModel {
         var request: RecipeRequest
         switch recipeListType {
         case .recentlyAdded:
-            request = RecipeRequest(listType: .recentlyAdded)
+            request = RecipeRequest(listType: .recentlyAdded, page: page)
         case .editorChoice:
-            request = RecipeRequest(listType: .editorChoice)
+            request = RecipeRequest(listType: .editorChoice, page: page)
         }
         if !isRefreshing { self.showActivityIndicatorView?() }
         dataProvider.request(for: request) { [weak self] (result) in
@@ -60,7 +63,10 @@ extension RecipesViewModel {
             self.hideActivityIndicatorView?()
             switch result {
             case .success(let response):
-                self.cellItems = response.data.map({ RecipeCellModel(recipe: $0) })
+                let cellItems = response.data.map({ RecipeCellModel(recipe: $0) })
+                self.cellItems.append(contentsOf: cellItems)
+                self.page += 1
+                self.isPagingEnabled = response.pagination.lastPage > response.pagination.currentPage
                 self.didSuccessGetRecipeData?()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)

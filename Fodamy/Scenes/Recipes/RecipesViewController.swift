@@ -61,6 +61,20 @@ extension RecipesViewController {
     }
 }
 
+// MARK: - UIScrollViewDelegate
+extension RecipesViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let viewHeight = scrollView.frame.height
+        
+        if contentOffsetY > (contentHeight - viewHeight ) && viewModel.isPagingEnabled {
+            viewModel.getRecipeData(isRefreshing: false)
+        }
+    }
+}
+
 // MARK: - UICollectionViewDataSource
 extension RecipesViewController: UICollectionViewDataSource {
     
