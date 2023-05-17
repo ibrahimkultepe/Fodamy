@@ -16,7 +16,9 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     private var recipeListType: RecipeListType
     
     var page = 1
+    
     var isPagingEnabled = false
+    var isRequestEnabled = false
     
     var didSuccessGetRecipeData: VoidClosure?
     
@@ -28,7 +30,7 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     
     override func tryAgainButtonTapped() {
         self.hideTryAgainButton?()
-        getRecipeData(isRefreshing: false)
+        getRecipeData(showLoading: false)
     }
     
     func cellItemForAt(indexPath: IndexPath) -> RecipeCellModelProtocol {
@@ -49,7 +51,7 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
 // MARK: - Network
 extension RecipesViewModel {
     
-    func getRecipeData(isRefreshing: Bool) {
+    func getRecipeData(showLoading: Bool) {
         var request: RecipeRequest
         switch recipeListType {
         case .recentlyAdded:
@@ -57,7 +59,8 @@ extension RecipesViewModel {
         case .editorChoice:
             request = RecipeRequest(listType: .editorChoice, page: page)
         }
-        if !isRefreshing { self.showActivityIndicatorView?() }
+        self.isRequestEnabled = false
+        if !showLoading { self.showActivityIndicatorView?() }
         dataProvider.request(for: request) { [weak self] (result) in
             guard let self = self else { return }
             self.hideActivityIndicatorView?()
@@ -73,5 +76,6 @@ extension RecipesViewModel {
                 self.showTryAgainButton?()
             }
         }
+        self.isRequestEnabled = true
     }
 }
