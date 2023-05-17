@@ -11,8 +11,10 @@ public struct RecipeRequest: APIDecodableResponseRequest {
 
     public var path: String = ""
     public let method: RequestMethod = .get
+    public var parameters: RequestParameters = [:]
     
-    public init(listType: ListType) {
+    public init(listType: ListType, page: Int) {
+        self.parameters["page"] = page
         switch listType {
         case .editorChoice:
             path = "editor-choices"

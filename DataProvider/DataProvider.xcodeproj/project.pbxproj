@@ -22,6 +22,7 @@
 		9C53A11D2A112F1A008C0CC3 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A11C2A112F1A008C0CC3 /* Image.swift */; };
 		9C69FB9E29B14864000D17C3 /* DataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C69FB9D29B14864000D17C3 /* DataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CAF3CF62A0BE4890058553E /* RecipeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF3CF52A0BE4890058553E /* RecipeRequest.swift */; };
+		9CE355902A1387300054580E /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE3558F2A1387300054580E /* Pagination.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		9C69FB9A29B14864000D17C3 /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C69FB9D29B14864000D17C3 /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
 		9CAF3CF52A0BE4890058553E /* RecipeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRequest.swift; sourceTree = "<group>"; };
+		9CE3558F2A1387300054580E /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		9FF1A30294D327C61C958443 /* Pods-DataProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.release.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 				9C1763622A0CD522001175B5 /* User.swift */,
 				9C1763642A0CD550001175B5 /* RecipeCategory.swift */,
 				9C53A11C2A112F1A008C0CC3 /* Image.swift */,
+				9CE3558F2A1387300054580E /* Pagination.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				9CAF3CF62A0BE4890058553E /* RecipeRequest.swift in Sources */,
 				9C37541C29B2719E0037EE08 /* RequestMethod.swift in Sources */,
 				9C37541E29B2719E0037EE08 /* APIDecodableResponseRequest.swift in Sources */,
+				9CE355902A1387300054580E /* Pagination.swift in Sources */,
 				9C53A11D2A112F1A008C0CC3 /* Image.swift in Sources */,
 				9C37541D29B2719E0037EE08 /* RequestEncoding.swift in Sources */,
 				9C1763612A0CD1B4001175B5 /* Recipe.swift in Sources */,

@@ -15,7 +15,13 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     
     private var recipeListType: RecipeListType
     
+    var page = 1
+    
+    var isPagingEnabled = false
+    var isRequestEnabled = false
+    
     var didSuccessGetRecipeData: VoidClosure?
+    var reloadData: VoidClosure?
     
     var cellItems = [RecipeCellModelProtocol]()
     
@@ -25,7 +31,14 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     
     override func tryAgainButtonTapped() {
         self.hideTryAgainButton?()
-        getRecipeData(isRefreshing: false)
+        getRecipeData(showLoading: false)
+    }
+    
+    func refreshData() {
+        cellItems.removeAll()
+        page = 1
+        self.reloadData?()
+        getRecipeData(showLoading: false)
     }
     
     func cellItemForAt(indexPath: IndexPath) -> RecipeCellModelProtocol {
@@ -46,26 +59,31 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
 // MARK: - Network
 extension RecipesViewModel {
     
-    func getRecipeData(isRefreshing: Bool) {
+    func getRecipeData(showLoading: Bool) {
         var request: RecipeRequest
         switch recipeListType {
         case .recentlyAdded:
-            request = RecipeRequest(listType: .recentlyAdded)
+            request = RecipeRequest(listType: .recentlyAdded, page: page)
         case .editorChoice:
-            request = RecipeRequest(listType: .editorChoice)
+            request = RecipeRequest(listType: .editorChoice, page: page)
         }
-        if !isRefreshing { self.showActivityIndicatorView?() }
+        self.isRequestEnabled = true
+        if showLoading { self.showActivityIndicatorView?() }
         dataProvider.request(for: request) { [weak self] (result) in
             guard let self = self else { return }
             self.hideActivityIndicatorView?()
             switch result {
             case .success(let response):
-                self.cellItems = response.data.map({ RecipeCellModel(recipe: $0) })
+                let cellItems = response.data.map({ RecipeCellModel(recipe: $0) })
+                self.cellItems.append(contentsOf: cellItems)
+                self.page += 1
+                self.isPagingEnabled = response.pagination.lastPage > response.pagination.currentPage
                 self.didSuccessGetRecipeData?()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
                 self.showTryAgainButton?()
             }
+            self.isRequestEnabled = false
         }
     }
 }

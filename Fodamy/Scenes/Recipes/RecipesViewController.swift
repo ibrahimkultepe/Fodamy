@@ -20,7 +20,8 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         addSubviews()
         configureContent()
         subscribeViewModel()
-        viewModel.getRecipeData(isRefreshing: false)
+        reloadData()
+        viewModel.getRecipeData(showLoading: true)
     }
 }
 
@@ -52,12 +53,26 @@ extension RecipesViewController {
     
     @objc
     private func refreshData() {
-        viewModel.getRecipeData(isRefreshing: true)
+        viewModel.refreshData()
     }
     
     @objc
     private func errorButtonAction() {
-        viewModel.getRecipeData(isRefreshing: false)
+        viewModel.getRecipeData(showLoading: true)
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+extension RecipesViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let viewHeight = scrollView.frame.height
+        
+        if contentOffsetY > (contentHeight - viewHeight) && viewModel.isPagingEnabled && !viewModel.isRequestEnabled {
+            viewModel.getRecipeData(showLoading: true)
+        }
     }
 }
 
@@ -104,6 +119,15 @@ extension RecipesViewController {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
                 self.refreshControl.endRefreshing()
+            }
+        }
+        
+        func reloadData() {
+            viewModel.reloadData = { [weak self] in
+                guard let self = self else { return }
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
             }
         }
     }
