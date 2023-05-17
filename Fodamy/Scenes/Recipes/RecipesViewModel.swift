@@ -60,7 +60,7 @@ extension RecipesViewModel {
             request = RecipeRequest(listType: .editorChoice, page: page)
         }
         self.isRequestEnabled = false
-        if !showLoading { self.showActivityIndicatorView?() }
+        if showLoading { self.showActivityIndicatorView?() }
         dataProvider.request(for: request) { [weak self] (result) in
             guard let self = self else { return }
             self.hideActivityIndicatorView?()

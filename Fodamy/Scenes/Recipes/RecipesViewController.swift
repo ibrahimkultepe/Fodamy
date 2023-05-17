@@ -20,7 +20,7 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         addSubviews()
         configureContent()
         subscribeViewModel()
-        viewModel.getRecipeData(showLoading: false)
+        viewModel.getRecipeData(showLoading: true)
     }
 }
 
@@ -52,12 +52,12 @@ extension RecipesViewController {
     
     @objc
     private func refreshData() {
-        viewModel.getRecipeData(showLoading: true)
+        viewModel.getRecipeData(showLoading: false)
     }
     
     @objc
     private func errorButtonAction() {
-        viewModel.getRecipeData(showLoading: false)
+        viewModel.getRecipeData(showLoading: true)
     }
 }
 
@@ -70,7 +70,7 @@ extension RecipesViewController: UIScrollViewDelegate {
         let viewHeight = scrollView.frame.height
         
         if contentOffsetY > (contentHeight - viewHeight ) && viewModel.isPagingEnabled && viewModel.isRequestEnabled {
-            viewModel.getRecipeData(showLoading: false)
+            viewModel.getRecipeData(showLoading: true)
         }
     }
 }
