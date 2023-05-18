@@ -278,7 +278,8 @@
 				9CAD3FC829ABE7DE006F499E /* ActivityIndicatorProtocol.swift */,
 				9CAD3FCA29ABE7F1006F499E /* ActivityIndicatorView.swift */,
 			);
-			path = UIComponent;
+			name = UIComponent;
+			path = ../UIComponents/UIComponents/UIComponent;
 			sourceTree = "<group>";
 		};
 		9CAD3FCC29ABE80E006F499E /* Toast */ = {
