@@ -20,7 +20,6 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         addSubviews()
         configureContent()
         subscribeViewModel()
-        reloadData()
         viewModel.getRecipeData(showLoading: true)
     }
 }
@@ -41,6 +40,7 @@ extension RecipesViewController {
     private func configureContent() {
         view.backgroundColor = .appSecondaryBackground
         collectionView.register(RecipesCollectionViewCell.self)
+        collectionView.registerFooter(ActivityIndicatorViewFooterView.self)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.refreshControl = refreshControl
@@ -89,12 +89,46 @@ extension RecipesViewController: UICollectionViewDataSource {
         cell.setCellItem(viewModel: cellItem)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionFooter {
+            let footer: ActivityIndicatorViewFooterView = collectionView.dequeueReusableCell(ofKind: kind, for: indexPath)
+            return footer
+        }
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplaySupplementaryView view: UICollectionReusableView,
+                        forElementKind elementKind: String,
+                        at indexPath: IndexPath) {
+        if elementKind == UICollectionView.elementKindSectionFooter,
+           let view = view as? ActivityIndicatorViewFooterView,
+           viewModel.isPagingEnabled {
+            view.startLoading()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        didEndDisplayingSupplementaryView view: UICollectionReusableView,
+                        forElementOfKind elementKind: String,
+                        at indexPath: IndexPath) {
+        if elementKind == UICollectionView.elementKindSectionFooter,
+           let view = view as? ActivityIndicatorViewFooterView,
+           viewModel.isPagingEnabled {
+            view.stopLoading()
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension RecipesViewController: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = collectionView.bounds.width
         let imageHeight = cellWidth - 40
         let cellHeight = imageHeight + CGFloat(175)
@@ -105,8 +139,17 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
         return 16
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: 16, left: 0, bottom: 16, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForFooterInSection section: Int) -> CGSize {
+        let height: CGFloat = viewModel.isPagingEnabled ? 50 : 0
+        return CGSize(width: collectionView.bounds.width, height: height)
     }
 }
 
