@@ -30,6 +30,7 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        addNavigationBarLogo()
         subscribeShowTryAgainButton()
         subscribeHideTryAgainButton()
         subscribeActivityIndicatorView()
@@ -45,6 +46,11 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
 }
 
 extension BaseViewController {
+    
+    func addNavigationBarLogo() {
+        let imageView = UIImageView(image: .imgLogoFodamy)
+        navigationItem.titleView = imageView
+    }
     
     func addTryAgainButton() {
         view.addSubview(tryAgainButton)
@@ -66,7 +72,7 @@ extension BaseViewController {
             self?.tryAgainButton.removeFromSuperview()
         }
     }
-
+    
     func subscribeActivityIndicatorView() {
         viewModel.hideActivityIndicatorView = { [weak self] in
             self?.hideActivityIndicator()

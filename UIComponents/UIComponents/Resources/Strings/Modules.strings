@@ -21,5 +21,8 @@
 "Home.segmentedControl0" = "EDİTÖR SEÇİMİ";
 "Home.segmentedControl1" = "SON EKLENENLER";
 
+// MARK: - FavoritesCollectionViewCell
+"FavoritesCollectionViewCell.seeAllButton" = "TÜMÜNÜ GÖR";
+
 //MARK: - UserDefaultsKeys
 "UserDefaultsKeys.didFinishWalkthrough" = "WalkthroughFinished";
