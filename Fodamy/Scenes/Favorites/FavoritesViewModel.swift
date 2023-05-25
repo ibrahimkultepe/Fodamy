@@ -21,7 +21,7 @@ final class FavoritesViewModel: BaseViewModel<FavoritesRouter>, FavoritesViewPro
     var didSuccessGetFavoritesData: VoidClosure?
     var reloadData: VoidClosure?
     
-    var cellItems = [FavoritesCellModelProtocol]()
+    private var cellItems = [FavoritesCellModelProtocol]()
     
     var numberOfItems: Int {
         return cellItems.count

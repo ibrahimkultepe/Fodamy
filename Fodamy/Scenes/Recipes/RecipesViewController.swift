@@ -159,13 +159,10 @@ extension RecipesViewController {
                 self.refreshControl.endRefreshing()
             }
         }
-        
-        func reloadData() {
-            viewModel.reloadData = { [weak self] in
-                guard let self = self else { return }
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
+        viewModel.reloadData = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
         }
     }
