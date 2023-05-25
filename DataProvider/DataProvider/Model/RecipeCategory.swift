@@ -7,4 +7,5 @@
 
 public struct RecipeCategory: Decodable {
     public let name: String?
+    public let image: Image?
 }

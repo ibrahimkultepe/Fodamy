@@ -55,11 +55,6 @@ extension RecipesViewController {
     private func refreshData() {
         viewModel.refreshData()
     }
-    
-    @objc
-    private func errorButtonAction() {
-        viewModel.getRecipeData(showLoading: true)
-    }
 }
 
 // MARK: - UIScrollViewDelegate
@@ -71,7 +66,7 @@ extension RecipesViewController: UIScrollViewDelegate {
         let viewHeight = scrollView.frame.height
         
         if contentOffsetY > (contentHeight - viewHeight) && viewModel.isPagingEnabled && !viewModel.isRequestEnabled {
-            viewModel.getRecipeData(showLoading: true)
+            viewModel.getRecipeData(showLoading: false)
         }
     }
 }

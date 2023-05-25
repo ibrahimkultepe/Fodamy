@@ -23,7 +23,6 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addNavigationBarLogo()
         addSubviews()
         configureContent()
     }
@@ -78,15 +77,6 @@ extension HomeViewController {
                                               animated: true, completion: nil)
         viewModel.selectedSegmentIndex = segmentedControl.selectedSegmentIndex
         segmentedControl.selectedSegmentIndex = viewModel.selectedSegmentIndex
-    }
-}
-
-// MARK: - NavigationBar
-extension HomeViewController {
-    
-    private func addNavigationBarLogo() {
-        let imageView = UIImageView(image: .imgLogoFodamy)
-        navigationItem.titleView = imageView
     }
 }
 
