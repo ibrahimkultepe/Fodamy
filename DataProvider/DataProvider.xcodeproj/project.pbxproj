@@ -20,6 +20,8 @@
 		9C37541E29B2719E0037EE08 /* APIDecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37541729B2719E0037EE08 /* APIDecodableResponseRequest.swift */; };
 		9C37541F29B2719E0037EE08 /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37541829B2719E0037EE08 /* DataProviderProtocol.swift */; };
 		9C399FC62A1D203A00662B37 /* MainCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C399FC52A1D203A00662B37 /* MainCategory.swift */; };
+		9C4AA6F32A2499D100F7D76F /* GetRecipeDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4AA6F22A2499D100F7D76F /* GetRecipeDetailRequest.swift */; };
+		9C4AA6F52A24A24500F7D76F /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4AA6F42A24A24500F7D76F /* RecipeDetail.swift */; };
 		9C53A11D2A112F1A008C0CC3 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A11C2A112F1A008C0CC3 /* Image.swift */; };
 		9C69FB9E29B14864000D17C3 /* DataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C69FB9D29B14864000D17C3 /* DataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CAF3CF62A0BE4890058553E /* RecipeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF3CF52A0BE4890058553E /* RecipeRequest.swift */; };
@@ -42,6 +44,8 @@
 		9C37541729B2719E0037EE08 /* APIDecodableResponseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDecodableResponseRequest.swift; sourceTree = "<group>"; };
 		9C37541829B2719E0037EE08 /* DataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
 		9C399FC52A1D203A00662B37 /* MainCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategory.swift; sourceTree = "<group>"; };
+		9C4AA6F22A2499D100F7D76F /* GetRecipeDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipeDetailRequest.swift; sourceTree = "<group>"; };
+		9C4AA6F42A24A24500F7D76F /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
 		9C53A11C2A112F1A008C0CC3 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		9C69FB9A29B14864000D17C3 /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C69FB9D29B14864000D17C3 /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 			children = (
 				9CAF3CF52A0BE4890058553E /* RecipeRequest.swift */,
 				9CF786702A1CC30300FC4A61 /* FavoritesRequest.swift */,
+				9C4AA6F22A2499D100F7D76F /* GetRecipeDetailRequest.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 				9C53A11C2A112F1A008C0CC3 /* Image.swift */,
 				9CE3558F2A1387300054580E /* Pagination.swift */,
 				9C399FC52A1D203A00662B37 /* MainCategory.swift */,
+				9C4AA6F42A24A24500F7D76F /* RecipeDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,9 +277,11 @@
 				9C1763612A0CD1B4001175B5 /* Recipe.swift in Sources */,
 				9C37541F29B2719E0037EE08 /* DataProviderProtocol.swift in Sources */,
 				9C37541B29B2719E0037EE08 /* RequestProtocol.swift in Sources */,
+				9C4AA6F52A24A24500F7D76F /* RecipeDetail.swift in Sources */,
 				9C1763652A0CD550001175B5 /* RecipeCategory.swift in Sources */,
 				9C1763632A0CD522001175B5 /* User.swift in Sources */,
 				9C17635F2A0CC548001175B5 /* RecipeData.swift in Sources */,
+				9C4AA6F32A2499D100F7D76F /* GetRecipeDetailRequest.swift in Sources */,
 				9C399FC62A1D203A00662B37 /* MainCategory.swift in Sources */,
 				9C37541A29B2719E0037EE08 /* Typealias.swift in Sources */,
 				9C37541929B2719E0037EE08 /* DecodableResponseRequest.swift in Sources */,

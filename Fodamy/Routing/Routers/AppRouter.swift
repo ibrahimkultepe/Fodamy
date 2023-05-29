@@ -5,17 +5,21 @@
 //  Created by İbrahim Kültepe on 3.03.2023.
 //
 
-import Foundation
+import MobilliumUserDefaults
 import UIKit
 
 
 final class AppRouter: Router, AppRouter.Routes {
     
-    typealias Routes = WalkthroughRoute
+    typealias Routes = WalkthroughRoute & TabBarRoute
     
     static let shared = AppRouter()
     
     func startApp() {
-        placeOnWindowWalkthrough()
+        if DefaultsKey.isWalkthroughFinished.value == true {
+            placeOnWindowTabBar()
+        } else {
+            placeOnWindowWalkthrough()
+        }
     }
 }

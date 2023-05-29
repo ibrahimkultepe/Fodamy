@@ -13,7 +13,7 @@ extension TabBarRoute where Self: RouterProtocol {
     
     func placeOnWindowTabBar() {
         let viewController = TabBarViewController()
-        let transition = ModalTransition()
+        let transition = PlaceOnWindowTransition()
         open(viewController, transition: transition)
     }
 }

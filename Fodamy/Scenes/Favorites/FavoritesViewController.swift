@@ -15,6 +15,7 @@ final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNavigationBarLogo()
         addSubviews()
         configureContent()
         subscribeViewModel()
@@ -71,6 +72,10 @@ extension FavoritesViewController: UIScrollViewDelegate {
 
 // MARK: - UICollectionViewDataSource
 extension FavoritesViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectRecipeDetail()
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems

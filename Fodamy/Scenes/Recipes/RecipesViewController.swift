@@ -74,6 +74,10 @@ extension RecipesViewController: UIScrollViewDelegate {
 // MARK: - UICollectionViewDataSource
 extension RecipesViewController: UICollectionViewDataSource {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectRecipeDetail()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems
     }

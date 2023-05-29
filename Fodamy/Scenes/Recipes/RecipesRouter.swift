@@ -5,4 +5,6 @@
 //  Created by İbrahim Kültepe on 2.05.2023.
 //
 
-final class RecipesRouter: Router {}
+final class RecipesRouter: Router, RecipesRouter.Routes {
+    typealias Routes = RecipeDetailRoute
+}
