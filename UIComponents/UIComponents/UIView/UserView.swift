@@ -15,7 +15,7 @@ public class UserView: UIView {
         .clipsToBounds(true)
         .build()
     
-    private let verticalStackView = UIStackViewBuilder()
+    private let nameAndSurnameStackView = UIStackViewBuilder()
         .axis(.vertical)
         .build()
     
@@ -61,14 +61,19 @@ public class UserView: UIView {
 extension UserView {
     
     private func addSubviews() {
+        backgroundColor = .appWhite
         addSubview(userImageView)
-        userImageView.edgesToSuperview(excluding: .right ,insets: .init(top: 0, left: 10, bottom: 20.5, right: 0))
+        userImageView.leadingToSuperview().constant = 20
+        userImageView.topToSuperview(relation: .equalOrGreater)
+        userImageView.bottomToSuperview(relation: .equalOrLess)
+        userImageView.centerYToSuperview()
         userImageView.size(.init(width: 40, height: 40))
         
-        addSubview(verticalStackView)
-        verticalStackView.leadingToTrailing(of: userImageView).constant = 12
-        verticalStackView.edgesToSuperview(excluding: .leading, insets: .init(top: 0, left: 0, bottom: 12, right: 20))
-        verticalStackView.addArrangedSubview(userNameAndSurnameLabel)
-        verticalStackView.addArrangedSubview(recipeAndFollowerLabel)
+        addSubview(nameAndSurnameStackView)
+        nameAndSurnameStackView.leadingToTrailing(of: userImageView).constant = 12
+        nameAndSurnameStackView.centerYToSuperview()
+        nameAndSurnameStackView.trailingToSuperview()
+        nameAndSurnameStackView.addArrangedSubview(userNameAndSurnameLabel)
+        nameAndSurnameStackView.addArrangedSubview(recipeAndFollowerLabel)
     }
 }

@@ -28,6 +28,18 @@ public enum L10n {
     public static let segmentedControl1 = L10n.tr("Modules", "Home.segmentedControl1")
   }
 
+  public enum NavigationController {
+    /// Geri
+    public static let backButtonTitle = L10n.tr("Modules", "NavigationController.backButtonTitle")
+  }
+
+  public enum RecipeDetail {
+    /// Yorum
+    public static let commentViewInfo = L10n.tr("Modules", "RecipeDetail.CommentViewInfo")
+    /// Beğeni
+    public static let likeViewInfo = L10n.tr("Modules", "RecipeDetail.LikeViewInfo")
+  }
+
   public enum UserDefaultsKeys {
     /// WalkthroughFinished
     public static let didFinishWalkthrough = L10n.tr("Modules", "UserDefaultsKeys.didFinishWalkthrough")

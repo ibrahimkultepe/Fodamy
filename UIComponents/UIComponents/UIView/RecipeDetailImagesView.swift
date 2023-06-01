@@ -8,15 +8,23 @@
 import UIKit
 
 public class RecipeDetailImagesView: UIView {
-
+    
     private let collectionView = UICollectionViewBuilder()
         .backgroundColor(.clear)
+        .scrollDirection(.horizontal)
         .build()
     
     private let pageControl = UIPageControlBuilder()
+        .isUserInteractionEnabled(false)
+        .hidesForSinglePage(true)
         .build()
     
-    private var cellItems = [RecipeDetailCellModelProtocol]()
+    public var recipeDetailData: [RecipeDetailCellModelProtocol] = [] {
+        didSet {
+            collectionView.reloadData()
+            pageControl.numberOfPages = recipeDetailData.count
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,11 +42,11 @@ extension RecipeDetailImagesView {
     
     private func addSubviews() {
         addSubview(collectionView)
-        collectionView.edgesToSuperview(excluding: .bottom)
+        collectionView.edgesToSuperview()
         
         addSubview(pageControl)
-        pageControl.topToBottom(of: collectionView)
-        pageControl.centerXToSuperview()
+        pageControl.bottom(to: collectionView)
+        pageControl.centerX(to: collectionView)
     }
 }
 
@@ -46,6 +54,7 @@ extension RecipeDetailImagesView {
 extension RecipeDetailImagesView {
     
     private func configureContent() {
+        collectionView.isPagingEnabled = true
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(RecipeDetailCollectionViewCell.self)
@@ -56,12 +65,12 @@ extension RecipeDetailImagesView {
 extension RecipeDetailImagesView: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cellItems.count
+        return recipeDetailData.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: RecipeDetailCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-        let cellItem = cellItems[indexPath.row]
+        let cellItem = recipeDetailData[indexPath.row]
         cell.setCellItem(viewModel: cellItem)
         return cell
     }
@@ -71,11 +80,11 @@ extension RecipeDetailImagesView: UICollectionViewDataSource {
 extension RecipeDetailImagesView: UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
     }
-
+    
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat.leastNonzeroMagnitude
     }
