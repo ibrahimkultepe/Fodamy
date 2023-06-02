@@ -80,8 +80,8 @@ extension FavoritesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: FavoritesCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
         let cellItem = viewModel.cellItemForAt(indexPath: indexPath)
-        cellItem.didSelectRecipeDetail = { id in
-            self.viewModel.didSelectRecipe(recipeId: id)
+        cellItem.didSelectRecipeDetail = { [weak self] id in
+            self?.viewModel.didSelectRecipe(recipeId: id)
         }
         cell.setCellItem(viewModel: cellItem)
         return cell
