@@ -37,6 +37,7 @@ final class WalkthroughViewController: BaseViewController<WalkthroughViewModel> 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNavigationBarLogo()
         addSubviews()
         configureContent()
         setLocalize()

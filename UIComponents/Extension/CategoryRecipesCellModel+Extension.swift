@@ -8,7 +8,8 @@
 public extension CategoryRecipesCellModel {
     
     convenience init(recipe: Recipe) {
-        self.init(recipeImageURL: recipe.images.first?.url,
+        self.init(recipeId: recipe.recipeId,
+                  recipeImageURL: recipe.images.first?.url,
                   recipeTitle: recipe.title,
                   recipeCommentAndLikeCountText: "\(recipe.commentCount) Yorum \(recipe.likeCount) Beğeni")
     }

@@ -15,6 +15,7 @@ final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNavigationBarLogo()
         addSubviews()
         configureContent()
         subscribeViewModel()
@@ -79,6 +80,9 @@ extension FavoritesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: FavoritesCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
         let cellItem = viewModel.cellItemForAt(indexPath: indexPath)
+        cellItem.didSelectRecipeDetail = { [weak self] id in
+            self?.viewModel.didSelectRecipe(recipeId: id)
+        }
         cell.setCellItem(viewModel: cellItem)
         return cell
     }
@@ -148,7 +152,7 @@ extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - SubscribeViewModel
 extension FavoritesViewController {
     
-    func subscribeViewModel() {
+    private func subscribeViewModel() {
         viewModel.didSuccessGetFavoritesData = { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.async {

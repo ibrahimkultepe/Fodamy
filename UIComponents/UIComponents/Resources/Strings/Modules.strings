@@ -5,6 +5,13 @@
   Created by İbrahim Kültepe on 16.04.2023.
   
 */
+// MARK: - Navigation
+"NavigationController.backButtonTitle" = "Geri";
+
+// MARK: - RecipeDetail
+"RecipeDetail.CommentViewInfo" = "Yorum";
+"RecipeDetail.LikeViewInfo" = "Beğeni";
+
 // MARK: - Base
 "Base.errorButtonTitle" = "Try Again";
 

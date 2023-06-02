@@ -37,6 +37,7 @@ final class WalkthroughViewModel: BaseViewModel<WalkthroughRouter>, WalkthroughV
     }
 }
 
+// MARK: - Actions
 extension WalkthroughViewModel {
     
     func didFinishWalkthrough() {

@@ -74,6 +74,10 @@ extension RecipesViewController: UIScrollViewDelegate {
 // MARK: - UICollectionViewDataSource
 extension RecipesViewController: UICollectionViewDataSource {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectRecipeDetail(indexPath: indexPath)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems
     }
@@ -151,7 +155,7 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - SubscribeViewModel
 extension RecipesViewController {
     
-    func subscribeViewModel() {
+    private func subscribeViewModel() {
         viewModel.didSuccessGetRecipeData = { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.async {

@@ -23,6 +23,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNavigationBarLogo()
         addSubviews()
         configureContent()
     }

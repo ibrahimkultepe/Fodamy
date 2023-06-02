@@ -12,6 +12,7 @@ public protocol FavoritesCellModelDataSource: AnyObject {
     var recipeCategory: String? { get }
     var cellItems: [CategoryRecipesCellProtocol]? { get }
     var numberOfItems: Int? { get }
+    var didSelectRecipeDetail: IntClosure? { get set }
     func cellItemForAt(indexPath: IndexPath) -> CategoryRecipesCellProtocol?
 }
 
@@ -31,6 +32,7 @@ public final class FavoritesCellModel: FavoritesCellModelProtocol {
         return cellItems?.count
     }
     
+    public var didSelectRecipeDetail: IntClosure?
     public var categoryImageURL: String?
     public var recipeCategory: String?
     public var cellItems: [CategoryRecipesCellProtocol]?

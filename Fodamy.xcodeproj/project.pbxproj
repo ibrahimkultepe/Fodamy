@@ -45,6 +45,10 @@
 		9CB8005C29F17B280014E95C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8005929F17B280014E95C /* HomeViewModel.swift */; };
 		9CB8006429F17B600014E95C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8006129F17B600014E95C /* TabBarViewController.swift */; };
 		9CB8006729F17B6C0014E95C /* TabBarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8006629F17B6B0014E95C /* TabBarRoute.swift */; };
+		9CCB264E2A209A3900D3CBBB /* RecipeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB264B2A209A3900D3CBBB /* RecipeDetailRouter.swift */; };
+		9CCB264F2A209A3900D3CBBB /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB264C2A209A3900D3CBBB /* RecipeDetailViewController.swift */; };
+		9CCB26502A209A3900D3CBBB /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB264D2A209A3900D3CBBB /* RecipeDetailViewModel.swift */; };
+		9CCB26522A209A4D00D3CBBB /* RecipeDetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB26512A209A4D00D3CBBB /* RecipeDetailRoute.swift */; };
 		9CE25C4629B912B7000DD905 /* WalkthroughRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4329B912B7000DD905 /* WalkthroughRouter.swift */; };
 		9CE25C4729B912B7000DD905 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4429B912B7000DD905 /* WalkthroughViewController.swift */; };
 		9CE25C4829B912B7000DD905 /* WalkthroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4529B912B7000DD905 /* WalkthroughViewModel.swift */; };
@@ -95,6 +99,10 @@
 		9CB8005929F17B280014E95C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		9CB8006129F17B600014E95C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		9CB8006629F17B6B0014E95C /* TabBarRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRoute.swift; sourceTree = "<group>"; };
+		9CCB264B2A209A3900D3CBBB /* RecipeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailRouter.swift; sourceTree = "<group>"; };
+		9CCB264C2A209A3900D3CBBB /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		9CCB264D2A209A3900D3CBBB /* RecipeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewModel.swift; sourceTree = "<group>"; };
+		9CCB26512A209A4D00D3CBBB /* RecipeDetailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailRoute.swift; sourceTree = "<group>"; };
 		9CE25C4329B912B7000DD905 /* WalkthroughRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughRouter.swift; sourceTree = "<group>"; };
 		9CE25C4429B912B7000DD905 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		9CE25C4529B912B7000DD905 /* WalkthroughViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewModel.swift; sourceTree = "<group>"; };
@@ -255,9 +263,10 @@
 				9CAD3FC029ABE74D006F499E /* Base */,
 				9C37543229B274F50037EE08 /* Walkthrough */,
 				9CB8005F29F17B3B0014E95C /* TabBar */,
-				9CB8004D29F17AF10014E95C /* Favorites */,
 				9CB8005629F17B1B0014E95C /* Home */,
 				9C87CE182A014C2D007FD4DC /* Recipes */,
+				9CB8004D29F17AF10014E95C /* Favorites */,
+				9CCB264A2A209A0D00D3CBBB /* Detail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -339,6 +348,17 @@
 				9CB8006629F17B6B0014E95C /* TabBarRoute.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		9CCB264A2A209A0D00D3CBBB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				9CCB264C2A209A3900D3CBBB /* RecipeDetailViewController.swift */,
+				9CCB264D2A209A3900D3CBBB /* RecipeDetailViewModel.swift */,
+				9CCB264B2A209A3900D3CBBB /* RecipeDetailRouter.swift */,
+				9CCB26512A209A4D00D3CBBB /* RecipeDetailRoute.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		BCEE16FE7B24FBFDE8461817 /* Frameworks */ = {
@@ -479,6 +499,7 @@
 				9CAD3FDD29ABE91D006F499E /* APILogger.swift in Sources */,
 				9CB8005A29F17B280014E95C /* HomeRouter.swift in Sources */,
 				9CAD3FCE29ABE824006F499E /* ToastPresenter.swift in Sources */,
+				9CCB26522A209A4D00D3CBBB /* RecipeDetailRoute.swift in Sources */,
 				9CAD3FDB29ABE905006F499E /* APIRequestAdapter.swift in Sources */,
 				9C37543129B274240037EE08 /* Transition.swift in Sources */,
 				9C37542F29B274080037EE08 /* PushTransition.swift in Sources */,
@@ -490,10 +511,12 @@
 				9CB8005C29F17B280014E95C /* HomeViewModel.swift in Sources */,
 				9C37542B29B273D90037EE08 /* ModalTransition.swift in Sources */,
 				9CAD3FCB29ABE7F1006F499E /* ActivityIndicatorView.swift in Sources */,
+				9CCB264F2A209A3900D3CBBB /* RecipeDetailViewController.swift in Sources */,
 				9C87CE1E2A014C53007FD4DC /* RecipesViewModel.swift in Sources */,
 				9CAD3FDF29ABE92F006F499E /* DataProvider.swift in Sources */,
 				9C87CE202A014C64007FD4DC /* RecipeRoute.swift in Sources */,
 				9C37540D29B26F890037EE08 /* APIRequestInterceptor.swift in Sources */,
+				9CCB26502A209A3900D3CBBB /* RecipeDetailViewModel.swift in Sources */,
 				9CF10F3D2A042C61009B75E8 /* HomeRoute.swift in Sources */,
 				9CE25C4629B912B7000DD905 /* WalkthroughRouter.swift in Sources */,
 				9CAD3FC929ABE7DE006F499E /* ActivityIndicatorProtocol.swift in Sources */,
@@ -505,6 +528,7 @@
 				9CB8005129F17B040014E95C /* FavoritesRouter.swift in Sources */,
 				9CF10F372A042674009B75E8 /* MainNavigationController.swift in Sources */,
 				9CB8006729F17B6C0014E95C /* TabBarRoute.swift in Sources */,
+				9CCB264E2A209A3900D3CBBB /* RecipeDetailRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

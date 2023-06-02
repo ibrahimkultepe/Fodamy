@@ -56,6 +56,15 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     }
 }
 
+// MARK: - Actions
+extension RecipesViewModel {
+    
+    func didSelectRecipeDetail(indexPath: IndexPath) {
+        let recipeId = cellItems[indexPath.row].recipeId
+        router.pushRecipeDetail(recipeId: recipeId)
+    }
+}
+
 // MARK: - Network
 extension RecipesViewModel {
     

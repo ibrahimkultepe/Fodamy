@@ -30,7 +30,6 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        addNavigationBarLogo()
         subscribeShowTryAgainButton()
         subscribeHideTryAgainButton()
         subscribeActivityIndicatorView()

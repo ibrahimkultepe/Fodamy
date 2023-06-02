@@ -109,6 +109,11 @@ extension FavoritesCollectionViewCell {
 // MARK: - UICollectionViewDataSource
 extension FavoritesCollectionViewCell: UICollectionViewDataSource {
     
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cellItem = viewModel?.cellItems?[indexPath.row] else { return }
+        viewModel?.didSelectRecipeDetail?(cellItem.recipeId)
+    }
+    
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.numberOfItems ?? 0
     }
