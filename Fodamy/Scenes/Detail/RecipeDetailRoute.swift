@@ -6,14 +6,14 @@
 //
 
 protocol RecipeDetailRoute {
-    func pushRecipeDetail()
+    func pushRecipeDetail(recipeId: Int)
 }
 
 extension RecipeDetailRoute where Self: RouterProtocol {
     
-    func pushRecipeDetail() {
+    func pushRecipeDetail(recipeId: Int) {
         let router = RecipeDetailRouter()
-        let viewModel = RecipeDetailViewModel(router: router)
+        let viewModel = RecipeDetailViewModel(recipeId: recipeId, router: router)
         let viewController = RecipeDetailViewController(viewModel: viewModel)
         
         let transition = PushTransition()

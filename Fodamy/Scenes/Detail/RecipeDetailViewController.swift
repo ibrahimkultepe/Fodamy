@@ -43,19 +43,6 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         viewModel.getRecipeDetail()
         subscribeViewModel()
     }
-    
-    func setItem() {
-        navigationItem.title = viewModel.recipeTitle
-        recipeImagesView.recipeDetailData = viewModel.recipeImageCellItems
-        recipeDetailTitlesView.recipeName = viewModel.recipeTitle
-        recipeDetailTitlesView.recipeCategory = viewModel.recipeCategory
-        recipeDetailTitlesView.differece = viewModel.difference
-        commentView.number = viewModel.commentCount
-        likeView.number = viewModel.likeCount
-        userView.userImageURL = viewModel.userImageURL
-        userView.userNameAndSurname = viewModel.userNameAndSurname
-        userView.recipeAndFollower = viewModel.recipeAndFollower
-    }
 }
 
 // MARK: - UILayout
@@ -93,6 +80,19 @@ extension RecipeDetailViewController {
     private func configureContent() {
         view.backgroundColor = .appSecondaryBackground
     }
+    
+    private func setItem() {
+        navigationItem.title = viewModel.recipeTitle
+        recipeImagesView.recipeDetailData = viewModel.recipeImageCellItems
+        recipeDetailTitlesView.recipeName = viewModel.recipeTitle
+        recipeDetailTitlesView.recipeCategory = viewModel.recipeCategory
+        recipeDetailTitlesView.differece = viewModel.difference
+        commentView.number = viewModel.commentCount
+        likeView.number = viewModel.likeCount
+        userView.userImageURL = viewModel.userImageURL
+        userView.userNameAndSurname = viewModel.userNameAndSurname
+        userView.recipeAndFollower = viewModel.recipeAndFollower
+    }
 }
 
 // MARK: - SetLocalize
@@ -110,8 +110,8 @@ extension RecipeDetailViewController {
 // MARK: - SubscribeViewModel
 extension RecipeDetailViewController {
     
-    func subscribeViewModel() {
-        viewModel.fillData = { [weak self] in
+    private func subscribeViewModel() {
+        viewModel.getDataDidSuccess = { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.setItem()

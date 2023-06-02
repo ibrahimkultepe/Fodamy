@@ -6,6 +6,7 @@
 //
 
 public struct Recipe: Decodable {
+    public let recipeId: Int
     public let title: String?
     public let isEditorChoice: Bool
     public let likeCount: Int
@@ -15,6 +16,7 @@ public struct Recipe: Decodable {
     public let images: [Image]
     
     enum CodingKeys: String, CodingKey {
+        case recipeId = "id"
         case title
         case isEditorChoice = "is_editor_choice"
         case likeCount = "like_count"

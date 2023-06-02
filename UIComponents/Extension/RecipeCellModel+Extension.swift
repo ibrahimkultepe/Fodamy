@@ -8,7 +8,8 @@
 public extension RecipeCellModel {
     
     convenience init(recipe: Recipe) {
-        self.init(userNameAndSurname: "\(recipe.user.name ?? "") \(recipe.user.surname ?? "")",
+        self.init(recipeId: recipe.recipeId,
+                  userNameAndSurname: "\(recipe.user.name ?? "") \(recipe.user.surname ?? "")",
                   userImageURL: recipe.user.image?.url,
                   userRecipeAndFollowerCountText: "\(recipe.user.recipeCount) Tarif \(recipe.user.followedCount) Takipçi",
                   recipeTitle: recipe.title,

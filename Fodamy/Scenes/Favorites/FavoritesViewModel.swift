@@ -46,8 +46,8 @@ final class FavoritesViewModel: BaseViewModel<FavoritesRouter>, FavoritesViewPro
 // MARK: - Actions
 extension FavoritesViewModel {
     
-    func didSelectRecipeDetail() {
-        router.pushRecipeDetail()
+    func didSelectRecipe(recipeId: Int) {
+        router.pushRecipeDetail(recipeId: recipeId)
     }
 }
 

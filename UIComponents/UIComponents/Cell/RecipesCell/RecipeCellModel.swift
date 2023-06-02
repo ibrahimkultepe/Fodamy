@@ -8,6 +8,7 @@
 import UIKit
 
 public protocol RecipeCellModelDataSource: AnyObject {
+    var recipeId: Int { get }
     var userNameAndSurname: String? { get }
     var userImageURL: String? { get }
     var userRecipeAndFollowerCountText: String? { get }
@@ -27,6 +28,7 @@ public protocol RecipeCellModelProtocol: RecipeCellModelDataSource, RecipeCellMo
 
 public final class RecipeCellModel: RecipeCellModelProtocol {
     
+    public var recipeId: Int
     public var userNameAndSurname: String?
     public var userImageURL: String?
     public var userRecipeAndFollowerCountText: String?
@@ -35,13 +37,15 @@ public final class RecipeCellModel: RecipeCellModelProtocol {
     public var recipeImageURL: String?
     public var recipeCommentAndLikeCountText: String?
     
-    public init(userNameAndSurname: String?,
+    public init(recipeId: Int,
+                userNameAndSurname: String?,
                 userImageURL: String?,
                 userRecipeAndFollowerCountText: String?,
                 recipeTitle: String?,
                 recipeCategory: String?,
                 recipeImageURL: String?,
                 recipeCommentAndLikeCountText: String?) {
+        self.recipeId = recipeId
         self.userNameAndSurname = userNameAndSurname
         self.userImageURL = userImageURL
         self.userRecipeAndFollowerCountText = userRecipeAndFollowerCountText

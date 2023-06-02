@@ -15,6 +15,7 @@ protocol RecipeDetailViewProtocol: RecipeDetailViewDataSource, RecipeDetailViewE
 
 final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDetailViewProtocol {
     
+    var recipeId: Int
     var recipeTitle: String?
     var recipeCategory: String?
     var difference: String?
@@ -24,8 +25,13 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var userNameAndSurname: String?
     var recipeAndFollower: String?
     
-    var fillData: VoidClosure?
+    var getDataDidSuccess: VoidClosure?
     var recipeImageCellItems = [RecipeDetailCellModelProtocol]()
+    
+    override func tryAgainButtonTapped() {
+        self.hideTryAgainButton?()
+        getRecipeDetail()
+    }
     
     private func setItem(recipeDetail: RecipeDetail) {
         let imageModels = recipeDetail.images.map { imageURL in
@@ -41,13 +47,18 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
         userNameAndSurname = "\(recipeDetail.user.name ?? "") \(recipeDetail.user.surname ?? "")"
         recipeAndFollower = "\(recipeDetail.user.recipeCount) Tarif \(recipeDetail.user.followedCount) Takipçi"
     }
+    
+    init(recipeId: Int, router: RecipeDetailRouter) {
+        self.recipeId = recipeId
+        super.init(router: router)
+    }
 }
 
 // MARK: - Network
 extension RecipeDetailViewModel {
     
     func getRecipeDetail() {
-        let request = GetRecipeDetailRequest(recipeId: 27)
+        let request = GetRecipeDetailRequest(recipeId: recipeId)
         self.showActivityIndicatorView?()
         dataProvider.request(for: request) { [weak self] result in
             guard let self = self else { return }
@@ -55,7 +66,7 @@ extension RecipeDetailViewModel {
             switch result {
             case .success(let response):
                 self.setItem(recipeDetail: response)
-                self.fillData?()
+                self.getDataDidSuccess?()
             case .failure(let error ):
                 self.showWarningToast?(error.localizedDescription)
                 self.showTryAgainButton?()
