@@ -18,6 +18,7 @@ public struct RecipeDetail: Decodable {
     public let user: User
     public let category: RecipeCategory
     public let images: [Image]
+    public let numberOfPerson: NumberOfPerson
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -32,5 +33,6 @@ public struct RecipeDetail: Decodable {
         case user
         case category
         case images
+        case numberOfPerson = "number_of_person"
     }
 }

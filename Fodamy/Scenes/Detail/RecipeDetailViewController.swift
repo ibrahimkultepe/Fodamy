@@ -35,6 +35,9 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     
     private let userView = UserView()
     
+    private let ingredientsView = RecipeDetailInfoView()
+    private let instructionsView = RecipeDetailInfoView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
@@ -71,6 +74,10 @@ extension RecipeDetailViewController {
         contentStackView.addArrangedSubview(userView)
         userView.height(65)
         contentStackView.setCustomSpacing(20, after: userView)
+        
+        contentStackView.addArrangedSubview(ingredientsView)
+        contentStackView.setCustomSpacing(20, after: ingredientsView)
+        contentStackView.addArrangedSubview(instructionsView)
     }
 }
 
@@ -92,6 +99,10 @@ extension RecipeDetailViewController {
         userView.userImageURL = viewModel.userImageURL
         userView.userNameAndSurname = viewModel.userNameAndSurname
         userView.recipeAndFollower = viewModel.recipeAndFollower
+        ingredientsView.iconText = viewModel.numberOfPerson
+        ingredientsView.infoText = viewModel.ingredients
+        instructionsView.iconText = viewModel.difference
+        instructionsView.infoText = viewModel.directions
     }
 }
 
@@ -104,6 +115,10 @@ extension RecipeDetailViewController {
         commentView.info = L10n.RecipeDetail.commentViewInfo
         likeView.iconOfButton = .icHeart
         likeView.info = L10n.RecipeDetail.likeViewInfo
+        ingredientsView.title = L10n.RecipeDetailInfo.materials
+        ingredientsView.iconOfButton = .icRestaurant
+        instructionsView.title = L10n.RecipeDetailInfo.instructions
+        instructionsView.iconOfButton = .icClock
     }
 }
 

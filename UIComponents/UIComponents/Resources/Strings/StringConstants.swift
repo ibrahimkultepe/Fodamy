@@ -40,6 +40,13 @@ public enum L10n {
     public static let likeViewInfo = L10n.tr("Modules", "RecipeDetail.LikeViewInfo")
   }
 
+  public enum RecipeDetailInfo {
+    /// Yapılışı
+    public static let instructions = L10n.tr("Modules", "RecipeDetailInfo.instructions")
+    /// Malzemeler
+    public static let materials = L10n.tr("Modules", "RecipeDetailInfo.materials")
+  }
+
   public enum UserDefaultsKeys {
     /// WalkthroughFinished
     public static let didFinishWalkthrough = L10n.tr("Modules", "UserDefaultsKeys.didFinishWalkthrough")
