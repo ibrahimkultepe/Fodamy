@@ -24,6 +24,9 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var userImageURL: String?
     var userNameAndSurname: String?
     var recipeAndFollower: String?
+    var numberOfPerson: String?
+    var ingredients: String?
+    var directions: String?
     
     var getDataDidSuccess: VoidClosure?
     var recipeImageCellItems = [RecipeDetailCellModelProtocol]()
@@ -46,6 +49,9 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
         userImageURL = recipeDetail.user.image?.url
         userNameAndSurname = "\(recipeDetail.user.name ?? "") \(recipeDetail.user.surname ?? "")"
         recipeAndFollower = "\(recipeDetail.user.recipeCount) Tarif \(recipeDetail.user.followedCount) Takipçi"
+        numberOfPerson = recipeDetail.numberOfPerson.text
+        ingredients = recipeDetail.ingredients
+        directions = recipeDetail.directions
     }
     
     init(recipeId: Int, router: RecipeDetailRouter) {

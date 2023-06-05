@@ -26,6 +26,7 @@
 		9C69FB9E29B14864000D17C3 /* DataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C69FB9D29B14864000D17C3 /* DataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CAF3CF62A0BE4890058553E /* RecipeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF3CF52A0BE4890058553E /* RecipeRequest.swift */; };
 		9CE355902A1387300054580E /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE3558F2A1387300054580E /* Pagination.swift */; };
+		9CEB708C2A2DDB890092B320 /* NumberOfPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB708B2A2DDB890092B320 /* NumberOfPerson.swift */; };
 		9CF786712A1CC30300FC4A61 /* FavoritesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF786702A1CC30300FC4A61 /* FavoritesRequest.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		9C69FB9D29B14864000D17C3 /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
 		9CAF3CF52A0BE4890058553E /* RecipeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRequest.swift; sourceTree = "<group>"; };
 		9CE3558F2A1387300054580E /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		9CEB708B2A2DDB890092B320 /* NumberOfPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfPerson.swift; sourceTree = "<group>"; };
 		9CF786702A1CC30300FC4A61 /* FavoritesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRequest.swift; sourceTree = "<group>"; };
 		9FF1A30294D327C61C958443 /* Pods-DataProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.release.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +151,7 @@
 				9CE3558F2A1387300054580E /* Pagination.swift */,
 				9C399FC52A1D203A00662B37 /* MainCategory.swift */,
 				9C4AA6F42A24A24500F7D76F /* RecipeDetail.swift */,
+				9CEB708B2A2DDB890092B320 /* NumberOfPerson.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				9C37541E29B2719E0037EE08 /* APIDecodableResponseRequest.swift in Sources */,
 				9CE355902A1387300054580E /* Pagination.swift in Sources */,
 				9C53A11D2A112F1A008C0CC3 /* Image.swift in Sources */,
+				9CEB708C2A2DDB890092B320 /* NumberOfPerson.swift in Sources */,
 				9CF786712A1CC30300FC4A61 /* FavoritesRequest.swift in Sources */,
 				9C37541D29B2719E0037EE08 /* RequestEncoding.swift in Sources */,
 				9C1763612A0CD1B4001175B5 /* Recipe.swift in Sources */,

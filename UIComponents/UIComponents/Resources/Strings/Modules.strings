@@ -33,3 +33,7 @@
 
 //MARK: - UserDefaultsKeys
 "UserDefaultsKeys.didFinishWalkthrough" = "WalkthroughFinished";
+
+//MARK: - RecipeDetailInfo
+"RecipeDetailInfo.materials" = "Malzemeler";
+"RecipeDetailInfo.instructions" = "Yapılışı";
