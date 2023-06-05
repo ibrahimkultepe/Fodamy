@@ -53,6 +53,10 @@
 		9CE25C4729B912B7000DD905 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4429B912B7000DD905 /* WalkthroughViewController.swift */; };
 		9CE25C4829B912B7000DD905 /* WalkthroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4529B912B7000DD905 /* WalkthroughViewModel.swift */; };
 		9CE25C4A29B912D3000DD905 /* WalkthroughRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4929B912D3000DD905 /* WalkthroughRoute.swift */; };
+		9CEB70972A2DF3610092B320 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB70942A2DF3600092B320 /* RegisterRouter.swift */; };
+		9CEB70982A2DF3610092B320 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB70952A2DF3600092B320 /* RegisterViewController.swift */; };
+		9CEB70992A2DF3610092B320 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB70962A2DF3600092B320 /* RegisterViewModel.swift */; };
+		9CEB709B2A2DF37E0092B320 /* RegisterRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB709A2A2DF37E0092B320 /* RegisterRoute.swift */; };
 		9CF10F372A042674009B75E8 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF10F362A042674009B75E8 /* MainNavigationController.swift */; };
 		9CF10F3D2A042C61009B75E8 /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF10F3C2A042C61009B75E8 /* HomeRoute.swift */; };
 /* End PBXBuildFile section */
@@ -107,6 +111,10 @@
 		9CE25C4429B912B7000DD905 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		9CE25C4529B912B7000DD905 /* WalkthroughViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewModel.swift; sourceTree = "<group>"; };
 		9CE25C4929B912D3000DD905 /* WalkthroughRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughRoute.swift; sourceTree = "<group>"; };
+		9CEB70942A2DF3600092B320 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		9CEB70952A2DF3600092B320 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		9CEB70962A2DF3600092B320 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		9CEB709A2A2DF37E0092B320 /* RegisterRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRoute.swift; sourceTree = "<group>"; };
 		9CF10F362A042674009B75E8 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		9CF10F3C2A042C61009B75E8 /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
 		E5A884E93E5616E66D2CDDCF /* Pods_Fodamy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fodamy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +267,7 @@
 		9CAD3FBF29ABE732006F499E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9CEB70912A2DF3050092B320 /* Register */,
 				9C4E7C8C2A045A3700E81EFF /* MainNavigationController */,
 				9CAD3FC029ABE74D006F499E /* Base */,
 				9C37543229B274F50037EE08 /* Walkthrough */,
@@ -359,6 +368,17 @@
 				9CCB26512A209A4D00D3CBBB /* RecipeDetailRoute.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		9CEB70912A2DF3050092B320 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				9CEB70952A2DF3600092B320 /* RegisterViewController.swift */,
+				9CEB70962A2DF3600092B320 /* RegisterViewModel.swift */,
+				9CEB70942A2DF3600092B320 /* RegisterRouter.swift */,
+				9CEB709A2A2DF37E0092B320 /* RegisterRoute.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		BCEE16FE7B24FBFDE8461817 /* Frameworks */ = {
@@ -522,13 +542,17 @@
 				9CAD3FC929ABE7DE006F499E /* ActivityIndicatorProtocol.swift in Sources */,
 				9CAD3FC429ABE782006F499E /* BaseViewModel.swift in Sources */,
 				9C87CE1C2A014C53007FD4DC /* RecipesRouter.swift in Sources */,
+				9CEB70982A2DF3610092B320 /* RegisterViewController.swift in Sources */,
 				9CB8006429F17B600014E95C /* TabBarViewController.swift in Sources */,
+				9CEB70972A2DF3610092B320 /* RegisterRouter.swift in Sources */,
 				9C37542D29B273F10037EE08 /* PlaceOnWindowTransition.swift in Sources */,
 				9CB8005229F17B040014E95C /* FavoritesViewController.swift in Sources */,
 				9CB8005129F17B040014E95C /* FavoritesRouter.swift in Sources */,
 				9CF10F372A042674009B75E8 /* MainNavigationController.swift in Sources */,
 				9CB8006729F17B6C0014E95C /* TabBarRoute.swift in Sources */,
 				9CCB264E2A209A3900D3CBBB /* RecipeDetailRouter.swift in Sources */,
+				9CEB70992A2DF3610092B320 /* RegisterViewModel.swift in Sources */,
+				9CEB709B2A2DF37E0092B320 /* RegisterRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
