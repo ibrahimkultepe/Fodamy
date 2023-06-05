@@ -35,7 +35,7 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     
     private let userView = UserView()
     
-    private let materialsView = RecipeDetailInfoView()
+    private let ingredientsView = RecipeDetailInfoView()
     private let instructionsView = RecipeDetailInfoView()
     
     override func viewDidLoad() {
@@ -75,8 +75,8 @@ extension RecipeDetailViewController {
         userView.height(65)
         contentStackView.setCustomSpacing(20, after: userView)
         
-        contentStackView.addArrangedSubview(materialsView)
-        contentStackView.setCustomSpacing(20, after: materialsView)
+        contentStackView.addArrangedSubview(ingredientsView)
+        contentStackView.setCustomSpacing(20, after: ingredientsView)
         contentStackView.addArrangedSubview(instructionsView)
     }
 }
@@ -99,8 +99,8 @@ extension RecipeDetailViewController {
         userView.userImageURL = viewModel.userImageURL
         userView.userNameAndSurname = viewModel.userNameAndSurname
         userView.recipeAndFollower = viewModel.recipeAndFollower
-        materialsView.iconText = viewModel.numberOfPerson
-        materialsView.infoText = viewModel.ingredients
+        ingredientsView.iconText = viewModel.numberOfPerson
+        ingredientsView.infoText = viewModel.ingredients
         instructionsView.iconText = viewModel.difference
         instructionsView.infoText = viewModel.directions
     }
@@ -115,8 +115,8 @@ extension RecipeDetailViewController {
         commentView.info = L10n.RecipeDetail.commentViewInfo
         likeView.iconOfButton = .icHeart
         likeView.info = L10n.RecipeDetail.likeViewInfo
-        materialsView.title = L10n.RecipeDetailInfo.materials
-        materialsView.iconOfButton = .icRestaurant
+        ingredientsView.title = L10n.RecipeDetailInfo.materials
+        ingredientsView.iconOfButton = .icRestaurant
         instructionsView.title = L10n.RecipeDetailInfo.instructions
         instructionsView.iconOfButton = .icClock
     }
