@@ -29,11 +29,15 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var directions: String?
     
     var getDataDidSuccess: VoidClosure?
+    var reloadData: VoidClosure?
+    
     var recipeImageCellItems = [RecipeDetailCellModelProtocol]()
+    var commentCellıtems = [CommentCellModelProtocol]()
     
     override func tryAgainButtonTapped() {
         self.hideTryAgainButton?()
         getRecipeDetail()
+        getRecipeComment()
     }
     
     private func setItem(recipeDetail: RecipeDetail) {
@@ -76,6 +80,21 @@ extension RecipeDetailViewModel {
             case .failure(let error ):
                 self.showWarningToast?(error.localizedDescription)
                 self.showTryAgainButton?()
+            }
+        }
+    }
+    
+    func getRecipeComment() {
+        let request = GetRecipeCommentRequest(recipeId: recipeId)
+        dataProvider.request(for: request) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                let cellItems = response.data.prefix(3).map({ CommentCellModel(recipeComment: $0) })
+                self.commentCellıtems.append(contentsOf: cellItems)
+                self.reloadData?()
+            case .failure(let error ):
+                self.showWarningToast?(error.localizedDescription)
             }
         }
     }
