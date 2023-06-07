@@ -40,7 +40,7 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     
     private let commentView = RecipeDetailCommentView()
     
-    private let buttonView = UIView()
+    private let buttonContainerView = UIView()
     
     private let commentButton = UIButtonBuilder()
         .titleFont(.font(.nunitoBold, size: .xxLarge))
@@ -94,11 +94,11 @@ extension RecipeDetailViewController {
         contentStackView.addArrangedSubview(commentView)
         contentStackView.setCustomSpacing(20, after: commentView)
         
-        contentStackView.addArrangedSubview(buttonView)
-        buttonView.topToBottom(of: commentView).constant = 20
-        buttonView.edgesToSuperview(excluding: .top)
+        contentStackView.addArrangedSubview(buttonContainerView)
+        buttonContainerView.topToBottom(of: commentView).constant = 20
+        buttonContainerView.edgesToSuperview(excluding: .top)
         
-        buttonView.addSubview(commentButton)
+        buttonContainerView.addSubview(commentButton)
         commentButton.edgesToSuperview(insets: .init(top: 0, left: 20, bottom: 0, right: 20))
         commentButton.height(50)
     }

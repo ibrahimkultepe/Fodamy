@@ -5,8 +5,6 @@
 //  Created by İbrahim Kültepe on 6.06.2023.
 //
 
-import DataProvider
-
 public extension CommentCellModel {
     
     convenience init(recipeComment: RecipeComment) {

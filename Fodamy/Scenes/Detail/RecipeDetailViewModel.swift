@@ -93,7 +93,7 @@ extension RecipeDetailViewModel {
                 let cellItems = response.data.prefix(3).map({ CommentCellModel(recipeComment: $0) })
                 self.commentCellıtems.append(contentsOf: cellItems)
                 self.reloadData?()
-            case .failure(let error ):
+            case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }
         }

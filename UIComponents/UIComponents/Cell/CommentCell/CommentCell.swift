@@ -25,6 +25,7 @@ public class CommentCell: UICollectionViewCell, ReusableView {
     private let commentLabel = UILabelBuilder()
         .textColor(.appCinder)
         .font(.font(.nunitoSemiBold, size: .xLarge))
+        .numberOfLines(0)
         .build()
     
     private lazy var width: NSLayoutConstraint = {

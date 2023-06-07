@@ -12,7 +12,6 @@ public struct GetRecipeCommentRequest: APIDecodableResponseRequest {
     public var path: String = ""
     public let method: RequestMethod = .get
     
-    
     public init(recipeId: Int) {
         self.path = "recipe/\(recipeId)/comment"
     }
