@@ -35,6 +35,7 @@ public class RegisterTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubviews()
+        configureContent()
     }
     
     required init?(coder: NSCoder) {
@@ -54,5 +55,17 @@ extension RegisterTextField {
         titleLabel.leadingToTrailing(of: iconImageView).constant = 15
         titleLabel.centerYToSuperview()
         titleLabel.trailingToSuperview().constant = -20
+    }
+}
+
+// MARK: - ConfigureContent
+extension RegisterTextField {
+    
+    private func configureContent() {
+        height(60)
+        layer.borderColor = UIColor.appHeather.cgColor
+        layer.borderWidth = 1
+        layer.cornerRadius = 8
+        clipsToBounds = true
     }
 }

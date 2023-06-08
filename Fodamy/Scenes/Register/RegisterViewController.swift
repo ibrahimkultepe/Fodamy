@@ -16,6 +16,7 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     
     private let stackView = UIStackViewBuilder()
         .axis(.vertical)
+        .distribution(.fillEqually)
         .spacing(20)
         .build()
     
@@ -72,7 +73,6 @@ extension RegisterViewController {
         signUpButton.height(58)
         
         view.addSubview(bottomStackView)
-        bottomStackView.topToBottom(of: signUpButton).constant = 190
         bottomStackView.centerXToSuperview()
         bottomStackView.leadingToSuperview(relation: .equalOrGreater)
         bottomStackView.trailingToSuperview(relation: .equalOrLess)
@@ -86,14 +86,6 @@ extension RegisterViewController {
 extension RegisterViewController {
     
     private func configureContent() {
-        titleLabel.backgroundColor = .cyan
-        stackView.backgroundColor = .yellow
-        userNameTextField.backgroundColor = .red
-
-        
-        
-        
-        
         titleLabel.text = "Üye Ol"
         signUpButton.setTitle("Üye Ol", for: .normal)
         
