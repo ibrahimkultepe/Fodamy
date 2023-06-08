@@ -37,3 +37,7 @@
 //MARK: - RecipeDetailInfo
 "RecipeDetailInfo.materials" = "Malzemeler";
 "RecipeDetailInfo.instructions" = "Yapılışı";
+
+//MARK: - RecipeDetailComment
+"RecipeDetailComment.title" = "Yorumlar";
+"RecipeDetailComment.buttonTitle" = "Yorum Ekle";
