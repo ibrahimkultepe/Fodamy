@@ -86,8 +86,10 @@ extension RecipeDetailViewModel {
     
     func getRecipeComment() {
         let request = GetRecipeCommentRequest(recipeId: recipeId)
+        self.showActivityIndicatorView?()
         dataProvider.request(for: request) { [weak self] result in
             guard let self = self else { return }
+            self.hideActivityIndicatorView?()
             switch result {
             case .success(let response):
                 let cellItems = response.data.prefix(3).map({ CommentCellModel(recipeComment: $0) })
