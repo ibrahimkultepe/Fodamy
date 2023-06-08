@@ -11,13 +11,14 @@ import UIKit
 
 final class AppRouter: Router, AppRouter.Routes {
     
-    typealias Routes = WalkthroughRoute & TabBarRoute
+    typealias Routes = WalkthroughRoute & TabBarRoute & RegisterRoute//
     
     static let shared = AppRouter()
     
     func startApp() {
         if DefaultsKey.isWalkthroughFinished.value == true {
-            placeOnWindowTabBar()
+//            placeOnWindowTabBar()
+            pushRegister()
         } else {
             placeOnWindowWalkthrough()
         }
