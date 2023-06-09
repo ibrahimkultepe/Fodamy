@@ -20,9 +20,9 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         .spacing(20)
         .build()
     
-    private let userNameTextField = RegisterTextField()
-    private let emailTextField = RegisterTextField()
-    private let passwordTextField = RegisterTextField()
+    private let userNameTextField = AuthTextField()
+    private let emailTextField = AuthTextField()
+    private let passwordTextField = AuthTextField()
     
     private let signUpButton = UIButtonBuilder()
         .backgroundColor(.appHeather)
@@ -49,6 +49,7 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         super.viewDidLoad()
         addSubviews()
         configureContent()
+        setLocalize()
     }
 }
 
@@ -86,21 +87,28 @@ extension RegisterViewController {
 extension RegisterViewController {
     
     private func configureContent() {
-        titleLabel.text = "Üye Ol"
-        signUpButton.setTitle("Üye Ol", for: .normal)
         
-        userNameTextField.title = "Kullanıcı Adı"
-        userNameTextField.iconImage = .icUser
-        
-        emailTextField.title = "E-Mail Adresi"
-        emailTextField.iconImage = .icMail
-
-        passwordTextField.title = "Şifre"
-        userNameTextField.iconImage = .icPassword
-        
-        bottomLabel.text = "Hesabın mı var ?"
-    
-        
-        loginButton.setTitle("Giriş yap", for: .normal)
     }
+}
+
+// MARK: - SetLocalize
+extension RegisterViewController {
+    
+    private func setLocalize() {
+        titleLabel.text = L10n.Register.titleLabel
+        userNameTextField.title = L10n.Register.userNameTextField
+        userNameTextField.iconImage = .icUser
+        emailTextField.title = L10n.Register.emailTextField
+        emailTextField.iconImage = .icMail
+        passwordTextField.title = L10n.Register.passwordTextField
+        passwordTextField.iconImage = .icPassword
+        signUpButton.setTitle(L10n.Register.signUpButton, for: .normal)
+        bottomLabel.text = L10n.Register.bottomLabel
+        loginButton.setTitle(L10n.Register.loginButton, for: .normal)
+    }
+}
+
+// MARK: - Actions
+extension RegisterViewController {
+    
 }

@@ -33,3 +33,12 @@
 
 //MARK: - UserDefaultsKeys
 "UserDefaultsKeys.didFinishWalkthrough" = "WalkthroughFinished";
+
+//MARK: - Register
+"Register.titleLabel" = "Üye Ol";
+"Register.signUpButton" = "Üye Ol";
+"Register.userNameTextField" = "Kullanıcı Adı";
+"Register.emailTextField" = "E-mail Adresi";
+"Register.passwordTextField" = "Şifre";
+"Register.bottomLabel" = "Hesabın mı var ?";
+"Register.loginButton" = "Giriş yap";

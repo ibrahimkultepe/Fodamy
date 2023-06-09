@@ -40,6 +40,23 @@ public enum L10n {
     public static let likeViewInfo = L10n.tr("Modules", "RecipeDetail.LikeViewInfo")
   }
 
+  public enum Register {
+    /// Hesabın mı var ?
+    public static let bottomLabel = L10n.tr("Modules", "Register.bottomLabel")
+    /// E-mail Adresi
+    public static let emailTextField = L10n.tr("Modules", "Register.emailTextField")
+    /// Giriş yap
+    public static let loginButton = L10n.tr("Modules", "Register.loginButton")
+    /// Şifre
+    public static let passwordTextField = L10n.tr("Modules", "Register.passwordTextField")
+    /// Üye Ol
+    public static let signUpButton = L10n.tr("Modules", "Register.signUpButton")
+    /// Üye Ol
+    public static let titleLabel = L10n.tr("Modules", "Register.titleLabel")
+    /// Kullanıcı Adı
+    public static let userNameTextField = L10n.tr("Modules", "Register.userNameTextField")
+  }
+
   public enum UserDefaultsKeys {
     /// WalkthroughFinished
     public static let didFinishWalkthrough = L10n.tr("Modules", "UserDefaultsKeys.didFinishWalkthrough")
