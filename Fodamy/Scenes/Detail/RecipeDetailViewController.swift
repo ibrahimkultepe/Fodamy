@@ -53,9 +53,9 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         addSubviews()
         configureContent()
         setLocalize()
-        viewModel.getRecipeDetail()
-        viewModel.getRecipeComment()
+        viewModel.getData()
         subscribeViewModel()
+        likeButtonTapped()
     }
 }
 
@@ -146,6 +146,17 @@ extension RecipeDetailViewController {
     }
 }
 
+// MARK: - Actions
+extension RecipeDetailViewController {
+    
+    private func likeButtonTapped() {
+        likeCountView.buttonTapped = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.likeButtonTapped()
+        }
+    }
+}
+
 // MARK: - SubscribeViewModel
 extension RecipeDetailViewController {
     
@@ -154,11 +165,6 @@ extension RecipeDetailViewController {
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.setItem()
-            }
-        }
-        viewModel.reloadData = { [weak self] in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
                 self.commentView.recipeCommentData = self.viewModel.commentCellıtems
             }
         }

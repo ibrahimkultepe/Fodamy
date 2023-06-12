@@ -30,6 +30,8 @@ public class RecipeDetailCommentAndLikeView: UIView {
         .textAlignment(.center)
         .build()
     
+    public var buttonTapped: VoidClosure?
+    
     public var iconOfButton: UIImage? {
         didSet {
             iconButton.setImage(iconOfButton, for: .normal)
@@ -51,6 +53,7 @@ public class RecipeDetailCommentAndLikeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubviews()
+        configureContent()
     }
     
     required init?(coder: NSCoder) {
@@ -79,5 +82,22 @@ extension RecipeDetailCommentAndLikeView {
         
         stackView.addArrangedSubview(numberLabel)
         stackView.addArrangedSubview(infoLabel)
+    }
+}
+
+// MARK: - ConfigureContent
+extension RecipeDetailCommentAndLikeView {
+    
+    private func configureContent() {
+        iconButton.addTarget(self, action: #selector(iconButtonTapped), for: .touchUpInside)
+    }
+}
+
+// MARK: - Actions
+extension RecipeDetailCommentAndLikeView {
+    
+    @objc
+    private func iconButtonTapped() {
+        buttonTapped?()
     }
 }
