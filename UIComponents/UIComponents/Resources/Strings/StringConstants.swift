@@ -28,6 +28,15 @@ public enum L10n {
     public static let segmentedControl1 = L10n.tr("Modules", "Home.segmentedControl1")
   }
 
+  public enum LoginWarning {
+    /// Vazgeç
+    public static let giveUpButton = L10n.tr("Modules", "LoginWarning.giveUpButton")
+    /// Giriş Yap
+    public static let loginButton = L10n.tr("Modules", "LoginWarning.loginButton")
+    /// Giriş yapmanız gereklidir.
+    public static let warningLabel = L10n.tr("Modules", "LoginWarning.warningLabel")
+  }
+
   public enum NavigationController {
     /// Geri
     public static let backButtonTitle = L10n.tr("Modules", "NavigationController.backButtonTitle")

@@ -41,3 +41,8 @@
 //MARK: - RecipeDetailComment
 "RecipeDetailComment.title" = "Yorumlar";
 "RecipeDetailComment.buttonTitle" = "Yorum Ekle";
+
+//MARK: - LoginWarning
+"LoginWarning.warningLabel" = "Giriş yapmanız gereklidir.";
+"LoginWarning.giveUpButton" = "Vazgeç";
+"LoginWarning.loginButton" = "Giriş Yap";
