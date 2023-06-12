@@ -33,9 +33,9 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var recipeImageCellItems = [RecipeDetailCellModelProtocol]()
     var commentCellıtems = [CommentCellModelProtocol]()
     
-    let dispatchGroup = DispatchGroup()
-    var isGetRecipeDetailSuccess = false
-    var isGetRecipeCommentSuccess = false
+    private let dispatchGroup = DispatchGroup()
+    private var isGetRecipeDetailSuccess = false
+    private var isGetRecipeCommentSuccess = false
     
     override func tryAgainButtonTapped() {
         self.hideTryAgainButton?()

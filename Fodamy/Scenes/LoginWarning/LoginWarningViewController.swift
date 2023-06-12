@@ -55,8 +55,6 @@ final class LoginWarningViewController: BaseViewController<LoginWarningViewModel
 extension LoginWarningViewController {
     
     private func addSubviews() {
-        view.backgroundColor = UIColor.clear.withAlphaComponent(0.50)
-        view.isOpaque = false
         view.addSubview(contentView)
         contentView.centerYToSuperview()
         contentView.leadingToSuperview().constant = 20
@@ -86,6 +84,8 @@ extension LoginWarningViewController {
 extension LoginWarningViewController {
     
     private func configureContent() {
+        view.backgroundColor = UIColor.clear.withAlphaComponent(0.50)
+        view.isOpaque = false
         warningImageView.image = .icWarning.withRenderingMode(.alwaysTemplate)
         giveUpButton.addTarget(self, action: #selector(giveUpButtonAction), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)

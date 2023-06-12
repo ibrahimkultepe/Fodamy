@@ -55,7 +55,6 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         setLocalize()
         viewModel.getData()
         subscribeViewModel()
-        likeButtonTapped()
     }
 }
 
@@ -109,6 +108,7 @@ extension RecipeDetailViewController {
     
     private func configureContent() {
         view.backgroundColor = .appSecondaryBackground
+        subscribeLikeButton()
     }
     
     private func setItem() {
@@ -149,7 +149,7 @@ extension RecipeDetailViewController {
 // MARK: - Actions
 extension RecipeDetailViewController {
     
-    private func likeButtonTapped() {
+    private func subscribeLikeButton() {
         likeCountView.buttonTapped = { [weak self] in
             guard let self = self else { return }
             self.viewModel.likeButtonTapped()
