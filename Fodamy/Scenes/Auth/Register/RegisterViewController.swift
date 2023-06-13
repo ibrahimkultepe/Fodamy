@@ -45,6 +45,8 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         .titleFont(.font(.nunitoSemiBold, size: .large))
         .build()
     
+    private let validation = Validation()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
@@ -87,7 +89,13 @@ extension RegisterViewController {
 extension RegisterViewController {
     
     private func configureContent() {
-        
+        signUpButton.addTarget(self, action: #selector(signUpButtonAction), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
+        passwordTextField.isSecureTextEntry = true
+        emailTextField.autocapitalizationType = .none
+        userNameTextField.iconImage = .icUser
+        emailTextField.iconImage = .icMail
+        passwordTextField.iconImage = .icPassword
     }
 }
 
@@ -97,11 +105,8 @@ extension RegisterViewController {
     private func setLocalize() {
         titleLabel.text = L10n.Register.titleLabel
         userNameTextField.title = L10n.Register.userNameTextField
-        userNameTextField.iconImage = .icUser
         emailTextField.title = L10n.Register.emailTextField
-        emailTextField.iconImage = .icMail
         passwordTextField.title = L10n.Register.passwordTextField
-        passwordTextField.iconImage = .icPassword
         signUpButton.setTitle(L10n.Register.signUpButton, for: .normal)
         bottomLabel.text = L10n.Register.bottomLabel
         loginButton.setTitle(L10n.Register.loginButton, for: .normal)
@@ -111,4 +116,22 @@ extension RegisterViewController {
 // MARK: - Actions
 extension RegisterViewController {
     
+    @objc
+    private func signUpButtonAction() {
+        guard
+            let userName = userNameTextField.text,
+            let email = emailTextField.text,
+            let password = passwordTextField.text
+        else { return }
+        
+        guard validation.isValidEmail(email) else { return }
+        guard validation.isValidPassword(password) else { return }
+        
+        viewModel.registerRequest(userName: userName, email: email, password: password)
+    }
+    
+    @objc
+    private func loginButtonAction() {
+        viewModel.presentLoginVC()
+    }
 }

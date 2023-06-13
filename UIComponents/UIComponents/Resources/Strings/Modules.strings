@@ -42,3 +42,7 @@
 "Register.passwordTextField" = "Şifre";
 "Register.bottomLabel" = "Hesabın mı var ?";
 "Register.loginButton" = "Giriş yap";
+
+//MARK: - Validation
+"Validation.isValidEmail" = "Lütfen geçerli bir email adresi giriniz.";
+"Validation.isValidPassword" = "Şifreniz en az 6 karaterden oluşmalıdır.";

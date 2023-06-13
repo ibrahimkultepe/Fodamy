@@ -42,7 +42,7 @@ public class AuthTextField: UITextField {
     }
     
     private let labelTopMargin: CGFloat = 10
-    private let margin = UIEdgeInsets(top: 31, left: 56, bottom: 0, right: 26)
+    private let margin = UIEdgeInsets(top: 31, left: 56, bottom: 9, right: 26)
     
     @objc
     private func textFieldDidBeginEditing() {
@@ -100,5 +100,6 @@ extension AuthTextField {
         clipsToBounds = true
         addTarget(self, action: #selector(textFieldDidBeginEditing), for: .editingDidBegin)
         addTarget(self, action: #selector(textFieldDidEndEditing), for: .editingDidEnd)
+        autocorrectionType = .no
     }
 }

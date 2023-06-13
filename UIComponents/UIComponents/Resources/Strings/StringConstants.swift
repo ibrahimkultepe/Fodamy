@@ -62,6 +62,13 @@ public enum L10n {
     public static let didFinishWalkthrough = L10n.tr("Modules", "UserDefaultsKeys.didFinishWalkthrough")
   }
 
+  public enum Validation {
+    /// Lütfen geçerli bir email adresi giriniz.
+    public static let isValidEmail = L10n.tr("Modules", "Validation.isValidEmail")
+    /// Şifreniz en az 6 karaterden oluşmalıdır.
+    public static let isValidPassword = L10n.tr("Modules", "Validation.isValidPassword")
+  }
+
   public enum WalkThrough {
     /// Fodamy is the best place to find your favorite recipes in all around the word.
     public static let description = L10n.tr("Modules", "WalkThrough.description")
