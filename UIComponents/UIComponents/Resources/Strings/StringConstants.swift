@@ -28,6 +28,23 @@ public enum L10n {
     public static let segmentedControl1 = L10n.tr("Modules", "Home.segmentedControl1")
   }
 
+  public enum Login {
+    /// Hesabın mı yok? 
+    public static let bottomLabel = L10n.tr("Modules", "Login.bottomLabel")
+    /// E-mail Adresi
+    public static let emailTextField = L10n.tr("Modules", "Login.emailTextField")
+    /// Şifrenizi mi unuttunuz ?
+    public static let forgotPasswordButton = L10n.tr("Modules", "Login.forgotPasswordButton")
+    /// Giriş yap
+    public static let loginButton = L10n.tr("Modules", "Login.loginButton")
+    /// Şifre
+    public static let passwordTextField = L10n.tr("Modules", "Login.passwordTextField")
+    /// Üye Ol
+    public static let signUpButton = L10n.tr("Modules", "Login.signUpButton")
+    /// Giriş Yap
+    public static let titleLabel = L10n.tr("Modules", "Login.titleLabel")
+  }
+
   public enum LoginWarning {
     /// Vazgeç
     public static let giveUpButton = L10n.tr("Modules", "LoginWarning.giveUpButton")
@@ -63,9 +80,41 @@ public enum L10n {
     public static let materials = L10n.tr("Modules", "RecipeDetailInfo.materials")
   }
 
+  public enum Register {
+    /// Tamam
+    public static let alertControllerAcceptAction = L10n.tr("Modules", "Register.alertControllerAcceptAction")
+    /// Yemek tariflerine hoşgeldiniz.
+    public static let alertControllerMesssage = L10n.tr("Modules", "Register.alertControllerMesssage")
+    /// Üyelik işleminiz başarılı.
+    public static let alertControllerTitle = L10n.tr("Modules", "Register.alertControllerTitle")
+    /// Hesabın mı var ?
+    public static let bottomLabel = L10n.tr("Modules", "Register.bottomLabel")
+    /// E-mail Adresi
+    public static let emailTextField = L10n.tr("Modules", "Register.emailTextField")
+    /// Giriş yap
+    public static let loginButton = L10n.tr("Modules", "Register.loginButton")
+    /// Şifre
+    public static let passwordTextField = L10n.tr("Modules", "Register.passwordTextField")
+    /// Üye Ol
+    public static let signUpButton = L10n.tr("Modules", "Register.signUpButton")
+    /// Üye Ol
+    public static let titleLabel = L10n.tr("Modules", "Register.titleLabel")
+    /// Kullanıcı Adı
+    public static let userNameTextField = L10n.tr("Modules", "Register.userNameTextField")
+  }
+
   public enum UserDefaultsKeys {
     /// WalkthroughFinished
     public static let didFinishWalkthrough = L10n.tr("Modules", "UserDefaultsKeys.didFinishWalkthrough")
+  }
+
+  public enum Validation {
+    /// Lütfen geçerli bir email adresi giriniz.
+    public static let isValidEmail = L10n.tr("Modules", "Validation.isValidEmail")
+    /// Lütfen İsminizi Giriniz
+    public static let isValidName = L10n.tr("Modules", "Validation.isValidName")
+    /// Şifreniz en az 6 karaterden oluşmalıdır.
+    public static let isValidPassword = L10n.tr("Modules", "Validation.isValidPassword")
   }
 
   public enum WalkThrough {

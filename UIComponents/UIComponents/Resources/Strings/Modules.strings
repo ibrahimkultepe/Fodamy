@@ -46,3 +46,30 @@
 "LoginWarning.warningLabel" = "Giriş yapmanız gereklidir.";
 "LoginWarning.giveUpButton" = "Vazgeç";
 "LoginWarning.loginButton" = "Giriş Yap";
+
+//MARK: - Register
+"Register.titleLabel" = "Üye Ol";
+"Register.signUpButton" = "Üye Ol";
+"Register.userNameTextField" = "Kullanıcı Adı";
+"Register.emailTextField" = "E-mail Adresi";
+"Register.passwordTextField" = "Şifre";
+"Register.bottomLabel" = "Hesabın mı var ?";
+"Register.loginButton" = "Giriş yap";
+"Register.alertControllerTitle" = "Üyelik işleminiz başarılı.";
+"Register.alertControllerMesssage" = "Yemek tariflerine hoşgeldiniz.";
+"Register.alertControllerAcceptAction" = "Tamam";
+
+
+//MARK: - Login
+"Login.titleLabel" = "Giriş Yap";
+"Login.emailTextField" = "E-mail Adresi";
+"Login.passwordTextField" = "Şifre";
+"Login.loginButton" = "Giriş yap";
+"Login.forgotPasswordButton" = "Şifrenizi mi unuttunuz ?";
+"Login.bottomLabel" = "Hesabın mı yok? ";
+"Login.signUpButton" = "Üye Ol";
+
+//MARK: - Validation
+"Validation.isValidEmail" = "Lütfen geçerli bir email adresi giriniz.";
+"Validation.isValidPassword" = "Şifreniz en az 6 karaterden oluşmalıdır.";
+"Validation.isValidName" = "Lütfen İsminizi Giriniz";

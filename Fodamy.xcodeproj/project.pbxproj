@@ -23,6 +23,11 @@
 		9C6E6B092A36FA52006CBE9B /* LoginWarningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6E6B062A36FA52006CBE9B /* LoginWarningViewController.swift */; };
 		9C6E6B0A2A36FA52006CBE9B /* LoginWarningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6E6B072A36FA52006CBE9B /* LoginWarningViewModel.swift */; };
 		9C6E6B0C2A36FA68006CBE9B /* LoginWarningRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6E6B0B2A36FA68006CBE9B /* LoginWarningRoute.swift */; };
+		9C8462C32A38576800ECB614 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8462C22A38576800ECB614 /* Validation.swift */; };
+		9C8462D02A3873FE00ECB614 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8462CD2A3873FE00ECB614 /* LoginRouter.swift */; };
+		9C8462D12A3873FE00ECB614 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8462CE2A3873FE00ECB614 /* LoginViewController.swift */; };
+		9C8462D22A3873FE00ECB614 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8462CF2A3873FE00ECB614 /* LoginViewModel.swift */; };
+		9C8462D92A387D1E00ECB614 /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8462D82A387D1E00ECB614 /* LoginRoute.swift */; };
 		9C87CE1C2A014C53007FD4DC /* RecipesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87CE192A014C53007FD4DC /* RecipesRouter.swift */; };
 		9C87CE1D2A014C53007FD4DC /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87CE1A2A014C53007FD4DC /* RecipesViewController.swift */; };
 		9C87CE1E2A014C53007FD4DC /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87CE1B2A014C53007FD4DC /* RecipesViewModel.swift */; };
@@ -57,6 +62,10 @@
 		9CE25C4729B912B7000DD905 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4429B912B7000DD905 /* WalkthroughViewController.swift */; };
 		9CE25C4829B912B7000DD905 /* WalkthroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4529B912B7000DD905 /* WalkthroughViewModel.swift */; };
 		9CE25C4A29B912D3000DD905 /* WalkthroughRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE25C4929B912D3000DD905 /* WalkthroughRoute.swift */; };
+		9CEB70972A2DF3610092B320 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB70942A2DF3600092B320 /* RegisterRouter.swift */; };
+		9CEB70982A2DF3610092B320 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB70952A2DF3600092B320 /* RegisterViewController.swift */; };
+		9CEB70992A2DF3610092B320 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB70962A2DF3600092B320 /* RegisterViewModel.swift */; };
+		9CEB709B2A2DF37E0092B320 /* RegisterRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB709A2A2DF37E0092B320 /* RegisterRoute.swift */; };
 		9CF10F372A042674009B75E8 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF10F362A042674009B75E8 /* MainNavigationController.swift */; };
 		9CF10F3D2A042C61009B75E8 /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF10F3C2A042C61009B75E8 /* HomeRoute.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +88,11 @@
 		9C6E6B062A36FA52006CBE9B /* LoginWarningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWarningViewController.swift; sourceTree = "<group>"; };
 		9C6E6B072A36FA52006CBE9B /* LoginWarningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWarningViewModel.swift; sourceTree = "<group>"; };
 		9C6E6B0B2A36FA68006CBE9B /* LoginWarningRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWarningRoute.swift; sourceTree = "<group>"; };
+		9C8462C22A38576800ECB614 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		9C8462CD2A3873FE00ECB614 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		9C8462CE2A3873FE00ECB614 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9C8462CF2A3873FE00ECB614 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		9C8462D82A387D1E00ECB614 /* LoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoute.swift; sourceTree = "<group>"; };
 		9C87CE192A014C53007FD4DC /* RecipesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRouter.swift; sourceTree = "<group>"; };
 		9C87CE1A2A014C53007FD4DC /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		9C87CE1B2A014C53007FD4DC /* RecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
@@ -115,6 +129,10 @@
 		9CE25C4429B912B7000DD905 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		9CE25C4529B912B7000DD905 /* WalkthroughViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewModel.swift; sourceTree = "<group>"; };
 		9CE25C4929B912D3000DD905 /* WalkthroughRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughRoute.swift; sourceTree = "<group>"; };
+		9CEB70942A2DF3600092B320 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		9CEB70952A2DF3600092B320 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		9CEB70962A2DF3600092B320 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		9CEB709A2A2DF37E0092B320 /* RegisterRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRoute.swift; sourceTree = "<group>"; };
 		9CF10F362A042674009B75E8 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		9CF10F3C2A042C61009B75E8 /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
 		E5A884E93E5616E66D2CDDCF /* Pods_Fodamy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fodamy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +239,34 @@
 			path = LoginWarning;
 			sourceTree = "<group>";
 		};
+		9C8462C12A38574200ECB614 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				9C8462C22A38576800ECB614 /* Validation.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		9C8462CC2A3873EA00ECB614 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9C8462CE2A3873FE00ECB614 /* LoginViewController.swift */,
+				9C8462CF2A3873FE00ECB614 /* LoginViewModel.swift */,
+				9C8462CD2A3873FE00ECB614 /* LoginRouter.swift */,
+				9C8462D82A387D1E00ECB614 /* LoginRoute.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9C8462D52A38741600ECB614 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				9C8462CC2A3873EA00ECB614 /* Login */,
+				9CEB70912A2DF3050092B320 /* Register */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		9C87CE182A014C2D007FD4DC /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +303,7 @@
 				9CAD3FD729ABE8D0006F499E /* DataProvider */,
 				9CAD3FBE29ABE71E006F499E /* Delegate */,
 				9CAD3FD429ABE894006F499E /* Protocol */,
+				9C8462C12A38574200ECB614 /* Validation */,
 				9CAD3FBF29ABE732006F499E /* Scenes */,
 				9CAD3FC529ABE7A2006F499E /* UIComponent */,
 				9CAD3FCC29ABE80E006F499E /* Toast */,
@@ -278,6 +325,7 @@
 		9CAD3FBF29ABE732006F499E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9C8462D52A38741600ECB614 /* Auth */,
 				9C4E7C8C2A045A3700E81EFF /* MainNavigationController */,
 				9CAD3FC029ABE74D006F499E /* Base */,
 				9C37543229B274F50037EE08 /* Walkthrough */,
@@ -379,6 +427,17 @@
 				9CCB26512A209A4D00D3CBBB /* RecipeDetailRoute.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		9CEB70912A2DF3050092B320 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				9CEB70952A2DF3600092B320 /* RegisterViewController.swift */,
+				9CEB70962A2DF3600092B320 /* RegisterViewModel.swift */,
+				9CEB70942A2DF3600092B320 /* RegisterRouter.swift */,
+				9CEB709A2A2DF37E0092B320 /* RegisterRoute.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		BCEE16FE7B24FBFDE8461817 /* Frameworks */ = {
@@ -523,6 +582,7 @@
 				9C6E6B092A36FA52006CBE9B /* LoginWarningViewController.swift in Sources */,
 				9CCB26522A209A4D00D3CBBB /* RecipeDetailRoute.swift in Sources */,
 				9CAD3FDB29ABE905006F499E /* APIRequestAdapter.swift in Sources */,
+				9C8462D92A387D1E00ECB614 /* LoginRoute.swift in Sources */,
 				9C37543129B274240037EE08 /* Transition.swift in Sources */,
 				9C37542F29B274080037EE08 /* PushTransition.swift in Sources */,
 				9C37542829B273AB0037EE08 /* Router.swift in Sources */,
@@ -530,6 +590,7 @@
 				9CAD3FD029ABE841006F499E /* TostWarningView.swift in Sources */,
 				9CAD3FD629ABE8AB006F499E /* LoadingProtocol.swift in Sources */,
 				9CAD3FC729ABE7C3006F499E /* ActivityIndicator.swift in Sources */,
+				9C8462C32A38576800ECB614 /* Validation.swift in Sources */,
 				9CB8005C29F17B280014E95C /* HomeViewModel.swift in Sources */,
 				9C37542B29B273D90037EE08 /* ModalTransition.swift in Sources */,
 				9CAD3FCB29ABE7F1006F499E /* ActivityIndicatorView.swift in Sources */,
@@ -545,14 +606,21 @@
 				9C6E6B0C2A36FA68006CBE9B /* LoginWarningRoute.swift in Sources */,
 				9CAD3FC429ABE782006F499E /* BaseViewModel.swift in Sources */,
 				9C87CE1C2A014C53007FD4DC /* RecipesRouter.swift in Sources */,
+				9CEB70982A2DF3610092B320 /* RegisterViewController.swift in Sources */,
+				9C8462D12A3873FE00ECB614 /* LoginViewController.swift in Sources */,
 				9CB8006429F17B600014E95C /* TabBarViewController.swift in Sources */,
+				9CEB70972A2DF3610092B320 /* RegisterRouter.swift in Sources */,
+				9C8462D02A3873FE00ECB614 /* LoginRouter.swift in Sources */,
 				9C37542D29B273F10037EE08 /* PlaceOnWindowTransition.swift in Sources */,
 				9CB8005229F17B040014E95C /* FavoritesViewController.swift in Sources */,
+				9C8462D22A3873FE00ECB614 /* LoginViewModel.swift in Sources */,
 				9CB8005129F17B040014E95C /* FavoritesRouter.swift in Sources */,
 				9CF10F372A042674009B75E8 /* MainNavigationController.swift in Sources */,
 				9CB8006729F17B6C0014E95C /* TabBarRoute.swift in Sources */,
 				9CCB264E2A209A3900D3CBBB /* RecipeDetailRouter.swift in Sources */,
 				9C6E6B0A2A36FA52006CBE9B /* LoginWarningViewModel.swift in Sources */,
+				9CEB70992A2DF3610092B320 /* RegisterViewModel.swift in Sources */,
+				9CEB709B2A2DF37E0092B320 /* RegisterRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
