@@ -52,6 +52,7 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         addSubviews()
         configureContent()
         setLocalize()
+        subscribeViewModel()
     }
 }
 
@@ -97,6 +98,17 @@ extension RegisterViewController {
         emailTextField.iconImage = .icMail
         passwordTextField.iconImage = .icPassword
     }
+    
+    private func showAlert() {
+        let alertController = UIAlertController(title: L10n.Register.alertControllerTitle, message: L10n.Register.alertControllerMesssage, preferredStyle: .alert)
+        
+        let acceptAction = UIAlertAction(title: L10n.Register.alertControllerAcceptAction, style: .default) { (_) in
+            self.viewModel.showLoginVC()
+          }
+        
+        alertController.addAction(acceptAction)
+        present(alertController, animated: true, completion: nil)
+    }
 }
 
 // MARK: - SetLocalize
@@ -134,5 +146,18 @@ extension RegisterViewController {
     @objc
     private func loginButtonAction() {
         viewModel.showLoginVC()
+    }
+}
+
+// MARK: - SubscribeViewModel
+extension RegisterViewController {
+    
+    private func subscribeViewModel() {
+        viewModel.showAlert = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.showAlert()
+            }
+        }
     }
 }

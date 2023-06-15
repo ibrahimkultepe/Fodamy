@@ -58,6 +58,12 @@ public enum L10n {
   }
 
   public enum Register {
+    /// Tamam
+    public static let alertControllerAcceptAction = L10n.tr("Modules", "Register.alertControllerAcceptAction")
+    /// Yemek tariflerine hoşgeldiniz.
+    public static let alertControllerMesssage = L10n.tr("Modules", "Register.alertControllerMesssage")
+    /// Üyelik işleminiz başarılı.
+    public static let alertControllerTitle = L10n.tr("Modules", "Register.alertControllerTitle")
     /// Hesabın mı var ?
     public static let bottomLabel = L10n.tr("Modules", "Register.bottomLabel")
     /// E-mail Adresi

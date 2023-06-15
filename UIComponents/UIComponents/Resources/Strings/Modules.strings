@@ -42,6 +42,10 @@
 "Register.passwordTextField" = "Şifre";
 "Register.bottomLabel" = "Hesabın mı var ?";
 "Register.loginButton" = "Giriş yap";
+"Register.alertControllerTitle" = "Üyelik işleminiz başarılı.";
+"Register.alertControllerMesssage" = "Yemek tariflerine hoşgeldiniz.";
+"Register.alertControllerAcceptAction" = "Tamam";
+
 
 //MARK: - Login
 "Login.titleLabel" = "Giriş Yap";

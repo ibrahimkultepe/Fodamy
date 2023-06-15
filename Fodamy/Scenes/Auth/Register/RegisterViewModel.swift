@@ -15,6 +15,8 @@ protocol RegisterViewProtocol: RegisterViewDataSource, RegisterViewEventSource {
 
 final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtocol {
     
+    var showAlert: VoidClosure?
+    
     func showLoginVC(){
         router.close()
     }
@@ -32,6 +34,7 @@ extension RegisterViewModel {
             switch result {
             case .success(let response):
                 self.showLoginVC()
+                self.showAlert?()
             case .failure(let error ):
                 self.showWarningToast?(error.localizedDescription)
             }
