@@ -242,8 +242,8 @@
 		9C8462D52A38741600ECB614 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				9CEB70912A2DF3050092B320 /* Register */,
 				9C8462CC2A3873EA00ECB614 /* Login */,
+				9CEB70912A2DF3050092B320 /* Register */,
 			);
 			path = Auth;
 			sourceTree = "<group>";

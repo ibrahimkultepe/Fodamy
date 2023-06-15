@@ -15,4 +15,7 @@ protocol LoginViewProtocol: LoginViewDataSource, LoginViewEventSource {}
 
 final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
     
+    func pushRegisterVC() {
+        router.pushRegister()
+    }
 }

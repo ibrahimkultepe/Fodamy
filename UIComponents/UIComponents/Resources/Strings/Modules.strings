@@ -43,6 +43,16 @@
 "Register.bottomLabel" = "Hesabın mı var ?";
 "Register.loginButton" = "Giriş yap";
 
+//MARK: - Login
+"Login.titleLabel" = "Giriş Yap";
+"Login.emailTextField" = "E-mail Adresi";
+"Login.passwordTextField" = "Şifre";
+"Login.loginButton" = "Giriş yap";
+"Login.forgotPasswordButton" = "Şifrenizi mi unuttunuz ?";
+"Login.bottomLabel" = "Hesabın mı yok? ";
+"Login.signUpButton" = "Üye Ol";
+
 //MARK: - Validation
 "Validation.isValidEmail" = "Lütfen geçerli bir email adresi giriniz.";
 "Validation.isValidPassword" = "Şifreniz en az 6 karaterden oluşmalıdır.";
+"Validation.isValidName" = "Lütfen İsminizi Giriniz";

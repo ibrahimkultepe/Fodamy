@@ -124,6 +124,7 @@ extension RegisterViewController {
             let password = passwordTextField.text
         else { return }
         
+        guard validation.isValidName(userName) else { return }
         guard validation.isValidEmail(email) else { return }
         guard validation.isValidPassword(password) else { return }
         
@@ -132,6 +133,6 @@ extension RegisterViewController {
     
     @objc
     private func loginButtonAction() {
-        viewModel.presentLoginVC()
+        viewModel.showLoginVC()
     }
 }

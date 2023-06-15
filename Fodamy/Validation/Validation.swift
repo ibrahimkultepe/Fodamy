@@ -25,4 +25,12 @@ class Validation {
         }
         return true
     }
+    
+    func isValidName(_ name: String) -> Bool {
+        guard name.count > 1 else {
+            ToastPresenter.showWarningToast(text: L10n.Validation.isValidName)
+            return false
+        }
+        return true
+    }
 }

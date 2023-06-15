@@ -28,6 +28,23 @@ public enum L10n {
     public static let segmentedControl1 = L10n.tr("Modules", "Home.segmentedControl1")
   }
 
+  public enum Login {
+    /// Hesabın mı yok? 
+    public static let bottomLabel = L10n.tr("Modules", "Login.bottomLabel")
+    /// E-mail Adresi
+    public static let emailTextField = L10n.tr("Modules", "Login.emailTextField")
+    /// Şifrenizi mi unuttunuz ?
+    public static let forgotPasswordButton = L10n.tr("Modules", "Login.forgotPasswordButton")
+    /// Giriş yap
+    public static let loginButton = L10n.tr("Modules", "Login.loginButton")
+    /// Şifre
+    public static let passwordTextField = L10n.tr("Modules", "Login.passwordTextField")
+    /// Üye Ol
+    public static let signUpButton = L10n.tr("Modules", "Login.signUpButton")
+    /// Giriş Yap
+    public static let titleLabel = L10n.tr("Modules", "Login.titleLabel")
+  }
+
   public enum NavigationController {
     /// Geri
     public static let backButtonTitle = L10n.tr("Modules", "NavigationController.backButtonTitle")
@@ -65,6 +82,8 @@ public enum L10n {
   public enum Validation {
     /// Lütfen geçerli bir email adresi giriniz.
     public static let isValidEmail = L10n.tr("Modules", "Validation.isValidEmail")
+    /// Lütfen İsminizi Giriniz
+    public static let isValidName = L10n.tr("Modules", "Validation.isValidName")
     /// Şifreniz en az 6 karaterden oluşmalıdır.
     public static let isValidPassword = L10n.tr("Modules", "Validation.isValidPassword")
   }
