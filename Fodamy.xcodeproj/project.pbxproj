@@ -19,6 +19,10 @@
 		9C69FB7529B14732000D17C3 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69FB7429B14732000D17C3 /* UIComponents.framework */; };
 		9C69FB8D29B147F5000D17C3 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69FB8C29B147F5000D17C3 /* Utilities.framework */; };
 		9C69FBA529B14882000D17C3 /* DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69FBA429B14882000D17C3 /* DataProvider.framework */; };
+		9C6E6B082A36FA52006CBE9B /* LoginWarningRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6E6B052A36FA52006CBE9B /* LoginWarningRouter.swift */; };
+		9C6E6B092A36FA52006CBE9B /* LoginWarningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6E6B062A36FA52006CBE9B /* LoginWarningViewController.swift */; };
+		9C6E6B0A2A36FA52006CBE9B /* LoginWarningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6E6B072A36FA52006CBE9B /* LoginWarningViewModel.swift */; };
+		9C6E6B0C2A36FA68006CBE9B /* LoginWarningRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6E6B0B2A36FA68006CBE9B /* LoginWarningRoute.swift */; };
 		9C8462C32A38576800ECB614 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8462C22A38576800ECB614 /* Validation.swift */; };
 		9C8462D02A3873FE00ECB614 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8462CD2A3873FE00ECB614 /* LoginRouter.swift */; };
 		9C8462D12A3873FE00ECB614 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8462CE2A3873FE00ECB614 /* LoginViewController.swift */; };
@@ -80,6 +84,10 @@
 		9C69FB7429B14732000D17C3 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C69FB8C29B147F5000D17C3 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C69FBA429B14882000D17C3 /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C6E6B052A36FA52006CBE9B /* LoginWarningRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWarningRouter.swift; sourceTree = "<group>"; };
+		9C6E6B062A36FA52006CBE9B /* LoginWarningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWarningViewController.swift; sourceTree = "<group>"; };
+		9C6E6B072A36FA52006CBE9B /* LoginWarningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWarningViewModel.swift; sourceTree = "<group>"; };
+		9C6E6B0B2A36FA68006CBE9B /* LoginWarningRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWarningRoute.swift; sourceTree = "<group>"; };
 		9C8462C22A38576800ECB614 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		9C8462CD2A3873FE00ECB614 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		9C8462CE2A3873FE00ECB614 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +228,17 @@
 			path = BridgingHeader;
 			sourceTree = "<group>";
 		};
+		9C6E6B042A36FA0B006CBE9B /* LoginWarning */ = {
+			isa = PBXGroup;
+			children = (
+				9C6E6B062A36FA52006CBE9B /* LoginWarningViewController.swift */,
+				9C6E6B072A36FA52006CBE9B /* LoginWarningViewModel.swift */,
+				9C6E6B052A36FA52006CBE9B /* LoginWarningRouter.swift */,
+				9C6E6B0B2A36FA68006CBE9B /* LoginWarningRoute.swift */,
+			);
+			path = LoginWarning;
+			sourceTree = "<group>";
+		};
 		9C8462C12A38574200ECB614 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +334,7 @@
 				9C87CE182A014C2D007FD4DC /* Recipes */,
 				9CB8004D29F17AF10014E95C /* Favorites */,
 				9CCB264A2A209A0D00D3CBBB /* Detail */,
+				9C6E6B042A36FA0B006CBE9B /* LoginWarning */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -548,6 +568,7 @@
 				9CE25C4729B912B7000DD905 /* WalkthroughViewController.swift in Sources */,
 				9CE25C4A29B912D3000DD905 /* WalkthroughRoute.swift in Sources */,
 				9C37542629B273950037EE08 /* Animator.swift in Sources */,
+				9C6E6B082A36FA52006CBE9B /* LoginWarningRouter.swift in Sources */,
 				9CB8005B29F17B280014E95C /* HomeViewController.swift in Sources */,
 				9CAD3FC229ABE765006F499E /* BaseViewController.swift in Sources */,
 				9C37542329B273140037EE08 /* AppRouter.swift in Sources */,
@@ -558,6 +579,7 @@
 				9CAD3FDD29ABE91D006F499E /* APILogger.swift in Sources */,
 				9CB8005A29F17B280014E95C /* HomeRouter.swift in Sources */,
 				9CAD3FCE29ABE824006F499E /* ToastPresenter.swift in Sources */,
+				9C6E6B092A36FA52006CBE9B /* LoginWarningViewController.swift in Sources */,
 				9CCB26522A209A4D00D3CBBB /* RecipeDetailRoute.swift in Sources */,
 				9CAD3FDB29ABE905006F499E /* APIRequestAdapter.swift in Sources */,
 				9C8462D92A387D1E00ECB614 /* LoginRoute.swift in Sources */,
@@ -581,6 +603,7 @@
 				9CF10F3D2A042C61009B75E8 /* HomeRoute.swift in Sources */,
 				9CE25C4629B912B7000DD905 /* WalkthroughRouter.swift in Sources */,
 				9CAD3FC929ABE7DE006F499E /* ActivityIndicatorProtocol.swift in Sources */,
+				9C6E6B0C2A36FA68006CBE9B /* LoginWarningRoute.swift in Sources */,
 				9CAD3FC429ABE782006F499E /* BaseViewModel.swift in Sources */,
 				9C87CE1C2A014C53007FD4DC /* RecipesRouter.swift in Sources */,
 				9CEB70982A2DF3610092B320 /* RegisterViewController.swift in Sources */,
@@ -595,6 +618,7 @@
 				9CF10F372A042674009B75E8 /* MainNavigationController.swift in Sources */,
 				9CB8006729F17B6C0014E95C /* TabBarRoute.swift in Sources */,
 				9CCB264E2A209A3900D3CBBB /* RecipeDetailRouter.swift in Sources */,
+				9C6E6B0A2A36FA52006CBE9B /* LoginWarningViewModel.swift in Sources */,
 				9CEB70992A2DF3610092B320 /* RegisterViewModel.swift in Sources */,
 				9CEB709B2A2DF37E0092B320 /* RegisterRoute.swift in Sources */,
 			);

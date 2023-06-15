@@ -30,17 +30,30 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         .spacing(1)
         .build()
     
-    private let commentView = RecipeDetailCommentAndLikeView()
-    private let likeView = RecipeDetailCommentAndLikeView()
+    private let commentCountView = RecipeDetailCommentAndLikeView()
+    private let likeCountView = RecipeDetailCommentAndLikeView()
     
     private let userView = UserView()
+    
+    private let ingredientsView = RecipeDetailInfoView()
+    private let instructionsView = RecipeDetailInfoView()
+    
+    private let commentView = RecipeDetailCommentView()
+    
+    private let buttonContainerView = UIView()
+    
+    private let commentButton = UIButtonBuilder()
+        .titleFont(.font(.nunitoBold, size: .xxLarge))
+        .titleColor(.appWhite)
+        .backgroundColor(.appRed)
+        .build()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
         configureContent()
         setLocalize()
-        viewModel.getRecipeDetail()
+        viewModel.getData()
         subscribeViewModel()
     }
 }
@@ -63,14 +76,30 @@ extension RecipeDetailViewController {
         contentStackView.addArrangedSubview(seperator)
         
         contentStackView.addArrangedSubview(commentAndLikeStackView)
-        commentAndLikeStackView.addArrangedSubview(commentView)
+        commentAndLikeStackView.addArrangedSubview(commentCountView)
         commentAndLikeStackView.addArrangedSubview(seperator)
-        commentAndLikeStackView.addArrangedSubview(likeView)
+        commentAndLikeStackView.addArrangedSubview(likeCountView)
         
         contentStackView.setCustomSpacing(19, after: commentAndLikeStackView)
         contentStackView.addArrangedSubview(userView)
         userView.height(65)
         contentStackView.setCustomSpacing(20, after: userView)
+        
+        contentStackView.addArrangedSubview(ingredientsView)
+        contentStackView.setCustomSpacing(20, after: ingredientsView)
+        contentStackView.addArrangedSubview(instructionsView)
+        contentStackView.setCustomSpacing(20, after: instructionsView)
+        
+        contentStackView.addArrangedSubview(commentView)
+        contentStackView.setCustomSpacing(20, after: commentView)
+        
+        contentStackView.addArrangedSubview(buttonContainerView)
+        buttonContainerView.topToBottom(of: commentView).constant = 20
+        buttonContainerView.edgesToSuperview(excluding: .top)
+        
+        buttonContainerView.addSubview(commentButton)
+        commentButton.edgesToSuperview(insets: .init(top: 0, left: 20, bottom: 0, right: 20))
+        commentButton.height(50)
     }
 }
 
@@ -79,6 +108,7 @@ extension RecipeDetailViewController {
     
     private func configureContent() {
         view.backgroundColor = .appSecondaryBackground
+        subscribeLikeButton()
     }
     
     private func setItem() {
@@ -87,11 +117,15 @@ extension RecipeDetailViewController {
         recipeDetailTitlesView.recipeName = viewModel.recipeTitle
         recipeDetailTitlesView.recipeCategory = viewModel.recipeCategory
         recipeDetailTitlesView.differece = viewModel.difference
-        commentView.number = viewModel.commentCount
-        likeView.number = viewModel.likeCount
+        commentCountView.number = viewModel.commentCount
+        likeCountView.number = viewModel.likeCount
         userView.userImageURL = viewModel.userImageURL
         userView.userNameAndSurname = viewModel.userNameAndSurname
         userView.recipeAndFollower = viewModel.recipeAndFollower
+        ingredientsView.iconText = viewModel.numberOfPerson
+        ingredientsView.infoText = viewModel.ingredients
+        instructionsView.iconText = viewModel.difference
+        instructionsView.infoText = viewModel.directions
     }
 }
 
@@ -100,10 +134,26 @@ extension RecipeDetailViewController {
     
     private func setLocalize() {
         navigationController?.navigationBar.topItem?.backButtonTitle = L10n.NavigationController.backButtonTitle
-        commentView.iconOfButton = .icComment
-        commentView.info = L10n.RecipeDetail.commentViewInfo
-        likeView.iconOfButton = .icHeart
-        likeView.info = L10n.RecipeDetail.likeViewInfo
+        commentCountView.iconOfButton = .icComment
+        commentCountView.info = L10n.RecipeDetail.commentViewInfo
+        likeCountView.iconOfButton = .icHeart
+        likeCountView.info = L10n.RecipeDetail.likeViewInfo
+        ingredientsView.title = L10n.RecipeDetailInfo.materials
+        ingredientsView.iconOfButton = .icRestaurant
+        instructionsView.title = L10n.RecipeDetailInfo.instructions
+        instructionsView.iconOfButton = .icClock
+        commentButton.setTitle(L10n.RecipeDetailComment.buttonTitle, for: .normal)
+    }
+}
+
+// MARK: - Actions
+extension RecipeDetailViewController {
+    
+    private func subscribeLikeButton() {
+        likeCountView.buttonTapped = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.likeButtonTapped()
+        }
     }
 }
 
@@ -115,6 +165,7 @@ extension RecipeDetailViewController {
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.setItem()
+                self.commentView.recipeCommentData = self.viewModel.commentCellıtems
             }
         }
     }

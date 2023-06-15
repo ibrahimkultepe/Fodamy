@@ -45,6 +45,15 @@ public enum L10n {
     public static let titleLabel = L10n.tr("Modules", "Login.titleLabel")
   }
 
+  public enum LoginWarning {
+    /// Vazgeç
+    public static let giveUpButton = L10n.tr("Modules", "LoginWarning.giveUpButton")
+    /// Giriş Yap
+    public static let loginButton = L10n.tr("Modules", "LoginWarning.loginButton")
+    /// Giriş yapmanız gereklidir.
+    public static let warningLabel = L10n.tr("Modules", "LoginWarning.warningLabel")
+  }
+
   public enum NavigationController {
     /// Geri
     public static let backButtonTitle = L10n.tr("Modules", "NavigationController.backButtonTitle")
@@ -55,6 +64,20 @@ public enum L10n {
     public static let commentViewInfo = L10n.tr("Modules", "RecipeDetail.CommentViewInfo")
     /// Beğeni
     public static let likeViewInfo = L10n.tr("Modules", "RecipeDetail.LikeViewInfo")
+  }
+
+  public enum RecipeDetailComment {
+    /// Yorum Ekle
+    public static let buttonTitle = L10n.tr("Modules", "RecipeDetailComment.buttonTitle")
+    /// Yorumlar
+    public static let title = L10n.tr("Modules", "RecipeDetailComment.title")
+  }
+
+  public enum RecipeDetailInfo {
+    /// Yapılışı
+    public static let instructions = L10n.tr("Modules", "RecipeDetailInfo.instructions")
+    /// Malzemeler
+    public static let materials = L10n.tr("Modules", "RecipeDetailInfo.materials")
   }
 
   public enum Register {
