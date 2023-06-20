@@ -9,7 +9,7 @@ import UIKit
 
 final class LoginViewController: BaseViewController<LoginViewModel> {
     
-    private let vectorButton = UIButtonBuilder()
+    private let dismissButton = UIButtonBuilder()
         .image(.imgVector)
         .tintColor(.appCinder)
         .backgroundImage(.imgVector2)
@@ -70,13 +70,13 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
 extension LoginViewController {
     
     private func addSubviews() {
-        view.addSubview(vectorButton)
-        vectorButton.edgesToSuperview(excluding: [.left, .bottom], insets: .init(top: 20.75, left: 0, bottom: 0, right: 20.75), usingSafeArea: true)
-        vectorButton.height(22.5)
-        vectorButton.width(22.5)
+        view.addSubview(dismissButton)
+        dismissButton.edgesToSuperview(excluding: [.left, .bottom], insets: .init(top: 20.75, left: 0, bottom: 0, right: 20.75), usingSafeArea: true)
+        dismissButton.height(22.5)
+        dismissButton.width(22.5)
         
         view.addSubview(titleLabel)
-        titleLabel.topToBottom(of: vectorButton).constant = 75.75
+        titleLabel.topToBottom(of: dismissButton).constant = 75.75
         titleLabel.edgesToSuperview(excluding: [.top, .bottom], insets: .init(top: 44, left: 0, bottom: 0, right: 0), usingSafeArea: true)
         titleLabel.height(22)
         
@@ -112,7 +112,7 @@ extension LoginViewController {
     private func configureContent() {
         signUpButton.addTarget(self, action: #selector(signUpButtonAction), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
-        vectorButton.addTarget(self, action: #selector(vectorButtonAction), for: .touchUpInside)
+        dismissButton.addTarget(self, action: #selector(vectorButtonAction), for: .touchUpInside)
         forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonAction), for: .touchUpInside)
         passwordTextField.isSecureTextEntry = true
         userNameTextField.iconImage = .icUser
@@ -144,6 +144,9 @@ extension LoginViewController {
             let userName = userNameTextField.text,
             let password = passwordTextField.text
         else { return }
+        
+        guard validation.isValidName(userName) else { return }
+        guard validation.isValidPassword(password) else { return }
         
         viewModel.loginRequest(userName: userName, password: password)
     }
