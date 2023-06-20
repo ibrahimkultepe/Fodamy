@@ -25,9 +25,12 @@
 		9C53A11D2A112F1A008C0CC3 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A11C2A112F1A008C0CC3 /* Image.swift */; };
 		9C69FB9E29B14864000D17C3 /* DataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C69FB9D29B14864000D17C3 /* DataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C8462C62A385CDE00ECB614 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8462C52A385CDE00ECB614 /* RegisterRequest.swift */; };
+		9C91EEAF2A40731B0026D58C /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C91EEAE2A40731B0026D58C /* Auth.swift */; };
 		9CAF3CF62A0BE4890058553E /* RecipeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF3CF52A0BE4890058553E /* RecipeRequest.swift */; };
 		9CB1D0F92A2F5A4300A7806B /* RecipeComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1D0F82A2F5A4300A7806B /* RecipeComment.swift */; };
 		9CB1D0FB2A2F5F5F00A7806B /* GetRecipeCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1D0FA2A2F5F5F00A7806B /* GetRecipeCommentRequest.swift */; };
+		9CB973C62A3C4AC300C592FF /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB973C52A3C4AC300C592FF /* LoginRequest.swift */; };
+		9CCB229B2A3D1B1700F87B2B /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB229A2A3D1B1700F87B2B /* ForgotPasswordRequest.swift */; };
 		9CE355902A1387300054580E /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE3558F2A1387300054580E /* Pagination.swift */; };
 		9CEB708C2A2DDB890092B320 /* NumberOfPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB708B2A2DDB890092B320 /* NumberOfPerson.swift */; };
 		9CF786712A1CC30300FC4A61 /* FavoritesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF786702A1CC30300FC4A61 /* FavoritesRequest.swift */; };
@@ -54,9 +57,12 @@
 		9C69FB9A29B14864000D17C3 /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C69FB9D29B14864000D17C3 /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
 		9C8462C52A385CDE00ECB614 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		9C91EEAE2A40731B0026D58C /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		9CAF3CF52A0BE4890058553E /* RecipeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRequest.swift; sourceTree = "<group>"; };
 		9CB1D0F82A2F5A4300A7806B /* RecipeComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeComment.swift; sourceTree = "<group>"; };
 		9CB1D0FA2A2F5F5F00A7806B /* GetRecipeCommentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipeCommentRequest.swift; sourceTree = "<group>"; };
+		9CB973C52A3C4AC300C592FF /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		9CCB229A2A3D1B1700F87B2B /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
 		9CE3558F2A1387300054580E /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		9CEB708B2A2DDB890092B320 /* NumberOfPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfPerson.swift; sourceTree = "<group>"; };
 		9CF786702A1CC30300FC4A61 /* FavoritesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRequest.swift; sourceTree = "<group>"; };
@@ -132,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				9C8462C52A385CDE00ECB614 /* RegisterRequest.swift */,
+				9CB973C52A3C4AC300C592FF /* LoginRequest.swift */,
+				9CCB229A2A3D1B1700F87B2B /* ForgotPasswordRequest.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 				9C4AA6F42A24A24500F7D76F /* RecipeDetail.swift */,
 				9CEB708B2A2DDB890092B320 /* NumberOfPerson.swift */,
 				9CB1D0F82A2F5A4300A7806B /* RecipeComment.swift */,
+				9C91EEAE2A40731B0026D58C /* Auth.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -292,10 +301,12 @@
 				9C37541E29B2719E0037EE08 /* APIDecodableResponseRequest.swift in Sources */,
 				9CE355902A1387300054580E /* Pagination.swift in Sources */,
 				9C8462C62A385CDE00ECB614 /* RegisterRequest.swift in Sources */,
+				9C91EEAF2A40731B0026D58C /* Auth.swift in Sources */,
 				9C53A11D2A112F1A008C0CC3 /* Image.swift in Sources */,
 				9CB1D0FB2A2F5F5F00A7806B /* GetRecipeCommentRequest.swift in Sources */,
 				9CB1D0F92A2F5A4300A7806B /* RecipeComment.swift in Sources */,
 				9CEB708C2A2DDB890092B320 /* NumberOfPerson.swift in Sources */,
+				9CB973C62A3C4AC300C592FF /* LoginRequest.swift in Sources */,
 				9CF786712A1CC30300FC4A61 /* FavoritesRequest.swift in Sources */,
 				9C37541D29B2719E0037EE08 /* RequestEncoding.swift in Sources */,
 				9C1763612A0CD1B4001175B5 /* Recipe.swift in Sources */,
@@ -305,6 +316,7 @@
 				9C1763652A0CD550001175B5 /* RecipeCategory.swift in Sources */,
 				9C1763632A0CD522001175B5 /* User.swift in Sources */,
 				9C17635F2A0CC548001175B5 /* RecipeData.swift in Sources */,
+				9CCB229B2A3D1B1700F87B2B /* ForgotPasswordRequest.swift in Sources */,
 				9C4AA6F32A2499D100F7D76F /* GetRecipeDetailRequest.swift in Sources */,
 				9C399FC62A1D203A00662B37 /* MainCategory.swift in Sources */,
 				9C37541A29B2719E0037EE08 /* Typealias.swift in Sources */,

@@ -7,7 +7,7 @@
 
 public struct RegisterRequest: APIDecodableResponseRequest {
 
-    public typealias ResponseType = User
+    public typealias ResponseType = Auth
 
     public let path: String = "auth/register"
     public let method: RequestMethod = .post

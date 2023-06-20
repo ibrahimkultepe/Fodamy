@@ -112,6 +112,6 @@ extension LoginWarningViewController {
     
     @objc
     private func loginButtonAction() {
-        
+        viewModel.loginButtonAction()
     }
 }
