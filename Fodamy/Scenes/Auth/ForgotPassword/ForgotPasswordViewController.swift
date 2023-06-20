@@ -44,12 +44,12 @@ extension ForgotPasswordViewController {
     
     private func addSubviews() {
         view.addSubview(titleLabel)
-        titleLabel.edgesToSuperview(excluding: .bottom, insets: .init(top: 44, left: 0, bottom: 0, right: 0), usingSafeArea: true)
+        titleLabel.edgesToSuperview(excluding: .bottom, insets: .top(44), usingSafeArea: true)
         titleLabel.height(22)
         
         view.addSubview(stackView)
         stackView.topToBottom(of: titleLabel).constant = 32
-        stackView.edgesToSuperview(excluding: [.top, .bottom], insets: .init(top: 0, left: 20, bottom: 0, right: 20))
+        stackView.edgesToSuperview(excluding: [.top, .bottom], insets: .left(20) + .right(20))
         stackView.addArrangedSubview(emailTextField)
         stackView.addArrangedSubview(resetPasswordButton)
         resetPasswordButton.height(58)
@@ -65,11 +65,11 @@ extension ForgotPasswordViewController {
         emailTextField.autocapitalizationType = .none
     }
     
-    private func showAlert() {
+    private func showSuccessAlertController() {
         let alertController = UIAlertController(title: L10n.ForgotPassword.alertControllerTitle, message: L10n.ForgotPassword.alertControllerMesssage, preferredStyle: .alert)
         
-        let acceptAction = UIAlertAction(title: L10n.ForgotPassword.alertControllerAcceptAction, style: .default) { (_) in
-            self.viewModel.dismissVC()
+        let acceptAction = UIAlertAction(title: L10n.ForgotPassword.alertControllerAcceptAction, style: .default) { [weak self] _ in
+            self?.viewModel.dismissVC()
           }
         
         alertController.addAction(acceptAction)
@@ -106,7 +106,7 @@ extension ForgotPasswordViewController {
         viewModel.didSuccessPasswordReset = { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.async {
-                self.showAlert()
+                self.showSuccessAlertController()
             }
         }
     }

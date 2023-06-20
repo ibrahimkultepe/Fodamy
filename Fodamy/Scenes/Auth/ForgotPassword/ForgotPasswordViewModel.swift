@@ -24,15 +24,15 @@ final class ForgotPasswordViewModel: BaseViewModel<ForgotPasswordRouter>, Forgot
 extension ForgotPasswordViewModel {
     
     func forgotPasswordRequest(email: String) {
-        self.showActivityIndicatorView?()
+        showLoading?()
         let request = ForgotPasswordRequest(email: email)
         dataProvider.request(for: request) { [weak self] result in
             guard let self = self else { return }
-            self.hideActivityIndicatorView?()
+            self.hideLoading?()
             switch result {
-            case .success(_):
+            case .success:
                 self.didSuccessPasswordReset?()
-            case .failure(let error ):
+            case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }
         }
