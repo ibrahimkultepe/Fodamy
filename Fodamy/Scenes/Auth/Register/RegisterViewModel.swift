@@ -32,10 +32,9 @@ extension RegisterViewModel {
             guard let self = self else { return }
             self.hideActivityIndicatorView?()
             switch result {
-            case .success(let response):
-                self.showLoginVC()
+            case .success:
                 self.showAlert?()
-            case .failure(let error ):
+            case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }
         }
