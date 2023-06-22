@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		824F82F5E135FDD097F982E9 /* Pods_DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BDCCE912483998421CE261 /* Pods_DataProvider.framework */; };
+		9C052CDB2A4455A3009B2CB2 /* RecipeLikeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C052CDA2A4455A3009B2CB2 /* RecipeLikeRequest.swift */; };
 		9C17635F2A0CC548001175B5 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C17635E2A0CC548001175B5 /* RecipeData.swift */; };
 		9C1763612A0CD1B4001175B5 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1763602A0CD1B4001175B5 /* Recipe.swift */; };
 		9C1763632A0CD522001175B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1763622A0CD522001175B5 /* User.swift */; };
@@ -23,6 +24,8 @@
 		9C4AA6F32A2499D100F7D76F /* GetRecipeDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4AA6F22A2499D100F7D76F /* GetRecipeDetailRequest.swift */; };
 		9C4AA6F52A24A24500F7D76F /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4AA6F42A24A24500F7D76F /* RecipeDetail.swift */; };
 		9C53A11D2A112F1A008C0CC3 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A11C2A112F1A008C0CC3 /* Image.swift */; };
+		9C654A272A43201C005BD78F /* UserFollowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C654A262A43201C005BD78F /* UserFollowRequest.swift */; };
+		9C654A292A432487005BD78F /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C654A282A432487005BD78F /* SuccessResponse.swift */; };
 		9C69FB9E29B14864000D17C3 /* DataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C69FB9D29B14864000D17C3 /* DataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C8462C62A385CDE00ECB614 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8462C52A385CDE00ECB614 /* RegisterRequest.swift */; };
 		9C91EEAF2A40731B0026D58C /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C91EEAE2A40731B0026D58C /* Auth.swift */; };
@@ -39,6 +42,7 @@
 /* Begin PBXFileReference section */
 		09BDCCE912483998421CE261 /* Pods_DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E2ABB28ACF734279305E94 /* Pods-DataProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.debug.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.debug.xcconfig"; sourceTree = "<group>"; };
+		9C052CDA2A4455A3009B2CB2 /* RecipeLikeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeLikeRequest.swift; sourceTree = "<group>"; };
 		9C17635E2A0CC548001175B5 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
 		9C1763602A0CD1B4001175B5 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		9C1763622A0CD522001175B5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 		9C4AA6F22A2499D100F7D76F /* GetRecipeDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipeDetailRequest.swift; sourceTree = "<group>"; };
 		9C4AA6F42A24A24500F7D76F /* RecipeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
 		9C53A11C2A112F1A008C0CC3 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		9C654A262A43201C005BD78F /* UserFollowRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowRequest.swift; sourceTree = "<group>"; };
+		9C654A282A432487005BD78F /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
 		9C69FB9A29B14864000D17C3 /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C69FB9D29B14864000D17C3 /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
 		9C8462C52A385CDE00ECB614 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
@@ -105,6 +111,14 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		9C654A252A432001005BD78F /* User */ = {
+			isa = PBXGroup;
+			children = (
+				9C654A262A43201C005BD78F /* UserFollowRequest.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		9C69FB9029B14864000D17C3 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +161,7 @@
 		9CAF3CF32A0BE36F0058553E /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				9C654A252A432001005BD78F /* User */,
 				9C8462C42A385CCC00ECB614 /* Auth */,
 				9CAF3CF42A0BE37D0058553E /* Recipe */,
 				9CB1D0FA2A2F5F5F00A7806B /* GetRecipeCommentRequest.swift */,
@@ -160,6 +175,7 @@
 				9CAF3CF52A0BE4890058553E /* RecipeRequest.swift */,
 				9CF786702A1CC30300FC4A61 /* FavoritesRequest.swift */,
 				9C4AA6F22A2499D100F7D76F /* GetRecipeDetailRequest.swift */,
+				9C052CDA2A4455A3009B2CB2 /* RecipeLikeRequest.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -178,6 +194,7 @@
 				9CEB708B2A2DDB890092B320 /* NumberOfPerson.swift */,
 				9CB1D0F82A2F5A4300A7806B /* RecipeComment.swift */,
 				9C91EEAE2A40731B0026D58C /* Auth.swift */,
+				9C654A282A432487005BD78F /* SuccessResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,7 +313,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C052CDB2A4455A3009B2CB2 /* RecipeLikeRequest.swift in Sources */,
 				9CAF3CF62A0BE4890058553E /* RecipeRequest.swift in Sources */,
+				9C654A292A432487005BD78F /* SuccessResponse.swift in Sources */,
 				9C37541C29B2719E0037EE08 /* RequestMethod.swift in Sources */,
 				9C37541E29B2719E0037EE08 /* APIDecodableResponseRequest.swift in Sources */,
 				9CE355902A1387300054580E /* Pagination.swift in Sources */,
@@ -309,6 +328,7 @@
 				9CB973C62A3C4AC300C592FF /* LoginRequest.swift in Sources */,
 				9CF786712A1CC30300FC4A61 /* FavoritesRequest.swift in Sources */,
 				9C37541D29B2719E0037EE08 /* RequestEncoding.swift in Sources */,
+				9C654A272A43201C005BD78F /* UserFollowRequest.swift in Sources */,
 				9C1763612A0CD1B4001175B5 /* Recipe.swift in Sources */,
 				9C37541F29B2719E0037EE08 /* DataProviderProtocol.swift in Sources */,
 				9C37541B29B2719E0037EE08 /* RequestProtocol.swift in Sources */,

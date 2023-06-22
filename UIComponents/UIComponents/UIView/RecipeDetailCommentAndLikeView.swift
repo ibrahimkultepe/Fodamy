@@ -50,6 +50,12 @@ public class RecipeDetailCommentAndLikeView: UIView {
         }
     }
     
+    public var iconColor: UIColor? {
+        didSet {
+            iconButton.tintColor = iconColor
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubviews()

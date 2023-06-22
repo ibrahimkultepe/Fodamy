@@ -29,9 +29,21 @@ public class UserView: UIView {
         .font(.font(.nunitoSemiBold, size: .large))
         .build()
     
+    private let followButton = UIButtonBuilder()
+        .cornerRadius(6)
+        .clipsToBounds(true)
+        .borderColor(UIColor.appRed.cgColor)
+        .borderWidth(1)
+        .titleFont(.font(.nunitoSemiBold, size: .medium))
+        .build()
+    
     public var userImageURL: String? {
         didSet {
-            userImageView.setImage(userImageURL)
+            if let url = userImageURL, !url.isEmpty {
+                userImageView.setImage(url)
+            } else {
+                userImageView.image = .icUser
+            }
         }
     }
     
@@ -47,9 +59,26 @@ public class UserView: UIView {
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    public var isFollowing = false {
+        didSet {
+            updateFollowButton()
+        }
+    }
+    
+    public var followButtonTapped: VoidClosure?
+    
+    private let followButtonStatus: FollowButtonStatus
+    
+    public enum FollowButtonStatus {
+        case visible
+        case hidden
+    }
+    
+    public init(followButtonStatus: FollowButtonStatus) {
+        self.followButtonStatus = followButtonStatus
+        super.init(frame: .zero)
         addSubviews()
+        configureContent()
     }
     
     required init?(coder: NSCoder) {
@@ -72,8 +101,48 @@ extension UserView {
         addSubview(nameAndSurnameStackView)
         nameAndSurnameStackView.leadingToTrailing(of: userImageView).constant = 12
         nameAndSurnameStackView.centerYToSuperview()
-        nameAndSurnameStackView.trailingToSuperview()
         nameAndSurnameStackView.addArrangedSubview(userNameAndSurnameLabel)
         nameAndSurnameStackView.addArrangedSubview(recipeAndFollowerLabel)
+        
+        switch followButtonStatus {
+        case .visible:
+            addSubview(followButton)
+            followButton.leadingToTrailing(of: nameAndSurnameStackView).constant = 16
+            followButton.centerYToSuperview()
+            followButton.trailingToSuperview().constant = -20
+            followButton.size(.init(width: 91, height: 26))
+            updateFollowButton()
+        case .hidden:
+            nameAndSurnameStackView.trailingToSuperview()
+        }
+    }
+}
+
+// MARK: - Configure
+extension UserView {
+    
+    private func configureContent() {
+        followButton.addTarget(self, action: #selector(followButtonAction), for: .touchUpInside)
+    }
+    
+    private func updateFollowButton() {
+        if isFollowing {
+            followButton.setTitle(L10n.UserView.following, for: .normal)
+            followButton.setTitleColor(.white, for: .normal)
+            followButton.backgroundColor = .appRed
+        } else {
+            followButton.setTitle(L10n.UserView.notFollowing, for: .normal)
+            followButton.setTitleColor(.appRed, for: .normal)
+            followButton.backgroundColor = .appWhite
+        }
+    }
+}
+
+// MARK: - Actions
+extension UserView {
+    
+    @objc
+    private func followButtonAction() {
+        followButtonTapped?()
     }
 }

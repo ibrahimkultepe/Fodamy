@@ -5,7 +5,7 @@
 //  Created by İbrahim Kültepe on 26.05.2023.
 //
 
-import Foundation
+import KeychainSwift
 
 protocol RecipeDetailViewDataSource {}
 
@@ -27,15 +27,30 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var numberOfPerson: String?
     var ingredients: String?
     var directions: String?
+    var recipeCount: Int?
+    var isFollowing = false
+    var followUserId: Int?
+    var isLiked = false
     
     var getDataDidSuccess: VoidClosure?
-    
+    var followingStatus: VoidClosure?
+    var likedStatus: VoidClosure?
+    var unfollowShowAlert: VoidClosure?
+
     var recipeImageCellItems = [RecipeDetailCellModelProtocol]()
     var commentCellıtems = [CommentCellModelProtocol]()
     
+    var userFollowedCount: Int? {
+        didSet {
+            recipeAndFollower = "\(recipeCount ?? 0) Tarif \(userFollowedCount ?? 0) Takipçi"
+        }
+    }
+        
     private let dispatchGroup = DispatchGroup()
     private var isGetRecipeDetailSuccess = false
     private var isGetRecipeCommentSuccess = false
+    
+    private let keychain = KeychainSwift()
     
     override func tryAgainButtonTapped() {
         self.hideTryAgainButton?()
@@ -53,11 +68,16 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
         likeCount = recipeDetail.likeCount
         commentCount = recipeDetail.commentCount
         userImageURL = recipeDetail.user.image?.url
+        recipeCount = recipeDetail.user.recipeCount
+        userFollowedCount = recipeDetail.user.followedCount
         userNameAndSurname = "\(recipeDetail.user.name ?? "") \(recipeDetail.user.surname ?? "")"
-        recipeAndFollower = "\(recipeDetail.user.recipeCount) Tarif \(recipeDetail.user.followedCount) Takipçi"
+        recipeAndFollower = "\(recipeCount ?? 0) Tarif \(userFollowedCount ?? 0) Takipçi"
         numberOfPerson = recipeDetail.numberOfPerson.text
         ingredients = recipeDetail.ingredients
         directions = recipeDetail.directions
+        isFollowing = recipeDetail.user.isFollowing
+        followUserId = recipeDetail.user.id
+        isLiked = recipeDetail.isLiked
     }
     
     init(recipeId: Int, router: RecipeDetailRouter) {
@@ -70,7 +90,29 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
 extension RecipeDetailViewModel {
     
     func likeButtonTapped() {
-        router.pushLoginWarning()
+        guard keychain.get(Keychain.token) != nil else {
+            router.presentLogin()
+            return
+        }
+        switch isLiked {
+        case true:
+            self.recipeLikeRequest(likeType: .unlike)
+        case false:
+            self.recipeLikeRequest(likeType: .like)
+        }
+    }
+    
+    func followButtonTapped() {
+        guard keychain.get(Keychain.token) != nil else {
+            router.presentLogin()
+            return
+        }
+        switch isFollowing {
+        case true:
+            self.unfollowShowAlert?()
+        case false:
+            self.userFollowRequest(followType: .follow)
+        }
     }
 }
 
@@ -106,6 +148,36 @@ extension RecipeDetailViewModel {
                 self.isGetRecipeCommentSuccess = true
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
+            }
+        }
+    }
+    
+     func userFollowRequest(followType: UserFollowRequest.FollowStatus) {
+        guard let followUserId = followUserId else { return }
+        followingStatus?()
+        let request = UserFollowRequest(followUserId: followUserId, followStatus: followType)
+        dataProvider.request(for: request) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+     private func recipeLikeRequest(likeType: RecipeLikeRequest.LikeType) {
+        let recipeId = self.recipeId
+        likedStatus?()
+        let request = RecipeLikeRequest(recipeId: recipeId, likeType: likeType)
+        dataProvider.request(for: request) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

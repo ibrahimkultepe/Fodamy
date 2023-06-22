@@ -11,7 +11,7 @@ public class CommentCell: UICollectionViewCell, ReusableView {
     
     weak var viewModel: CommentCellModelProtocol?
     
-    private let userView = UserView()
+    private let userView = UserView(followButtonStatus: .hidden)
     
     private let stackView = UIStackViewBuilder()
         .axis(.vertical)
