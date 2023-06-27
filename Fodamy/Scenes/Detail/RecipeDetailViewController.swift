@@ -135,13 +135,8 @@ extension RecipeDetailViewController {
         
         let unfollowAction = UIAlertAction(title: L10n.RecipeDetail.unfollowAction, style: .destructive) { [weak self] _ in
             self?.viewModel.userFollowRequest(followType: .unfollow)
-            self?.viewModel.userFollowedCount? -= 1
-            self?.viewModel.isFollowing = false
-            self?.userView.isFollowing = false
-            self?.userView.recipeAndFollower = self?.viewModel.recipeAndFollower
         }
-        let cancelAction = UIAlertAction(title: L10n.RecipeDetail.cancelAction, style: .cancel) { [weak self] _ in
-        }
+        let cancelAction = UIAlertAction(title: L10n.RecipeDetail.cancelAction, style: .cancel)
         
         alertController.addAction(unfollowAction)
         alertController.addAction(cancelAction)
@@ -199,7 +194,11 @@ extension RecipeDetailViewController {
         viewModel.followingStatus = { [weak self] in
             guard let self = self else { return }
             let isFollowing = self.viewModel.isFollowing
-            if !isFollowing {
+            if isFollowing {
+                self.viewModel.userFollowedCount? -= 1
+                self.viewModel.isFollowing = false
+                self.userView.isFollowing = false
+            } else {
                 self.viewModel.userFollowedCount? += 1
                 self.viewModel.isFollowing = true
                 self.userView.isFollowing = true

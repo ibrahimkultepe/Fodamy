@@ -154,30 +154,36 @@ extension RecipeDetailViewModel {
     
      func userFollowRequest(followType: UserFollowRequest.FollowStatus) {
         guard let followUserId = followUserId else { return }
-        followingStatus?()
+         showLoading?()
         let request = UserFollowRequest(followUserId: followUserId, followStatus: followType)
         dataProvider.request(for: request) { [weak self] (result) in
             guard let self = self else { return }
+            self.hideLoading?()
             switch result {
             case .success(let response):
                 print(response)
+                self.followingStatus?()
             case .failure(let error):
                 print(error.localizedDescription)
+                self.showWarningToast?(error.localizedDescription)
             }
         }
     }
     
      private func recipeLikeRequest(likeType: RecipeLikeRequest.LikeType) {
+         showLoading?()
         let recipeId = self.recipeId
-        likedStatus?()
         let request = RecipeLikeRequest(recipeId: recipeId, likeType: likeType)
         dataProvider.request(for: request) { [weak self] (result) in
             guard let self = self else { return }
+            self.hideLoading?()
             switch result {
             case .success(let response):
                 print(response)
+                self.likedStatus?()
             case .failure(let error):
                 print(error.localizedDescription)
+                self.showWarningToast?(error.localizedDescription)
             }
         }
     }
