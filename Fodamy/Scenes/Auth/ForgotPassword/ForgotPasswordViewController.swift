@@ -67,7 +67,6 @@ extension ForgotPasswordViewController {
     
     private func showSuccessAlertController() {
         let alertController = UIAlertController(title: L10n.ForgotPassword.alertControllerTitle, message: L10n.ForgotPassword.alertControllerMesssage, preferredStyle: .alert)
-        
         let acceptAction = UIAlertAction(title: L10n.ForgotPassword.alertControllerAcceptAction, style: .default) { [weak self] _ in
             self?.viewModel.dismissVC()
           }

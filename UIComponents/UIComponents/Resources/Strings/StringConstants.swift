@@ -21,6 +21,21 @@ public enum L10n {
     public static let seeAllButton = L10n.tr("Modules", "FavoritesCollectionViewCell.seeAllButton")
   }
 
+  public enum ForgotPassword {
+    /// Tamam
+    public static let alertControllerAcceptAction = L10n.tr("Modules", "ForgotPassword.alertControllerAcceptAction")
+    /// E-mailinizi kontrol edip, paralonızı değiştirebilirsiniz.
+    public static let alertControllerMesssage = L10n.tr("Modules", "ForgotPassword.alertControllerMesssage")
+    /// Parolanız Sıfırlandı.
+    public static let alertControllerTitle = L10n.tr("Modules", "ForgotPassword.alertControllerTitle")
+    /// E-mail Adresi
+    public static let emailTextField = L10n.tr("Modules", "ForgotPassword.emailTextField")
+    /// Parolayı Sıfırla
+    public static let forgotPasswordButton = L10n.tr("Modules", "ForgotPassword.forgotPasswordButton")
+    /// Parolanızı Sıfırlayın
+    public static let titleLabel = L10n.tr("Modules", "ForgotPassword.titleLabel")
+  }
+
   public enum Home {
     /// EDİTÖR SEÇİMİ
     public static let segmentedControl0 = L10n.tr("Modules", "Home.segmentedControl0")
@@ -31,8 +46,6 @@ public enum L10n {
   public enum Login {
     /// Hesabın mı yok? 
     public static let bottomLabel = L10n.tr("Modules", "Login.bottomLabel")
-    /// E-mail Adresi
-    public static let emailTextField = L10n.tr("Modules", "Login.emailTextField")
     /// Şifrenizi mi unuttunuz ?
     public static let forgotPasswordButton = L10n.tr("Modules", "Login.forgotPasswordButton")
     /// Giriş yap
@@ -43,6 +56,8 @@ public enum L10n {
     public static let signUpButton = L10n.tr("Modules", "Login.signUpButton")
     /// Giriş Yap
     public static let titleLabel = L10n.tr("Modules", "Login.titleLabel")
+    /// Kullanıcı Adı
+    public static let userNameTextField = L10n.tr("Modules", "Login.userNameTextField")
   }
 
   public enum LoginWarning {
@@ -60,10 +75,14 @@ public enum L10n {
   }
 
   public enum RecipeDetail {
+    /// İptal
+    public static let cancelAction = L10n.tr("Modules", "RecipeDetail.cancelAction")
     /// Yorum
     public static let commentViewInfo = L10n.tr("Modules", "RecipeDetail.CommentViewInfo")
     /// Beğeni
     public static let likeViewInfo = L10n.tr("Modules", "RecipeDetail.LikeViewInfo")
+    /// Takibi Bırak
+    public static let unfollowAction = L10n.tr("Modules", "RecipeDetail.unfollowAction")
   }
 
   public enum RecipeDetailComment {
@@ -106,6 +125,13 @@ public enum L10n {
   public enum UserDefaultsKeys {
     /// WalkthroughFinished
     public static let didFinishWalkthrough = L10n.tr("Modules", "UserDefaultsKeys.didFinishWalkthrough")
+  }
+
+  public enum UserView {
+    /// Takip Ediliyor
+    public static let following = L10n.tr("Modules", "UserView.following")
+    /// Takip et
+    public static let notFollowing = L10n.tr("Modules", "UserView.notFollowing")
   }
 
   public enum Validation {

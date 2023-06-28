@@ -25,7 +25,7 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
         router.pushForgotPassword()
     }
     
-    func vectorButtonTapped() {
+    func dismissButtonTapped() {
         router.close()
     }
 }

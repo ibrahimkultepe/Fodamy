@@ -11,7 +11,7 @@ public class RecipesCollectionViewCell: UICollectionViewCell, ReusableView {
     
     weak var viewModel: RecipeCellModelProtocol?
     
-    private let userView = UserView()
+    private let userView = UserView(followButtonStatus: .hidden)
     
     private let recipesTitleView = UIView()
     private let recipesTitlesStackView = UIStackViewBuilder()

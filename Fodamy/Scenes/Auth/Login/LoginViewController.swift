@@ -163,6 +163,6 @@ extension LoginViewController {
     
     @objc
     private func vectorButtonAction() {
-        viewModel.vectorButtonTapped()
+        viewModel.dismissButtonTapped()
     }
 }

@@ -33,7 +33,7 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     private let commentCountView = RecipeDetailCommentAndLikeView()
     private let likeCountView = RecipeDetailCommentAndLikeView()
     
-    private let userView = UserView()
+    private let userView = UserView(followButtonStatus: .visible)
     
     private let ingredientsView = RecipeDetailInfoView()
     private let instructionsView = RecipeDetailInfoView()
@@ -109,6 +109,7 @@ extension RecipeDetailViewController {
     private func configureContent() {
         view.backgroundColor = .appSecondaryBackground
         subscribeLikeButton()
+        subscribeFollowButton()
     }
     
     private func setItem() {
@@ -126,6 +127,20 @@ extension RecipeDetailViewController {
         ingredientsView.infoText = viewModel.ingredients
         instructionsView.iconText = viewModel.difference
         instructionsView.infoText = viewModel.directions
+        userView.isFollowing = viewModel.isFollowing
+    }
+    
+    private func unfollowShowAlert() {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let unfollowAction = UIAlertAction(title: L10n.RecipeDetail.unfollowAction, style: .destructive) { [weak self] _ in
+            self?.viewModel.userFollowRequest(followType: .unfollow)
+        }
+        let cancelAction = UIAlertAction(title: L10n.RecipeDetail.cancelAction, style: .cancel)
+        
+        alertController.addAction(unfollowAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -155,6 +170,13 @@ extension RecipeDetailViewController {
             self.viewModel.likeButtonTapped()
         }
     }
+    
+    private func subscribeFollowButton() {
+        userView.followButtonTapped = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.followButtonTapped()
+        }
+    }
 }
 
 // MARK: - SubscribeViewModel
@@ -167,6 +189,43 @@ extension RecipeDetailViewController {
                 self.setItem()
                 self.commentView.recipeCommentData = self.viewModel.commentCellıtems
             }
+        }
+        
+        viewModel.followingStatus = { [weak self] in
+            guard let self = self else { return }
+            let isFollowing = self.viewModel.isFollowing
+            if isFollowing {
+                self.viewModel.userFollowedCount? -= 1
+                self.viewModel.isFollowing = false
+                self.userView.isFollowing = false
+            } else {
+                self.viewModel.userFollowedCount? += 1
+                self.viewModel.isFollowing = true
+                self.userView.isFollowing = true
+            }
+            self.userView.recipeAndFollower = self.viewModel.recipeAndFollower
+        }
+        
+        viewModel.likedStatus = { [weak self] in
+            guard let self = self else { return }
+            let isLiked = self.viewModel.isLiked
+            if isLiked {
+                self.likeCountView.iconColor = .appCinder
+                self.viewModel.likeCount? -= 1
+                self.likeCountView.number = self.viewModel.likeCount
+                self.viewModel.isLiked = false
+            } else {
+                self.likeCountView.iconColor = .appRed
+                self.viewModel.likeCount? += 1
+                self.likeCountView.number = self.viewModel.likeCount
+                self.viewModel.isLiked = true
+            }
+        }
+        
+        viewModel.unfollowShowAlert = { [weak self] in
+            guard let self = self else { return }
+            self.unfollowShowAlert()
+            
         }
     }
 }

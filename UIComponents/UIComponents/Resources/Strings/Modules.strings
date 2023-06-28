@@ -34,13 +34,14 @@
 //MARK: - UserDefaultsKeys
 "UserDefaultsKeys.didFinishWalkthrough" = "WalkthroughFinished";
 
-//MARK: - RecipeDetailInfo
+//MARK: - RecipeDetail
 "RecipeDetailInfo.materials" = "Malzemeler";
 "RecipeDetailInfo.instructions" = "Yapılışı";
-
-//MARK: - RecipeDetailComment
 "RecipeDetailComment.title" = "Yorumlar";
 "RecipeDetailComment.buttonTitle" = "Yorum Ekle";
+"RecipeDetail.unfollowAction" = "Takibi Bırak";
+"RecipeDetail.cancelAction" = "İptal";
+
 
 //MARK: - LoginWarning
 "LoginWarning.warningLabel" = "Giriş yapmanız gereklidir.";
@@ -59,17 +60,28 @@
 "Register.alertControllerMesssage" = "Yemek tariflerine hoşgeldiniz.";
 "Register.alertControllerAcceptAction" = "Tamam";
 
-
 //MARK: - Login
 "Login.titleLabel" = "Giriş Yap";
-"Login.emailTextField" = "E-mail Adresi";
+"Login.userNameTextField" = "Kullanıcı Adı";
 "Login.passwordTextField" = "Şifre";
 "Login.loginButton" = "Giriş yap";
 "Login.forgotPasswordButton" = "Şifrenizi mi unuttunuz ?";
 "Login.bottomLabel" = "Hesabın mı yok? ";
 "Login.signUpButton" = "Üye Ol";
 
+//MARK: - ForgotPassword
+"ForgotPassword.titleLabel" = "Parolanızı Sıfırlayın";
+"ForgotPassword.emailTextField" = "E-mail Adresi";
+"ForgotPassword.forgotPasswordButton" = "Parolayı Sıfırla";
+"ForgotPassword.alertControllerTitle" = "Parolanız Sıfırlandı.";
+"ForgotPassword.alertControllerMesssage" = "E-mailinizi kontrol edip, paralonızı değiştirebilirsiniz.";
+"ForgotPassword.alertControllerAcceptAction" = "Tamam";
+
 //MARK: - Validation
 "Validation.isValidEmail" = "Lütfen geçerli bir email adresi giriniz.";
 "Validation.isValidPassword" = "Şifreniz en az 6 karaterden oluşmalıdır.";
 "Validation.isValidName" = "Lütfen İsminizi Giriniz";
+
+//MARK: - UserView
+"UserView.following" = "Takip Ediliyor";
+"UserView.notFollowing" = "Takip et";
