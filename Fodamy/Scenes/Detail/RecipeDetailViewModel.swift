@@ -161,10 +161,8 @@ extension RecipeDetailViewModel {
             self.hideLoading?()
             switch result {
             case .success(let response):
-                print(response)
                 self.followingStatus?()
             case .failure(let error):
-                print(error.localizedDescription)
                 self.showWarningToast?(error.localizedDescription)
             }
         }
@@ -179,10 +177,8 @@ extension RecipeDetailViewModel {
             self.hideLoading?()
             switch result {
             case .success(let response):
-                print(response)
                 self.likedStatus?()
             case .failure(let error):
-                print(error.localizedDescription)
                 self.showWarningToast?(error.localizedDescription)
             }
         }
