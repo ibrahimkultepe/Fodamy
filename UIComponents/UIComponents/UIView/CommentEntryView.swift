@@ -18,12 +18,7 @@ public class CommentEntryView: UIView {
         .borderColor(UIColor.appZircon.cgColor)
         .cornerRadius(24)
         .textContainerInset(UIEdgeInsets(top: 7, left: 12, bottom: 7, right: 12))
-        .build()
-    
-    private let placeholderLabel = UILabelBuilder()
-        .font(.font(.nunitoSemiBold, size: .xLarge))
-        .textColor(.appRaven)
-        .text(L10n.CommentEntryView.placeholderLabel)
+        .text(L10n.CommentEntryView.textViewText)
         .build()
     
     private let sendButton = UIButtonBuilder()
@@ -59,10 +54,9 @@ extension CommentEntryView {
     private func addSubviews() {
         backgroundColor = .appWhite
         addSubview(textView)
-        textView.edgesToSuperview(excluding: .right, insets: .init(top: 9, left: 16, bottom: 9, right: 0))
-        
-        textView.addSubview(placeholderLabel)
-        placeholderLabel.edgesToSuperview(insets: .init(top: 7, left: 12, bottom: 7, right: 12))
+        textView.centerYToSuperview()
+        textView.leadingToSuperview().constant = 16
+        textView.height(34)
         
         addSubview(sendButton)
         sendButton.leadingToTrailing(of: textView).constant = 20
@@ -97,10 +91,18 @@ extension CommentEntryView: UITextViewDelegate {
     public func textViewDidChange(_ textView: UITextView) {
         if textView.text.isEmpty {
             sendButton.backgroundColor = .gray
-            placeholderLabel.isHidden = false
         } else {
             sendButton.backgroundColor = .red
-            placeholderLabel.isHidden = true
+        }
+    }
+    
+    public func textViewDidBeginEditing(_ textView: UITextView) {
+            textView.text = ""
+    }
+    
+    public func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = L10n.CommentEntryView.textViewText
         }
     }
 }

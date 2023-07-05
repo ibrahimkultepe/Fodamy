@@ -87,4 +87,4 @@
 "UserView.notFollowing" = "Takip et";
 
 //MARK: - CommentEntryView
-"CommentEntryView.placeholderLabel" = "Bir şey yaz...";
+"CommentEntryView.textViewText" = "Bir şey yaz...";

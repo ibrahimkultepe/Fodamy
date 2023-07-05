@@ -17,7 +17,9 @@ final class CommentSectionViewModel: BaseViewModel<CommentSectionRouter>, Commen
     
     private var recipeId: Int
     
-    private var isShowLoading = true
+    private var page = 1
+    
+    private var isPagingEnabled = false
 
     var getRecipeCommentDidSuccess: VoidClosure?
     var reloadData: VoidClosure?
@@ -36,15 +38,15 @@ final class CommentSectionViewModel: BaseViewModel<CommentSectionRouter>, Commen
     }
     
     func refreshData() {
-        cellItems.removeAll()
-        isShowLoading = false
+        page = 1
+//        cellItems.removeAll()
         self.reloadData?()
-        getRecipeComment()
+        getRecipeComment(showLoading: false)
     }
     
     override func tryAgainButtonTapped() {
         self.hideTryAgainButton?()
-        getRecipeComment()
+        getRecipeComment(showLoading: true)
     }
     
     init(recipeId: Int, router: CommentSectionRouter) {
@@ -68,9 +70,9 @@ extension CommentSectionViewModel {
 // MARK: - Network
 extension CommentSectionViewModel {
     
-    func getRecipeComment() {
-        if isShowLoading { showLoading?() }
-        let request = GetRecipeCommentRequest(recipeId: recipeId)
+    func getRecipeComment(showLoading: Bool) {
+        if showLoading { self.showLoading?() }
+        let request = GetRecipeCommentRequest(recipeId: recipeId, page: page)
         dataProvider.request(for: request) { [weak self] result in
             guard let self = self else { return }
             self.hideLoading?()
@@ -78,6 +80,8 @@ extension CommentSectionViewModel {
             case .success(let response):
                 let cellItems = response.data.map({ CommentCellModel(recipeComment: $0) })
                 self.cellItems.append(contentsOf: cellItems)
+                self.page += 1
+                self.isPagingEnabled = response.pagination.lastPage > response.pagination.currentPage
                 self.getRecipeCommentDidSuccess?()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
@@ -95,11 +99,10 @@ extension CommentSectionViewModel {
             switch result {
             case .success(let response):
                 self.cellItems.removeAll()
-                self.getRecipeComment()
+                self.getRecipeComment(showLoading: true)
                 self.postRecipeCommentDidSuccess?()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
-                self.showTryAgainButton?()
             }
         }
     }

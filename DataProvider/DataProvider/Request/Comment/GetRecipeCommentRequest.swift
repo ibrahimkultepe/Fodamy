@@ -11,8 +11,10 @@ public struct GetRecipeCommentRequest: APIDecodableResponseRequest {
     
     public var path: String = ""
     public let method: RequestMethod = .get
+    public var parameters: RequestParameters = [:]
     
-    public init(recipeId: Int) {
+    public init(recipeId: Int, page: Int? = 1) {
         self.path = "recipe/\(recipeId)/comment"
+        self.parameters["page"] = page
     }
 }

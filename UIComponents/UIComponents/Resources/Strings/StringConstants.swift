@@ -18,7 +18,7 @@ public enum L10n {
 
   public enum CommentEntryView {
     /// Bir şey yaz...
-    public static let placeholderLabel = L10n.tr("Modules", "CommentEntryView.placeholderLabel")
+    public static let textViewText = L10n.tr("Modules", "CommentEntryView.textViewText")
   }
 
   public enum FavoritesCollectionViewCell {

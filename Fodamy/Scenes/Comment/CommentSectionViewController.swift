@@ -18,12 +18,14 @@ final class CommentSectionViewController: BaseViewController<CommentSectionViewM
     
     private let commentEntryView = CommentEntryView()
     
+    private var bottomConstraint: NSLayoutConstraint?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
         configureContent()
         subscribeViewModel()
-        viewModel.getRecipeComment()
+        viewModel.getRecipeComment(showLoading: true)
         sendButtonTapped()
         registerKeyboardNotifications()
     }
@@ -40,6 +42,9 @@ extension CommentSectionViewController {
         commentEntryView.topToBottom(of: collectionView)
         commentEntryView.edgesToSuperview(excluding: .top, usingSafeArea: true)
         commentEntryView.height(52)
+        
+        bottomConstraint = commentEntryView.bottomToSuperview(usingSafeArea: true)
+        bottomConstraint?.isActive = true
     }
 }
 
@@ -96,13 +101,21 @@ extension CommentSectionViewController {
         
         let keyboardHeight = view.bounds.height - keyboardFrame.origin.y
         if notification.name == UIResponder.keyboardWillShowNotification {
-            commentEntryView.frame.origin.y = view.bounds.height - keyboardHeight - commentEntryView.frame.height
+            UIView.animate(withDuration: 0.3) { [weak self] in
+                guard let self = self else { return }
+                self.bottomConstraint?.constant = self.view.safeAreaInsets.bottom - keyboardHeight
+                self.view.layoutIfNeeded()
+            }
         }
     }
 
     @objc
     private func keyboardWillBeHidden(notification: Notification) {
-        commentEntryView.frame.origin.y = view.bounds.height - commentEntryView.frame.height - view.safeAreaInsets.bottom
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            guard let self = self else { return }
+            self.bottomConstraint?.constant = 0
+            self.view.layoutIfNeeded()
+        }
     }
 }
 
