@@ -58,6 +58,10 @@
 		9CB8005C29F17B280014E95C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8005929F17B280014E95C /* HomeViewModel.swift */; };
 		9CB8006429F17B600014E95C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8006129F17B600014E95C /* TabBarViewController.swift */; };
 		9CB8006729F17B6C0014E95C /* TabBarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8006629F17B6B0014E95C /* TabBarRoute.swift */; };
+		9CC895C02A4CCDE700396E4A /* CommentSectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC895BD2A4CCDE700396E4A /* CommentSectionRouter.swift */; };
+		9CC895C12A4CCDE700396E4A /* CommentSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC895BE2A4CCDE700396E4A /* CommentSectionViewController.swift */; };
+		9CC895C22A4CCDE700396E4A /* CommentSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC895BF2A4CCDE700396E4A /* CommentSectionViewModel.swift */; };
+		9CC895C42A4CCE0000396E4A /* CommentSectionRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC895C32A4CCE0000396E4A /* CommentSectionRoute.swift */; };
 		9CCB264E2A209A3900D3CBBB /* RecipeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB264B2A209A3900D3CBBB /* RecipeDetailRouter.swift */; };
 		9CCB264F2A209A3900D3CBBB /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB264C2A209A3900D3CBBB /* RecipeDetailViewController.swift */; };
 		9CCB26502A209A3900D3CBBB /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB264D2A209A3900D3CBBB /* RecipeDetailViewModel.swift */; };
@@ -129,6 +133,10 @@
 		9CB8005929F17B280014E95C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		9CB8006129F17B600014E95C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		9CB8006629F17B6B0014E95C /* TabBarRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRoute.swift; sourceTree = "<group>"; };
+		9CC895BD2A4CCDE700396E4A /* CommentSectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSectionRouter.swift; sourceTree = "<group>"; };
+		9CC895BE2A4CCDE700396E4A /* CommentSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSectionViewController.swift; sourceTree = "<group>"; };
+		9CC895BF2A4CCDE700396E4A /* CommentSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSectionViewModel.swift; sourceTree = "<group>"; };
+		9CC895C32A4CCE0000396E4A /* CommentSectionRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSectionRoute.swift; sourceTree = "<group>"; };
 		9CCB264B2A209A3900D3CBBB /* RecipeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailRouter.swift; sourceTree = "<group>"; };
 		9CCB264C2A209A3900D3CBBB /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		9CCB264D2A209A3900D3CBBB /* RecipeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewModel.swift; sourceTree = "<group>"; };
@@ -355,6 +363,7 @@
 				9CB8004D29F17AF10014E95C /* Favorites */,
 				9CCB264A2A209A0D00D3CBBB /* Detail */,
 				9C6E6B042A36FA0B006CBE9B /* LoginWarning */,
+				9CC895BC2A4CCDA400396E4A /* Comment */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -436,6 +445,17 @@
 				9CB8006629F17B6B0014E95C /* TabBarRoute.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		9CC895BC2A4CCDA400396E4A /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				9CC895BE2A4CCDE700396E4A /* CommentSectionViewController.swift */,
+				9CC895BF2A4CCDE700396E4A /* CommentSectionViewModel.swift */,
+				9CC895BD2A4CCDE700396E4A /* CommentSectionRouter.swift */,
+				9CC895C32A4CCE0000396E4A /* CommentSectionRoute.swift */,
+			);
+			path = Comment;
 			sourceTree = "<group>";
 		};
 		9CCB264A2A209A0D00D3CBBB /* Detail */ = {
@@ -600,6 +620,7 @@
 				9CAD3FDD29ABE91D006F499E /* APILogger.swift in Sources */,
 				9CB8005A29F17B280014E95C /* HomeRouter.swift in Sources */,
 				9CAD3FCE29ABE824006F499E /* ToastPresenter.swift in Sources */,
+				9CC895C42A4CCE0000396E4A /* CommentSectionRoute.swift in Sources */,
 				9C6E6B092A36FA52006CBE9B /* LoginWarningViewController.swift in Sources */,
 				9CCB26522A209A4D00D3CBBB /* RecipeDetailRoute.swift in Sources */,
 				9CAD3FDB29ABE905006F499E /* APIRequestAdapter.swift in Sources */,
@@ -607,6 +628,7 @@
 				9C37543129B274240037EE08 /* Transition.swift in Sources */,
 				9C37542F29B274080037EE08 /* PushTransition.swift in Sources */,
 				9C37542829B273AB0037EE08 /* Router.swift in Sources */,
+				9CC895C12A4CCDE700396E4A /* CommentSectionViewController.swift in Sources */,
 				9CB8005329F17B040014E95C /* FavoritesViewModel.swift in Sources */,
 				9CAD3FD029ABE841006F499E /* TostWarningView.swift in Sources */,
 				9CAD3FD629ABE8AB006F499E /* LoadingProtocol.swift in Sources */,
@@ -615,6 +637,7 @@
 				9CB8005C29F17B280014E95C /* HomeViewModel.swift in Sources */,
 				9C37542B29B273D90037EE08 /* ModalTransition.swift in Sources */,
 				9CAD3FCB29ABE7F1006F499E /* ActivityIndicatorView.swift in Sources */,
+				9CC895C02A4CCDE700396E4A /* CommentSectionRouter.swift in Sources */,
 				9CCB264F2A209A3900D3CBBB /* RecipeDetailViewController.swift in Sources */,
 				9C87CE1E2A014C53007FD4DC /* RecipesViewModel.swift in Sources */,
 				9CAD3FDF29ABE92F006F499E /* DataProvider.swift in Sources */,
@@ -637,6 +660,7 @@
 				9C8462D22A3873FE00ECB614 /* LoginViewModel.swift in Sources */,
 				9CB8005129F17B040014E95C /* FavoritesRouter.swift in Sources */,
 				9C898A452A3C76DC003E7C4F /* ForgotPasswordRoute.swift in Sources */,
+				9CC895C22A4CCDE700396E4A /* CommentSectionViewModel.swift in Sources */,
 				9CF10F372A042674009B75E8 /* MainNavigationController.swift in Sources */,
 				9CB8006729F17B6C0014E95C /* TabBarRoute.swift in Sources */,
 				9C898A432A3C76CD003E7C4F /* ForgotPasswordViewModel.swift in Sources */,

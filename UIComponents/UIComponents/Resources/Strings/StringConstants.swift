@@ -16,6 +16,11 @@ public enum L10n {
     public static let errorButtonTitle = L10n.tr("Modules", "Base.errorButtonTitle")
   }
 
+  public enum CommentEntryView {
+    /// Bir şey yaz...
+    public static let textViewText = L10n.tr("Modules", "CommentEntryView.textViewText")
+  }
+
   public enum FavoritesCollectionViewCell {
     /// TÜMÜNÜ GÖR
     public static let seeAllButton = L10n.tr("Modules", "FavoritesCollectionViewCell.seeAllButton")

@@ -114,6 +114,10 @@ extension RecipeDetailViewModel {
             self.userFollowRequest(followType: .follow)
         }
     }
+    
+    func commentButtonTapped() {
+        router.pushCommentSection(recipeId: recipeId)
+    }
 }
 
 // MARK: - Network

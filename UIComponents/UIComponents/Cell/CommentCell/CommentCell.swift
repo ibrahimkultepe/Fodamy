@@ -55,6 +55,7 @@ public class CommentCell: UICollectionViewCell, ReusableView {
 extension CommentCell {
     
     private func addSubviews() {
+        contentView.backgroundColor = .appWhite
         contentView.addSubview(userView)
         userView.edgesToSuperview(excluding: .bottom)
         userView.height(65)

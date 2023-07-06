@@ -110,6 +110,7 @@ extension RecipeDetailViewController {
         view.backgroundColor = .appSecondaryBackground
         subscribeLikeButton()
         subscribeFollowButton()
+        commentButton.addTarget(self, action: #selector(commentButtonAction), for: .touchUpInside)
     }
     
     private func setItem() {
@@ -176,6 +177,11 @@ extension RecipeDetailViewController {
             guard let self = self else { return }
             self.viewModel.followButtonTapped()
         }
+    }
+    
+    @objc
+    private func commentButtonAction() {
+        viewModel.commentButtonTapped()
     }
 }
 

@@ -85,3 +85,6 @@
 //MARK: - UserView
 "UserView.following" = "Takip Ediliyor";
 "UserView.notFollowing" = "Takip et";
+
+//MARK: - CommentEntryView
+"CommentEntryView.textViewText" = "Bir şey yaz...";
