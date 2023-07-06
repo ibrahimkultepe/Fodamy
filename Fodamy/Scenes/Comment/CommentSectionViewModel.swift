@@ -19,7 +19,8 @@ final class CommentSectionViewModel: BaseViewModel<CommentSectionRouter>, Commen
     
     private var page = 1
     
-    private var isPagingEnabled = false
+    var isPagingEnabled = false
+    var isRequestEnabled = false
 
     var getRecipeCommentDidSuccess: VoidClosure?
     var reloadData: VoidClosure?
@@ -39,7 +40,6 @@ final class CommentSectionViewModel: BaseViewModel<CommentSectionRouter>, Commen
     
     func refreshData() {
         page = 1
-//        cellItems.removeAll()
         self.reloadData?()
         getRecipeComment(showLoading: false)
     }
@@ -71,13 +71,18 @@ extension CommentSectionViewModel {
 extension CommentSectionViewModel {
     
     func getRecipeComment(showLoading: Bool) {
+        self.isRequestEnabled = false
         if showLoading { self.showLoading?() }
         let request = GetRecipeCommentRequest(recipeId: recipeId, page: page)
         dataProvider.request(for: request) { [weak self] result in
             guard let self = self else { return }
             self.hideLoading?()
+            self.isRequestEnabled = true
             switch result {
             case .success(let response):
+                if self.page == 1 {
+                    self.cellItems.removeAll()
+                }
                 let cellItems = response.data.map({ CommentCellModel(recipeComment: $0) })
                 self.cellItems.append(contentsOf: cellItems)
                 self.page += 1
@@ -98,7 +103,7 @@ extension CommentSectionViewModel {
             self.hideLoading?()
             switch result {
             case .success(let response):
-                self.cellItems.removeAll()
+                self.page = 1
                 self.getRecipeComment(showLoading: true)
                 self.postRecipeCommentDidSuccess?()
             case .failure(let error):

@@ -122,6 +122,16 @@ extension CommentSectionViewController {
 // MARK: - ScrollViewDelegate
 extension CommentSectionViewController {
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let viewHeight = scrollView.frame.height
+        
+        if contentOffsetY > contentHeight - viewHeight && viewModel.isPagingEnabled && viewModel.isRequestEnabled {
+            viewModel.getRecipeComment(showLoading: false)
+        }
+    }
+    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         view.endEditing(true)
     }
@@ -140,6 +150,38 @@ extension CommentSectionViewController: UICollectionViewDataSource {
         cell.setCellItem(viewModel: cellItem)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionFooter {
+            let footer: ActivityIndicatorViewFooterView = collectionView.dequeueReusableCell(ofKind: kind, for: indexPath)
+            return footer
+        }
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplaySupplementaryView view: UICollectionReusableView,
+                        forElementKind elementKind: String,
+                        at indexPath: IndexPath) {
+        if elementKind == UICollectionView.elementKindSectionFooter,
+           let view = view as? ActivityIndicatorViewFooterView,
+           viewModel.isPagingEnabled {
+            view.startLoading()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        didEndDisplayingSupplementaryView view: UICollectionReusableView,
+                        forElementOfKind elementKind: String,
+                        at indexPath: IndexPath) {
+        if elementKind == UICollectionView.elementKindSectionFooter,
+           let view = view as? ActivityIndicatorViewFooterView,
+           viewModel.isPagingEnabled {
+            view.stopLoading()
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -153,6 +195,13 @@ extension CommentSectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForFooterInSection section: Int) -> CGSize {
+        let height: CGFloat = viewModel.isPagingEnabled ? 50 : 0
+        return CGSize(width: collectionView.bounds.width, height: height)
     }
 }
 
@@ -178,6 +227,8 @@ extension CommentSectionViewController {
         viewModel.postRecipeCommentDidSuccess = { [weak self] in
             guard let self = self else { return }
             self.commentEntryView.textViewText = ""
+            let indexPath = IndexPath(item: 0, section: 0)
+            self.collectionView.scrollToItem(at: indexPath, at: .top, animated: true)
         }
     }
 }
