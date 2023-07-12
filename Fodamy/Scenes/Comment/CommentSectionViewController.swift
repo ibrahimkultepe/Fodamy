@@ -147,6 +147,12 @@ extension CommentSectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CommentCell = collectionView.dequeueReusableCell(for: indexPath)
         let cellItem = viewModel.cellItemForAt(indexPath: indexPath)
+        
+        cellItem.moreButtonTapped = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.moreButtonTapped(indexPath: indexPath, viewController: self)
+        }
+        
         cell.setCellItem(viewModel: cellItem)
         return cell
     }
@@ -229,6 +235,12 @@ extension CommentSectionViewController {
             self.commentEntryView.textViewText = ""
             let indexPath = IndexPath(item: 0, section: 0)
             self.collectionView.scrollToItem(at: indexPath, at: .top, animated: true)
+        }
+        
+        viewModel.deleteRecipeCommentDidSuccess = { [weak self] indexPath in
+            guard let self = self else { return }
+            self.collectionView.deleteItems(at: [indexPath])
+            self.collectionView.reloadData()
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 public struct RecipeComment: Decodable {
+    public let id: Int
     public let text: String?
     public let difference: String?
     public let user: User

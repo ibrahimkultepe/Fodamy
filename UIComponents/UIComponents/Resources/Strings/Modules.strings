@@ -88,3 +88,8 @@
 
 //MARK: - CommentEntryView
 "CommentEntryView.textViewText" = "Bir şey yaz...";
+
+//MARK: - CommentSectionViewModel
+"CommentSectionViewModel.alertControllerDeleteAction" = "Sil";
+"CommentSectionViewModel.alertControllerEditAction" = "Düzenle";
+"CommentSectionViewModel.alertControllerCancelAction" = "İptal";

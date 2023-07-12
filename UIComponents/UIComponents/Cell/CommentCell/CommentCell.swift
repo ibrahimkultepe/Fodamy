@@ -21,22 +21,35 @@ public class CommentCell: UICollectionViewCell, ReusableView {
         .textColor(.appRaven)
         .font(.font(.nunitoSemiBold, size: .large))
         .build()
-
+    
     private let commentLabel = UILabelBuilder()
         .textColor(.appCinder)
         .font(.font(.nunitoSemiBold, size: .xLarge))
         .numberOfLines(0)
         .build()
     
+    private let moreButton = UIButtonBuilder()
+        .backgroundColor(.clear)
+        .image(UIImage.icMore.withRenderingMode(.alwaysTemplate))
+        .tintColor(.appCinder)
+        .build()
+    
+    public var isMoreButtonHidden: Bool? {
+        didSet {
+            moreButton.isHidden = isMoreButtonHidden ?? false
+        }
+    }
+    
     private lazy var width: NSLayoutConstraint = {
-          let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
-          width.isActive = true
-          return width
-      }()
+        let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
+        width.isActive = true
+        return width
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubviews()
+        configureContent()
     }
     
     required init?(coder: NSCoder) {
@@ -57,7 +70,7 @@ extension CommentCell {
     private func addSubviews() {
         contentView.backgroundColor = .appWhite
         contentView.addSubview(userView)
-        userView.edgesToSuperview(excluding: .bottom)
+        userView.edgesToSuperview(excluding: [.bottom, .right])
         userView.height(65)
         
         contentView.addSubview(stackView)
@@ -65,6 +78,30 @@ extension CommentCell {
         stackView.edgesToSuperview(excluding: .top, insets: .init(top: 0, left: 20, bottom: 8, right: 20))
         stackView.addArrangedSubview(differenceLabel)
         stackView.addArrangedSubview(commentLabel)
+        
+        contentView.addSubview(moreButton)
+        moreButton.leadingToTrailing(of: userView).constant = 10
+        moreButton.size(CGSize(width: 15, height: 10))
+        moreButton.topToSuperview().constant = 10
+        moreButton.trailingToSuperview().constant = -15
+    }
+}
+
+// MARK: - ConfigureContent
+extension CommentCell {
+    
+    private func configureContent() {
+        moreButton.isHidden = true
+        moreButton.addTarget(self, action: #selector(moreButtonAction), for: .touchUpInside)
+    }
+}
+
+// MARK: - Actions
+extension CommentCell {
+    
+    @objc
+    private func moreButtonAction() {
+        viewModel?.moreButtonTapped?()
     }
 }
 
@@ -78,5 +115,6 @@ public extension CommentCell {
         userView.userImageURL = viewModel.userImageURL
         differenceLabel.text = viewModel.difference
         commentLabel.text = viewModel.commentText
+        moreButton.isHidden = !viewModel.isOwner
     }
 }

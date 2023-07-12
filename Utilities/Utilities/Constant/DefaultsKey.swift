@@ -9,4 +9,5 @@ import MobilliumUserDefaults
 
 public extension DefaultsKey {
     static let isWalkthroughFinished = Key<Bool>(key: "isWalkthroughFinished")
+    static let userId = Key<Int>(key: "userId")
 }

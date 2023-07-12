@@ -21,6 +21,15 @@ public enum L10n {
     public static let textViewText = L10n.tr("Modules", "CommentEntryView.textViewText")
   }
 
+  public enum CommentSectionViewModel {
+    /// İptal
+    public static let alertControllerCancelAction = L10n.tr("Modules", "CommentSectionViewModel.alertControllerCancelAction")
+    /// Sil
+    public static let alertControllerDeleteAction = L10n.tr("Modules", "CommentSectionViewModel.alertControllerDeleteAction")
+    /// Düzenle
+    public static let alertControllerEditAction = L10n.tr("Modules", "CommentSectionViewModel.alertControllerEditAction")
+  }
+
   public enum FavoritesCollectionViewCell {
     /// TÜMÜNÜ GÖR
     public static let seeAllButton = L10n.tr("Modules", "FavoritesCollectionViewCell.seeAllButton")
