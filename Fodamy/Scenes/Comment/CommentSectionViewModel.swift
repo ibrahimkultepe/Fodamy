@@ -70,13 +70,15 @@ extension CommentSectionViewModel {
     func moreButtonTapped(indexPath: IndexPath, viewController: UIViewController) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
+        let editAction = UIAlertAction(title: L10n.CommentSectionViewModel.alertControllerEditAction, style: .default)
         let deleteAction = UIAlertAction(title: L10n.CommentSectionViewModel.alertControllerDeleteAction, style: .destructive) { [weak self] _ in
             self?.deleteRecipeComment(indexPath: indexPath)
         }
-        let editAction = UIAlertAction(title: L10n.CommentSectionViewModel.alertControllerEditAction, style: .default)
-        
-        alertController.addAction(deleteAction)
+        let cancelAction = UIAlertAction(title: L10n.CommentSectionViewModel.alertControllerCancelAction, style: .cancel)
+
         alertController.addAction(editAction)
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
         viewController.present(alertController, animated: true, completion: nil)
     }
 }

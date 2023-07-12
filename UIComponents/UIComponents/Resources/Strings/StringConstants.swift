@@ -22,6 +22,8 @@ public enum L10n {
   }
 
   public enum CommentSectionViewModel {
+    /// İptal
+    public static let alertControllerCancelAction = L10n.tr("Modules", "CommentSectionViewModel.alertControllerCancelAction")
     /// Sil
     public static let alertControllerDeleteAction = L10n.tr("Modules", "CommentSectionViewModel.alertControllerDeleteAction")
     /// Düzenle
