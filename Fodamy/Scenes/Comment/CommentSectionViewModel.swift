@@ -21,13 +21,14 @@ final class CommentSectionViewModel: BaseViewModel<CommentSectionRouter>, Commen
     
     var isPagingEnabled = false
     var isRequestEnabled = false
-
+    
     var getRecipeCommentDidSuccess: VoidClosure?
     var reloadData: VoidClosure?
     var postRecipeCommentDidSuccess: VoidClosure?
+    var deleteRecipeCommentDidSuccess: IndexPathClosure?
     
     private let keychain = KeychainSwift()
-
+    
     var cellItems = [CommentCellModelProtocol]()
     
     var numberOfItems: Int {
@@ -64,6 +65,19 @@ extension CommentSectionViewModel {
             return
         }
         postRecipeComment(commentText: commentText)
+    }
+    
+    func moreButtonTapped(indexPath: IndexPath, viewController: UIViewController) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: L10n.CommentSectionViewModel.alertControllerDeleteAction, style: .destructive) { [weak self] _ in
+            self?.deleteRecipeComment(indexPath: indexPath)
+        }
+        let editAction = UIAlertAction(title: L10n.CommentSectionViewModel.alertControllerEditAction, style: .default)
+        
+        alertController.addAction(deleteAction)
+        alertController.addAction(editAction)
+        viewController.present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -106,6 +120,23 @@ extension CommentSectionViewModel {
                 self.page = 1
                 self.getRecipeComment(showLoading: true)
                 self.postRecipeCommentDidSuccess?()
+            case .failure(let error):
+                self.showWarningToast?(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func deleteRecipeComment(indexPath: IndexPath) {
+        showLoading?()
+        let commentId = cellItems[indexPath.row].commentId
+        let request = DeleteRecipeCommentRequest(recipeId: recipeId, commentId: commentId)
+        dataProvider.request(for: request) { [weak self] (result) in
+            guard let self = self else { return }
+            self.hideLoading?()
+            switch result {
+            case .success(let response):
+                self.cellItems.remove(at: indexPath.row)
+                self.deleteRecipeCommentDidSuccess?(indexPath)
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }

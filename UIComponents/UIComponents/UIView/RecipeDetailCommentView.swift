@@ -95,6 +95,7 @@ extension RecipeDetailCommentView: UICollectionViewDataSource {
         let cell: CommentCell = collectionView.dequeueReusableCell(for: indexPath)
         let cellItem = recipeCommentData[indexPath.row]
         cell.setCellItem(viewModel: cellItem)
+        cell.isMoreButtonHidden = true
         return cell
     }
 }

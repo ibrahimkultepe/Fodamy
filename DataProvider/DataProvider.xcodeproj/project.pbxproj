@@ -13,6 +13,7 @@
 		9C1763612A0CD1B4001175B5 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1763602A0CD1B4001175B5 /* Recipe.swift */; };
 		9C1763632A0CD522001175B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1763622A0CD522001175B5 /* User.swift */; };
 		9C1763652A0CD550001175B5 /* RecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1763642A0CD550001175B5 /* RecipeCategory.swift */; };
+		9C2AF1982A57EAFD002BB11D /* DeleteRecipeCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2AF1972A57EAFD002BB11D /* DeleteRecipeCommentRequest.swift */; };
 		9C37541929B2719E0037EE08 /* DecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37541229B2719E0037EE08 /* DecodableResponseRequest.swift */; };
 		9C37541A29B2719E0037EE08 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37541329B2719E0037EE08 /* Typealias.swift */; };
 		9C37541B29B2719E0037EE08 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37541429B2719E0037EE08 /* RequestProtocol.swift */; };
@@ -48,6 +49,7 @@
 		9C1763602A0CD1B4001175B5 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		9C1763622A0CD522001175B5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9C1763642A0CD550001175B5 /* RecipeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCategory.swift; sourceTree = "<group>"; };
+		9C2AF1972A57EAFD002BB11D /* DeleteRecipeCommentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRecipeCommentRequest.swift; sourceTree = "<group>"; };
 		9C37541229B2719E0037EE08 /* DecodableResponseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodableResponseRequest.swift; sourceTree = "<group>"; };
 		9C37541329B2719E0037EE08 /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		9C37541429B2719E0037EE08 /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				9CB1D0FA2A2F5F5F00A7806B /* GetRecipeCommentRequest.swift */,
 				9CAE8F092A52D2330011A4CE /* PostRecipeCommentRequest.swift */,
+				9C2AF1972A57EAFD002BB11D /* DeleteRecipeCommentRequest.swift */,
 			);
 			path = Comment;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				9C1763612A0CD1B4001175B5 /* Recipe.swift in Sources */,
 				9C37541F29B2719E0037EE08 /* DataProviderProtocol.swift in Sources */,
 				9C37541B29B2719E0037EE08 /* RequestProtocol.swift in Sources */,
+				9C2AF1982A57EAFD002BB11D /* DeleteRecipeCommentRequest.swift in Sources */,
 				9C4AA6F52A24A24500F7D76F /* RecipeDetail.swift in Sources */,
 				9C1763652A0CD550001175B5 /* RecipeCategory.swift in Sources */,
 				9C1763632A0CD522001175B5 /* User.swift in Sources */,
