@@ -12,7 +12,7 @@ public protocol CommentCellModelDataSource: AnyObject {
     var userImageURL: String? { get }
     var userRecipeAndFollowerCountText: String? { get }
     var difference: String? { get }
-    var commentText: String? { get }
+    var commentText: String? { get set }
     var commentId: Int { get }
     var moreButtonTapped: VoidClosure? { get set }
     var isOwner: Bool { get set }

@@ -70,7 +70,10 @@ extension CommentSectionViewModel {
     func moreButtonTapped(indexPath: IndexPath, viewController: UIViewController) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let editAction = UIAlertAction(title: L10n.CommentSectionViewModel.alertControllerEditAction, style: .default)
+        let editAction = UIAlertAction(title: L10n.CommentSectionViewModel.alertControllerEditAction, style: .default) {
+            [weak self] _ in
+            self?.editButtonTapped(indexPath: indexPath)
+        }
         let deleteAction = UIAlertAction(title: L10n.CommentSectionViewModel.alertControllerDeleteAction, style: .destructive) { [weak self] _ in
             self?.deleteRecipeComment(indexPath: indexPath)
         }
@@ -80,6 +83,20 @@ extension CommentSectionViewModel {
         alertController.addAction(deleteAction)
         alertController.addAction(cancelAction)
         viewController.present(alertController, animated: true, completion: nil)
+    }
+    
+    private func editButtonTapped(indexPath: IndexPath) {
+        let commentId = cellItems[indexPath.row].commentId
+        let commentText = cellItems[indexPath.row].commentText
+        
+        let editCommentDidSuccess: StringClosure = { [weak self] text in
+            self?.cellItems[indexPath.row].commentText = text
+            self?.reloadData?()
+        }
+        router.pushCommentEdit(recipeId: recipeId,
+                               commentId: commentId,
+                               commentText: commentText,
+                               editCommentDidSuccess: editCommentDidSuccess)
     }
 }
 

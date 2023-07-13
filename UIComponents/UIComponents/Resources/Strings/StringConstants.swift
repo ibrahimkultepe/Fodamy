@@ -16,6 +16,15 @@ public enum L10n {
     public static let errorButtonTitle = L10n.tr("Modules", "Base.errorButtonTitle")
   }
 
+  public enum CommentEditViewController {
+    /// Yorumlar
+    public static let navigationTitle = L10n.tr("Modules", "CommentEditViewController.navigationTitle")
+    /// Kaydet
+    public static let saveButtonTitle = L10n.tr("Modules", "CommentEditViewController.saveButtonTitle")
+    /// Lütfen bir mesaj girin
+    public static let showWarningToast = L10n.tr("Modules", "CommentEditViewController.showWarningToast")
+  }
+
   public enum CommentEntryView {
     /// Bir şey yaz...
     public static let textViewText = L10n.tr("Modules", "CommentEntryView.textViewText")
