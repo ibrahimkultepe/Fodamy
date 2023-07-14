@@ -89,7 +89,6 @@ extension CommentSectionViewController {
                                                selector: #selector(keyboardWillBeHidden),
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
-        
     }
     
     @objc

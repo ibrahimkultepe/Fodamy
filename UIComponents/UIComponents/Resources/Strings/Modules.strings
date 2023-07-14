@@ -93,3 +93,8 @@
 "CommentSectionViewModel.alertControllerDeleteAction" = "Sil";
 "CommentSectionViewModel.alertControllerEditAction" = "Düzenle";
 "CommentSectionViewModel.alertControllerCancelAction" = "İptal";
+
+//MARK: - CommentEditViewController
+"CommentEditViewController.saveButtonTitle" = "Kaydet";
+"CommentEditViewController.navigationTitle" = "Yorumlar";
+"CommentEditViewController.showWarningToast" = "Lütfen bir mesaj girin";

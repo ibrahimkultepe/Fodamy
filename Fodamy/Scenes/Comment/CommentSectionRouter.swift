@@ -6,5 +6,5 @@
 //
 
 final class CommentSectionRouter: Router, CommentSectionRouter.Routes {
-    typealias Routes = LoginRoute
+    typealias Routes = LoginRoute & CommentEditRoute
 }
