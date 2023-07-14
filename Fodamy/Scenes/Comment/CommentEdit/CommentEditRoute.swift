@@ -15,8 +15,9 @@ extension CommentEditRoute where Self: RouterProtocol {
         let router = CommentEditRouter()
         let viewModel = CommentEditViewModel(recipeId: recipeId, commentId: commentId, commentText: commentText, router: router)
         let viewController = CommentEditViewController(viewModel: viewModel)
+        viewController.hidesBottomBarWhenPushed = true
         viewModel.editCommentDidSuccess = editCommentDidSuccess
-
+        
         let transition = PushTransition()
         router.viewController = viewController
         router.openTransition = transition

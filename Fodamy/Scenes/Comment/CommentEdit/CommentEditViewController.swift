@@ -22,7 +22,6 @@ final class CommentEditViewController: BaseViewController<CommentEditViewModel> 
         .build()
     
     private var bottomConstraint: NSLayoutConstraint?
-    private let horizontalInset = UIScreen.main.bounds.width / 4
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +41,9 @@ extension CommentEditViewController {
         
         view.addSubview(saveButton)
         saveButton.topToBottom(of: commentTextView)
-        saveButton.edgesToSuperview(excluding: .top,
-                                    insets: .init(top: 0, left: horizontalInset, bottom: 0, right: horizontalInset),
-                                    usingSafeArea: true)
-        saveButton.height(50)
+        saveButton.bottomToSuperview(usingSafeArea: true)
+        saveButton.centerXToSuperview()
+        saveButton.size(.init(width: 150, height: 50))
         
         bottomConstraint = saveButton.bottomToSuperview(usingSafeArea: true)
         bottomConstraint?.isActive = true
@@ -96,7 +94,6 @@ extension CommentEditViewController {
                                                selector: #selector(keyboardWillBeHidden),
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
-        
     }
     
     @objc

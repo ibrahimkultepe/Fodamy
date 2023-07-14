@@ -38,6 +38,7 @@ extension CommentEditViewModel {
             switch result {
             case .success(let response):
                 self.editCommentDidSuccess?(commentText)
+                self.showSuccessToast?(response.message ?? "")
                 self.router.close()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
