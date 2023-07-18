@@ -36,7 +36,7 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var followingStatus: VoidClosure?
     var likedStatus: VoidClosure?
     var unfollowShowAlert: VoidClosure?
-
+    
     var recipeImageCellItems = [RecipeDetailCellModelProtocol]()
     var commentCellıtems = [CommentCellModelProtocol]()
     
@@ -45,7 +45,7 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
             recipeAndFollower = "\(recipeCount ?? 0) Tarif \(userFollowedCount ?? 0) Takipçi"
         }
     }
-        
+    
     private let dispatchGroup = DispatchGroup()
     private var isGetRecipeDetailSuccess = false
     private var isGetRecipeCommentSuccess = false
@@ -91,7 +91,9 @@ extension RecipeDetailViewModel {
     
     func likeButtonTapped() {
         guard keychain.get(Keychain.token) != nil else {
-            router.presentLogin()
+            router.pushLoginWarning { [weak self] in
+                self?.router.presentLogin()
+            }
             return
         }
         switch isLiked {
@@ -104,7 +106,9 @@ extension RecipeDetailViewModel {
     
     func followButtonTapped() {
         guard keychain.get(Keychain.token) != nil else {
-            router.presentLogin()
+            router.pushLoginWarning { [weak self] in
+                self?.router.presentLogin()
+            }
             return
         }
         switch isFollowing {
@@ -156,9 +160,9 @@ extension RecipeDetailViewModel {
         }
     }
     
-     func userFollowRequest(followType: UserFollowRequest.FollowStatus) {
+    func userFollowRequest(followType: UserFollowRequest.FollowStatus) {
         guard let followUserId = followUserId else { return }
-         showLoading?()
+        showLoading?()
         let request = UserFollowRequest(followUserId: followUserId, followStatus: followType)
         dataProvider.request(for: request) { [weak self] (result) in
             guard let self = self else { return }
@@ -172,8 +176,8 @@ extension RecipeDetailViewModel {
         }
     }
     
-     private func recipeLikeRequest(likeType: RecipeLikeRequest.LikeType) {
-         showLoading?()
+    private func recipeLikeRequest(likeType: RecipeLikeRequest.LikeType) {
+        showLoading?()
         let recipeId = self.recipeId
         let request = RecipeLikeRequest(recipeId: recipeId, likeType: likeType)
         dataProvider.request(for: request) { [weak self] (result) in

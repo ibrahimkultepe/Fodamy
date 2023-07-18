@@ -5,6 +5,6 @@
 //  Created by İbrahim Kültepe on 12.06.2023.
 //
 
-final class LoginWarningRouter: Router, LoginRoute {
+final class LoginWarningRouter: Router, LoginWarningRouter.Routes {
     typealias Routes = LoginRoute
 }
