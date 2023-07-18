@@ -61,7 +61,9 @@ extension CommentSectionViewModel {
     
     func sendButtonTapped(commentText: String) {
         guard keychain.get(Keychain.token) != nil else {
-            router.presentLogin()
+            router.pushLoginWarning { [weak self] in
+                self?.router.presentLogin()
+            }
             return
         }
         postRecipeComment(commentText: commentText)

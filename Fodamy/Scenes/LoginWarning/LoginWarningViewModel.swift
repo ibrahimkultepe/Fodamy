@@ -15,11 +15,20 @@ protocol LoginWarningViewProtocol: LoginWarningViewDataSource, LoginWarningViewE
 
 final class LoginWarningViewModel: BaseViewModel<LoginWarningRouter>, LoginWarningViewProtocol {
     
+    var loginButtonTapped: VoidClosure?
+
     func giveUpButtonAction() {
         router.close()
     }
     
     func loginButtonAction() {
-        router.presentLogin()
+        router.dismiss(isAnimated: false) { [weak self] in
+            self?.loginButtonTapped?()
+        }
+    }
+    
+    init(router: LoginWarningRouter, dataProvider: DataProviderProtocol = apiDataProvider, loginButtonTapped: VoidClosure?) {
+        self.loginButtonTapped = loginButtonTapped
+        super.init(router: router, dataProvider: dataProvider)
     }
 }
