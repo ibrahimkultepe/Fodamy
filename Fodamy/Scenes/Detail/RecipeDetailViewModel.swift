@@ -80,6 +80,13 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
         isLiked = recipeDetail.isLiked
     }
     
+    func resetData() {
+        recipeImageCellItems.removeAll()
+        commentCellıtems.removeAll()
+        isGetRecipeDetailSuccess = false
+        isGetRecipeCommentSuccess = false
+    }
+    
     init(recipeId: Int, router: RecipeDetailRouter) {
         self.recipeId = recipeId
         super.init(router: router)

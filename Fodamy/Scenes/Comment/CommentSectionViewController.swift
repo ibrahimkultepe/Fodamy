@@ -234,12 +234,14 @@ extension CommentSectionViewController {
             self.commentEntryView.textViewText = ""
             let indexPath = IndexPath(item: 0, section: 0)
             self.collectionView.scrollToItem(at: indexPath, at: .top, animated: true)
+            self.viewModel.postNotification()
         }
         
         viewModel.deleteRecipeCommentDidSuccess = { [weak self] indexPath in
             guard let self = self else { return }
             self.collectionView.deleteItems(at: [indexPath])
             self.collectionView.reloadData()
+            self.viewModel.postNotification()
         }
     }
 }

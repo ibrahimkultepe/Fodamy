@@ -94,11 +94,16 @@ extension CommentSectionViewModel {
         let editCommentDidSuccess: StringClosure = { [weak self] text in
             self?.cellItems[indexPath.row].commentText = text
             self?.reloadData?()
+            self?.postNotification()
         }
         router.pushCommentEdit(recipeId: recipeId,
                                commentId: commentId,
                                commentText: commentText,
                                editCommentDidSuccess: editCommentDidSuccess)
+    }
+    
+    func postNotification() {
+        NotificationCenter.default.post(name: .updateRecipeDetailView, object: nil)
     }
 }
 
