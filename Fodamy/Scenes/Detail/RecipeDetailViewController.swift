@@ -111,6 +111,9 @@ extension RecipeDetailViewController {
         subscribeLikeButton()
         subscribeFollowButton()
         commentButton.addTarget(self, action: #selector(commentButtonAction), for: .touchUpInside)
+        NotificationCenter.default.addObserver(forName: .updateRecipeDetailView, object: nil, queue: nil) { [weak self] _ in
+            self?.updateRecipeDetail()
+        }
     }
     
     private func setItem() {
@@ -142,6 +145,11 @@ extension RecipeDetailViewController {
         alertController.addAction(unfollowAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    private func updateRecipeDetail() {
+        viewModel.resetData()
+        viewModel.getData()
     }
 }
 
