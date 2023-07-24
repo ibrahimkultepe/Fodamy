@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SKPhotoBrowser
 
 public class RecipeDetailImagesView: UIView {
     
@@ -25,6 +26,8 @@ public class RecipeDetailImagesView: UIView {
             pageControl.numberOfPages = recipeDetailData.count
         }
     }
+    
+    public var showSKPhotoBrowserClosure: SKPhotoBrowserClosure?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,11 +61,25 @@ extension RecipeDetailImagesView {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(RecipeDetailCollectionViewCell.self)
+        SKPhotoBrowserOptions.displayAction = false
+    }
+    
+    private func showSKPhotoBrowser(photos: [String?], initialPageIndex: Int) -> SKPhotoBrowser {
+        let skPhotos = photos.map { SKPhoto.photoWithImageURL($0 ?? "") }
+        let browser = SKPhotoBrowser(photos: skPhotos, initialPageIndex: initialPageIndex)
+        browser.initializePageIndex(initialPageIndex)
+        browser.delegate = self
+        return browser
     }
 }
 
 // MARK: - UICollectionViewDataSource
 extension RecipeDetailImagesView: UICollectionViewDataSource {
+    
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photos = recipeDetailData.map { $0.recipeImageURL }
+        showSKPhotoBrowserClosure?(showSKPhotoBrowser(photos: photos, initialPageIndex: indexPath.row))
+    }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return recipeDetailData.count
@@ -87,5 +104,15 @@ extension RecipeDetailImagesView: UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat.leastNonzeroMagnitude
+    }
+}
+
+// MARK: - SKPhotoBrowserDelegate
+extension RecipeDetailImagesView: SKPhotoBrowserDelegate {
+    
+    public func willDismissAtPageIndex(_ index: Int) {
+        let indexPath = IndexPath(item: index, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .top, animated: true)
+        pageControl.currentPage = index
     }
 }

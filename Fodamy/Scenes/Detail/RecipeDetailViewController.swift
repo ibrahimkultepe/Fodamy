@@ -239,7 +239,11 @@ extension RecipeDetailViewController {
         viewModel.unfollowShowAlert = { [weak self] in
             guard let self = self else { return }
             self.unfollowShowAlert()
-            
+        }
+        
+        recipeImagesView.showSKPhotoBrowserClosure = { [weak self] browser in
+            guard let self = self else { return }
+            self.present(browser, animated: true, completion: {})
         }
     }
 }
