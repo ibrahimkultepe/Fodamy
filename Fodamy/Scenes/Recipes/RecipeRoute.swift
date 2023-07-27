@@ -6,21 +6,20 @@
 //
 
 protocol RecipeRoute {
-    func pushRecipes()
+    func pushRecipes(categoryId: Int)
 }
 
 extension RecipeRoute where Self: RouterProtocol {
     
-    func pushRecipes() {
+    func pushRecipes(categoryId: Int) {
         let router = RecipesRouter()
-        let viewModel = RecipesViewModel(recipeListType: .recentlyAdded, router: router)
+        let viewModel = RecipesViewModel(recipeListType: .categoryRecipes(categoryId: categoryId), router: router)
         let viewController = RecipesViewController(viewModel: viewModel)
-        let navController = UINavigationController(rootViewController: viewController)
         
         let transition = PushTransition()
         router.viewController = viewController
         router.openTransition = transition
         
-        open(navController, transition: transition)
+        open(viewController, transition: transition)
     }
 }

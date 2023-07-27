@@ -95,6 +95,7 @@ extension FavoritesCollectionViewCell {
         recipeCollectionView.register(CategoryRecipesCell.self)
         recipeCollectionView.dataSource = self
         recipeCollectionView.delegate = self
+        seeAllButton.addTarget(self, action: #selector(seeAllButtonAction), for: .touchUpInside)
     }
 }
 
@@ -103,6 +104,16 @@ extension FavoritesCollectionViewCell {
     
     private func setLocalize() {
         seeAllButton.setTitle(L10n.FavoritesCollectionViewCell.seeAllButton, for: .normal)
+    }
+}
+
+// MARK: - Actions
+extension FavoritesCollectionViewCell {
+    
+    @objc
+    private func seeAllButtonAction() {
+        guard let categoryId = viewModel?.categoryId else { return }
+        viewModel?.seeAllButtonTapped?(categoryId)
     }
 }
 
@@ -154,6 +165,7 @@ public extension FavoritesCollectionViewCell {
     
     func setCellItem(viewModel: FavoritesCellModelProtocol) {
         self.viewModel = viewModel
+        recipeCollectionView.reloadData()
         categoryImageView.setImage(viewModel.categoryImageURL)
         categoryLabel.text = viewModel.recipeCategory
     }

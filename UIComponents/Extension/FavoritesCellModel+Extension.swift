@@ -5,14 +5,13 @@
 //  Created by İbrahim Kültepe on 23.05.2023.
 //
 
-import DataProvider
-
 public extension FavoritesCellModel {
     
     convenience init(category: MainCategory) {
         let cellItems = category.recipes?.map({ CategoryRecipesCellModel(recipe: $0) })
         self.init(categoryImageURL: category.recipes?.first?.category.image?.url,
                   recipeCategory: category.name,
-                  cellItems: cellItems)
+                  cellItems: cellItems,
+                  categoryId: category.id)
     }
 }
