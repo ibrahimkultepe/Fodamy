@@ -5,6 +5,9 @@
 //  Created by İbrahim Kültepe on 20.04.2023.
 //
 
+import KeychainSwift
+import MobilliumUserDefaults
+
 final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
     
     private let refreshControl = UIRefreshControl()
@@ -13,6 +16,8 @@ final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
         .backgroundColor(.clear)
         .build()
     
+    private let keychain = KeychainSwift()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addNavigationBarLogo()
@@ -20,6 +25,11 @@ final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
         configureContent()
         subscribeViewModel()
         viewModel.getFavoritesData(showLoading: true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkIsUserLogin()
     }
 }
 
@@ -45,6 +55,19 @@ extension FavoritesViewController {
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
+    
+    private func addLogoutButton() {
+        let logoutButton = UIBarButtonItem(image: .icLogout, style: .done, target: self, action: #selector(logoutButtonAction))
+        navigationItem.rightBarButtonItem = logoutButton
+    }
+    
+    private func checkIsUserLogin() {
+        guard keychain.get(Keychain.token) != nil else {
+            navigationItem.rightBarButtonItem = .none
+            return
+        }
+        addLogoutButton()
+    }
 }
 
 // MARK: - Actions
@@ -53,6 +76,11 @@ extension FavoritesViewController {
     @objc
     private func refreshData() {
         viewModel.refreshData()
+    }
+    
+    @objc
+    private func logoutButtonAction() {
+        viewModel.userLogoutRequest()
     }
 }
 
@@ -82,6 +110,9 @@ extension FavoritesViewController: UICollectionViewDataSource {
         let cellItem = viewModel.cellItemForAt(indexPath: indexPath)
         cellItem.didSelectRecipeDetail = { [weak self] id in
             self?.viewModel.didSelectRecipe(recipeId: id)
+        }
+        cellItem.seeAllButtonTapped = { [weak self] id in
+            self?.viewModel.seeAllButtonTapped(categoryId: id)
         }
         cell.setCellItem(viewModel: cellItem)
         return cell
@@ -165,6 +196,12 @@ extension FavoritesViewController {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
+        }
+        viewModel.didSuccesLogout = { [weak self] in
+            guard let self = self else { return }
+            self.keychain.delete(Keychain.token)
+            DefaultsKey.userId.remove()
+            self.navigationItem.rightBarButtonItem = .none
         }
     }
 }

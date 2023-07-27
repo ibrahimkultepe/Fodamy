@@ -35,6 +35,7 @@
 		9CB1D0F92A2F5A4300A7806B /* RecipeComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1D0F82A2F5A4300A7806B /* RecipeComment.swift */; };
 		9CB1D0FB2A2F5F5F00A7806B /* GetRecipeCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1D0FA2A2F5F5F00A7806B /* GetRecipeCommentRequest.swift */; };
 		9CB973C62A3C4AC300C592FF /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB973C52A3C4AC300C592FF /* LoginRequest.swift */; };
+		9CC6B3B52A71BD8B00A590F1 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6B3B42A71BD8B00A590F1 /* LogoutRequest.swift */; };
 		9CCB229B2A3D1B1700F87B2B /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB229A2A3D1B1700F87B2B /* ForgotPasswordRequest.swift */; };
 		9CD0219C2A5F425D0030324B /* EditRecipeCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD0219B2A5F425D0030324B /* EditRecipeCommentRequest.swift */; };
 		9CE355902A1387300054580E /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE3558F2A1387300054580E /* Pagination.swift */; };
@@ -73,6 +74,7 @@
 		9CB1D0F82A2F5A4300A7806B /* RecipeComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeComment.swift; sourceTree = "<group>"; };
 		9CB1D0FA2A2F5F5F00A7806B /* GetRecipeCommentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipeCommentRequest.swift; sourceTree = "<group>"; };
 		9CB973C52A3C4AC300C592FF /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		9CC6B3B42A71BD8B00A590F1 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		9CCB229A2A3D1B1700F87B2B /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
 		9CD0219B2A5F425D0030324B /* EditRecipeCommentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeCommentRequest.swift; sourceTree = "<group>"; };
 		9CE3558F2A1387300054580E /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				9C8462C52A385CDE00ECB614 /* RegisterRequest.swift */,
 				9CB973C52A3C4AC300C592FF /* LoginRequest.swift */,
 				9CCB229A2A3D1B1700F87B2B /* ForgotPasswordRequest.swift */,
+				9CC6B3B42A71BD8B00A590F1 /* LogoutRequest.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				9CAE8F0A2A52D2330011A4CE /* PostRecipeCommentRequest.swift in Sources */,
 				9C37541D29B2719E0037EE08 /* RequestEncoding.swift in Sources */,
 				9C654A272A43201C005BD78F /* UserFollowRequest.swift in Sources */,
+				9CC6B3B52A71BD8B00A590F1 /* LogoutRequest.swift in Sources */,
 				9C1763612A0CD1B4001175B5 /* Recipe.swift in Sources */,
 				9C37541F29B2719E0037EE08 /* DataProviderProtocol.swift in Sources */,
 				9C37541B29B2719E0037EE08 /* RequestProtocol.swift in Sources */,

@@ -6,5 +6,5 @@
 //
 
 final class FavoritesRouter: Router, FavoritesRouter.Routes {
-    typealias Routes = RecipeDetailRoute
+    typealias Routes = RecipeDetailRoute & RecipeRoute
 }

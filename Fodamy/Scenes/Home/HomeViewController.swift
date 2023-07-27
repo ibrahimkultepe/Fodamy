@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import KeychainSwift
+import MobilliumUserDefaults
 
 final class HomeViewController: BaseViewController<HomeViewModel> {
     
@@ -21,11 +23,19 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         return self.preparedViewControllers()
     }()
     
+    private let keychain = KeychainSwift()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addNavigationBarLogo()
         addSubviews()
         configureContent()
+        subscribeViewModel()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkIsUserLogin()
     }
 }
 
@@ -62,6 +72,19 @@ extension HomeViewController {
                                               animated: true,
                                               completion: nil)
     }
+    
+    private func addLogoutButton() {
+        let logoutButton = UIBarButtonItem(image: .icLogout, style: .done, target: self, action: #selector(logoutButtonAction))
+        navigationItem.rightBarButtonItem = logoutButton
+    }
+    
+    private func checkIsUserLogin() {
+        guard keychain.get(Keychain.token) != nil else {
+            navigationItem.rightBarButtonItem = .none
+            return
+        }
+        addLogoutButton()
+    }
 }
 
 // MARK: - Actions
@@ -78,6 +101,11 @@ extension HomeViewController {
                                               animated: true, completion: nil)
         viewModel.selectedSegmentIndex = segmentedControl.selectedSegmentIndex
         segmentedControl.selectedSegmentIndex = viewModel.selectedSegmentIndex
+    }
+    
+    @objc
+    private func logoutButtonAction() {
+        viewModel.userLogoutRequest()
     }
 }
 
@@ -127,6 +155,19 @@ extension HomeViewController: UIPageViewControllerDelegate, UIPageViewController
               let index = subViewControllers.firstIndex(of: firtsViewController) else {return}
         if finished && completed {
             segmentedControl.selectedSegmentIndex = index
+        }
+    }
+}
+
+// MARK: - SubscribeViewModel
+extension HomeViewController {
+    
+    private func subscribeViewModel() {
+        viewModel.didSuccesLogout = { [weak self] in
+            guard let self = self else { return }
+            self.keychain.delete(Keychain.token)
+            DefaultsKey.userId.remove()
+            self.navigationItem.rightBarButtonItem = .none
         }
     }
 }
