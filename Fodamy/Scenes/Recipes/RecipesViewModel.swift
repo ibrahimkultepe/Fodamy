@@ -38,6 +38,7 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
         cellItems.removeAll()
         page = 1
         self.reloadData?()
+        self.isPagingEnabled = false
         getRecipeData(showLoading: false)
     }
     
@@ -48,6 +49,7 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     enum RecipeListType {
         case recentlyAdded
         case editorChoice
+        case categoryRecipes(categoryId: Int)
     }
     
     init(recipeListType: RecipeListType, router: RecipesRouter) {
@@ -75,6 +77,8 @@ extension RecipesViewModel {
             request = RecipeRequest(listType: .recentlyAdded, page: page)
         case .editorChoice:
             request = RecipeRequest(listType: .editorChoice, page: page)
+        case .categoryRecipes(let categoryId):
+            request = RecipeRequest(listType: .categoryRecipes(categoryId: categoryId), page: page)
         }
         self.isRequestEnabled = true
         if showLoading { self.showActivityIndicatorView?() }

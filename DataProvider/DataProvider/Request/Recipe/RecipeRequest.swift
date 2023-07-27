@@ -8,7 +8,7 @@
 public struct RecipeRequest: APIDecodableResponseRequest {
     
     public typealias ResponseType = RecipeData<[Recipe]>
-
+    
     public var path: String = ""
     public let method: RequestMethod = .get
     public var parameters: RequestParameters = [:]
@@ -20,6 +20,8 @@ public struct RecipeRequest: APIDecodableResponseRequest {
             path = "editor-choices"
         case .recentlyAdded:
             path = "recipe"
+        case .categoryRecipes(let categoryId):
+            path = "category/\(categoryId)/recipe"
         }
     }
 }
@@ -27,4 +29,5 @@ public struct RecipeRequest: APIDecodableResponseRequest {
 public enum ListType {
     case editorChoice
     case recentlyAdded
+    case categoryRecipes(categoryId: Int)
 }
