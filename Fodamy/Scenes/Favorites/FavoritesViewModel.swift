@@ -20,6 +20,7 @@ final class FavoritesViewModel: BaseViewModel<FavoritesRouter>, FavoritesViewPro
     
     var didSuccessGetFavoritesData: VoidClosure?
     var reloadData: VoidClosure?
+    var didSuccesLogout: VoidClosure?
     
     private var cellItems = [FavoritesCellModelProtocol]()
     
@@ -37,8 +38,10 @@ final class FavoritesViewModel: BaseViewModel<FavoritesRouter>, FavoritesViewPro
     }
     
     func refreshData() {
+        cellItems.removeAll()
         page = 1
         self.reloadData?()
+        self.isPagingEnabled = false
         getFavoritesData(showLoading: false)
     }
 }
@@ -48,6 +51,10 @@ extension FavoritesViewModel {
     
     func didSelectRecipe(recipeId: Int) {
         router.pushRecipeDetail(recipeId: recipeId)
+    }
+    
+    func seeAllButtonTapped(categoryId: Int) {
+        router.pushRecipes(categoryId: categoryId)
     }
 }
 
@@ -73,6 +80,21 @@ extension FavoritesViewModel {
                 self.showTryAgainButton?()
             }
             self.isRequestEnabled = false
+        }
+    }
+    
+    func userLogoutRequest() {
+        showLoading?()
+        let request = LogoutRequest()
+        dataProvider.request(for: request) { [weak self] (result) in
+            guard let self = self else { return }
+            self.hideLoading?()
+            switch result {
+            case .success(let response):
+                self.didSuccesLogout?()
+            case .failure(let error):
+                self.showWarningToast?(error.localizedDescription)
+            }
         }
     }
 }
