@@ -9,7 +9,7 @@ public extension RecipeCellModel {
     
     convenience init(recipe: Recipe) {
         self.init(recipeId: recipe.recipeId,
-                  userNameAndSurname: "\(recipe.user.name ?? "") \(recipe.user.surname ?? "")",
+                  username: recipe.user.username,
                   userImageURL: recipe.user.image?.url,
                   userRecipeAndFollowerCountText: "\(recipe.user.recipeCount) Tarif \(recipe.user.followedCount) Takipçi",
                   recipeTitle: recipe.title,

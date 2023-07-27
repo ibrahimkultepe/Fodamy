@@ -23,6 +23,8 @@ final class CommentEditViewController: BaseViewController<CommentEditViewModel> 
     
     private var bottomConstraint: NSLayoutConstraint?
     
+    private let padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
@@ -56,6 +58,7 @@ extension CommentEditViewController {
     private func configureContent() {
         saveButton.addTarget(self, action: #selector(saveButtonAction), for: .touchUpInside)
         commentTextView.text = viewModel.commentText
+        commentTextView.textContainerInset = padding
     }
 }
 

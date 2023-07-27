@@ -70,7 +70,7 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
         userImageURL = recipeDetail.user.image?.url
         recipeCount = recipeDetail.user.recipeCount
         userFollowedCount = recipeDetail.user.followedCount
-        userNameAndSurname = "\(recipeDetail.user.name ?? "") \(recipeDetail.user.surname ?? "")"
+        userNameAndSurname = recipeDetail.user.username
         recipeAndFollower = "\(recipeCount ?? 0) Tarif \(userFollowedCount ?? 0) Takipçi"
         numberOfPerson = recipeDetail.numberOfPerson.text
         ingredients = recipeDetail.ingredients

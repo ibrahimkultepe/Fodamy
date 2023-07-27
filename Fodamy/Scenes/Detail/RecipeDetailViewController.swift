@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MobilliumUserDefaults
 
 final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel> {
     
@@ -132,6 +133,9 @@ extension RecipeDetailViewController {
         instructionsView.iconText = viewModel.difference
         instructionsView.infoText = viewModel.directions
         userView.isFollowing = viewModel.isFollowing
+        if DefaultsKey.userId.value == viewModel.followUserId {
+            userView.isFollowButtonHidden = true
+        }
     }
     
     private func unfollowShowAlert() {
