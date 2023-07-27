@@ -163,7 +163,6 @@ extension RecipeDetailViewModel {
                 self.isGetRecipeCommentSuccess = true
             case .failure(let error):
                 self.isGetRecipeCommentSuccess = true
-                self.showWarningToast?(error.localizedDescription)
             }
         }
     }
