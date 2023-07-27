@@ -71,7 +71,7 @@ extension LoginViewController {
     
     private func addSubviews() {
         view.addSubview(dismissButton)
-        dismissButton.edgesToSuperview(excluding: [.left, .bottom], insets: .init(top: 64, left: 0, bottom: 0, right: 20))
+        dismissButton.edgesToSuperview(excluding: [.left, .bottom], insets: .init(top: 20, left: 0, bottom: 0, right: 20), usingSafeArea: true)
         dismissButton.height(24)
         dismissButton.width(24)
         
@@ -118,6 +118,7 @@ extension LoginViewController {
         userNameTextField.iconImage = .icUser
         passwordTextField.iconImage = .icPassword
         forgotPasswordButton.contentHorizontalAlignment = .right
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
 

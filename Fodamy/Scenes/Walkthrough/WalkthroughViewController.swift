@@ -50,7 +50,7 @@ extension WalkthroughViewController {
     
     private func addSubviews() {
         view.addSubview(vectorButton)
-        vectorButton.edgesToSuperview(excluding: [.left, .bottom], insets: .init(top: 64, left: 0, bottom: 0, right: 20))
+        vectorButton.edgesToSuperview(excluding: [.left, .bottom], insets: .init(top: 20, left: 0, bottom: 0, right: 20), usingSafeArea: true)
         vectorButton.height(24)
         vectorButton.width(24)
         
@@ -78,6 +78,7 @@ extension WalkthroughViewController {
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         nextButton.addTarget(self, action: #selector(nextButtonAction), for: .touchUpInside)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
 
