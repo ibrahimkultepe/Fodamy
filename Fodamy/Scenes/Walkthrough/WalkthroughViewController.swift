@@ -12,6 +12,7 @@ final class WalkthroughViewController: BaseViewController<WalkthroughViewModel> 
     private let vectorButton = UIButtonBuilder()
         .image(.imgVector)
         .backgroundImage(.imgVector2)
+        .tintColor(.appCinder)
         .build()
     
     private let collectionView: UICollectionView = {
@@ -49,9 +50,9 @@ extension WalkthroughViewController {
     
     private func addSubviews() {
         view.addSubview(vectorButton)
-        vectorButton.edgesToSuperview(excluding: [.left, .bottom], insets: .init(top: 20.75, left: 0, bottom: 0, right: 20.75), usingSafeArea: true)
-        vectorButton.height(22.5)
-        vectorButton.width(22.5)
+        vectorButton.edgesToSuperview(excluding: [.left, .bottom], insets: .init(top: 64, left: 0, bottom: 0, right: 20))
+        vectorButton.height(24)
+        vectorButton.width(24)
         
         view.addSubview(collectionView)
         collectionView.topToBottom(of: vectorButton).constant = 75.75

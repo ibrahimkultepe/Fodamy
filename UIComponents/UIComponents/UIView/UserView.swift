@@ -65,6 +65,12 @@ public class UserView: UIView {
         }
     }
     
+    public var isFollowButtonHidden = false {
+        didSet {
+            followButton.isHidden = isFollowButtonHidden
+        }
+    }
+    
     public var followButtonTapped: VoidClosure?
     
     private let followButtonStatus: FollowButtonStatus

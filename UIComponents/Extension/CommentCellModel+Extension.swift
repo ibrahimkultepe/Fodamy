@@ -13,7 +13,7 @@ public extension CommentCellModel {
         let isOwner: Bool
         isOwner = recipeComment.user.id == DefaultsKey.userId.value
         
-        self.init(userNameAndSurname: "\(recipeComment.user.name ?? "") \(recipeComment.user.surname ?? "")",
+        self.init(userNameAndSurname: recipeComment.user.username,
                   userImageURL: recipeComment.user.image?.url,
                   userRecipeAndFollowerCountText: "\(recipeComment.user.recipeCount) Tarif \(recipeComment.user.followedCount) Takipçi",
                   difference: recipeComment.difference,

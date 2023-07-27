@@ -6,8 +6,6 @@
 //
 
 public struct User: Decodable {
-    public let name: String?
-    public let surname: String?
     public let followedCount: Int
     public let recipeCount: Int
     public let image: Image?
@@ -16,8 +14,6 @@ public struct User: Decodable {
     public let id: Int
     
     enum CodingKeys: String, CodingKey {
-        case name
-        case surname
         case followedCount = "followed_count"
         case recipeCount = "recipe_count"
         case image

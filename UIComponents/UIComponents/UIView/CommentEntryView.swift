@@ -22,7 +22,7 @@ public class CommentEntryView: UIView {
         .build()
     
     private let sendButton = UIButtonBuilder()
-        .cornerRadius(14)
+        .cornerRadius(18)
         .clipsToBounds(true)
         .image(UIImage.icSend.withRenderingMode(.alwaysTemplate))
         .tintColor(.appWhite)
@@ -62,7 +62,7 @@ extension CommentEntryView {
         sendButton.leadingToTrailing(of: textView).constant = 20
         sendButton.centerYToSuperview()
         sendButton.trailingToSuperview().constant = -16
-        sendButton.size(.init(width: 28, height: 28))
+        sendButton.size(.init(width: 36, height: 36))
     }
 }
 

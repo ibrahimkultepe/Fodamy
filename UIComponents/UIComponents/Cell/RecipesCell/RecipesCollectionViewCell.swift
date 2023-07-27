@@ -94,7 +94,7 @@ public extension RecipesCollectionViewCell {
     
     func setCellItem(viewModel: RecipeCellModelProtocol) {
         self.viewModel = viewModel
-        userView.userNameAndSurname = viewModel.userNameAndSurname
+        userView.userNameAndSurname = viewModel.username
         userView.recipeAndFollower = viewModel.userRecipeAndFollowerCountText
         userView.userImageURL = viewModel.userImageURL
         recipeNameLabel.text = viewModel.recipeTitle

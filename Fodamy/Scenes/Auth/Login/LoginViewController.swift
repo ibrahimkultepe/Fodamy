@@ -71,9 +71,9 @@ extension LoginViewController {
     
     private func addSubviews() {
         view.addSubview(dismissButton)
-        dismissButton.edgesToSuperview(excluding: [.left, .bottom], insets: .init(top: 20.75, left: 0, bottom: 0, right: 20.75), usingSafeArea: true)
-        dismissButton.height(22.5)
-        dismissButton.width(22.5)
+        dismissButton.edgesToSuperview(excluding: [.left, .bottom], insets: .init(top: 64, left: 0, bottom: 0, right: 20))
+        dismissButton.height(24)
+        dismissButton.width(24)
         
         view.addSubview(titleLabel)
         titleLabel.topToBottom(of: dismissButton).constant = 75.75
