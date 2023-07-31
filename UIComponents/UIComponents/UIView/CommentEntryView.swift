@@ -19,6 +19,7 @@ public class CommentEntryView: UIView {
         .cornerRadius(24)
         .textContainerInset(UIEdgeInsets(top: 7, left: 12, bottom: 7, right: 12))
         .text(L10n.CommentEntryView.textViewText)
+        .isScrollEnabled(false)
         .build()
     
     private let sendButton = UIButtonBuilder()
@@ -54,9 +55,7 @@ extension CommentEntryView {
     private func addSubviews() {
         backgroundColor = .appWhite
         addSubview(textView)
-        textView.centerYToSuperview()
-        textView.leadingToSuperview().constant = 16
-        textView.height(34)
+        textView.edgesToSuperview(excluding: .right, insets: .init(top: 9, left: 16, bottom: 9, right: 0))
         
         addSubview(sendButton)
         sendButton.leadingToTrailing(of: textView).constant = 20
@@ -97,7 +96,7 @@ extension CommentEntryView: UITextViewDelegate {
     }
     
     public func textViewDidBeginEditing(_ textView: UITextView) {
-            textView.text = ""
+        textView.text = ""
     }
     
     public func textViewDidEndEditing(_ textView: UITextView) {
