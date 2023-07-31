@@ -41,7 +41,6 @@ extension CommentSectionViewController {
         view.addSubview(commentEntryView)
         commentEntryView.topToBottom(of: collectionView)
         commentEntryView.edgesToSuperview(excluding: .top, usingSafeArea: true)
-        commentEntryView.height(52)
         
         bottomConstraint = commentEntryView.bottomToSuperview(usingSafeArea: true)
         bottomConstraint?.isActive = true
@@ -107,7 +106,7 @@ extension CommentSectionViewController {
             }
         }
     }
-
+    
     @objc
     private func keyboardWillBeHidden(notification: Notification) {
         UIView.animate(withDuration: 0.3) { [weak self] in

@@ -10,8 +10,8 @@ public struct Pagination: Decodable {
     public let perPage: Int
     public let currentPage: Int
     public let lastPage: Int
-    public let firstItem: Int
-    public let lastItem: Int
+    public let firstItem: Int?
+    public let lastItem: Int?
     
     enum CodingKeys: String, CodingKey {
         case total
