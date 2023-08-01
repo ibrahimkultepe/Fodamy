@@ -56,6 +56,7 @@ extension CommentEntryView {
         backgroundColor = .appWhite
         addSubview(textView)
         textView.edgesToSuperview(excluding: .right, insets: .init(top: 9, left: 16, bottom: 9, right: 0))
+        textView.height(34, relation: .equalOrGreater)
         
         addSubview(sendButton)
         sendButton.leadingToTrailing(of: textView).constant = 20
@@ -92,6 +93,20 @@ extension CommentEntryView: UITextViewDelegate {
             sendButton.backgroundColor = .gray
         } else {
             sendButton.backgroundColor = .red
+        }
+        
+        let size = CGSize(width: textView.bounds.size.width, height: .infinity)
+        let estimatedSize = textView.sizeThatFits(size)
+        
+        guard textView.contentSize.height < 95.0 else {
+            textView.isScrollEnabled = true
+            return
+        }
+        textView.isScrollEnabled = false
+        textView.constraints.forEach { [weak self] (constraint) in
+            if constraint.firstAttribute == .height {
+                constraint.constant = estimatedSize.height
+            }
         }
     }
     
