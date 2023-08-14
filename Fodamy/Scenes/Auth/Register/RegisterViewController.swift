@@ -5,6 +5,8 @@
 //  Created by İbrahim Kültepe on 5.06.2023.
 //
 
+import UIKit
+
 final class RegisterViewController: BaseViewController<RegisterViewModel> {
     
     private let titleLabel = UILabelBuilder()
@@ -50,6 +52,7 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         addSubviews()
         configureContent()
         setLocalize()
+        subscribeViewModel()
     }
 }
 
@@ -58,7 +61,7 @@ extension RegisterViewController {
     
     private func addSubviews() {
         view.addSubview(titleLabel)
-        titleLabel.edgesToSuperview(excluding: .bottom, insets: .top(63), usingSafeArea: true)
+        titleLabel.edgesToSuperview(excluding: .bottom, insets: .init(top: 63, left: 0, bottom: 0, right: 0), usingSafeArea: true)
         titleLabel.height(22)
         
         view.addSubview(stackView)
@@ -94,6 +97,17 @@ extension RegisterViewController {
         userNameTextField.iconImage = .icUser
         emailTextField.iconImage = .icMail
         passwordTextField.iconImage = .icPassword
+    }
+    
+    private func showAlert() {
+        let alertController = UIAlertController(title: L10n.Register.alertControllerTitle, message: L10n.Register.alertControllerMesssage, preferredStyle: .alert)
+        
+        let acceptAction = UIAlertAction(title: L10n.Register.alertControllerAcceptAction, style: .default) { (_) in
+            self.viewModel.showLoginVC()
+          }
+        
+        alertController.addAction(acceptAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -132,5 +146,18 @@ extension RegisterViewController {
     @objc
     private func loginButtonAction() {
         viewModel.showLoginVC()
+    }
+}
+
+// MARK: - SubscribeViewModel
+extension RegisterViewController {
+    
+    private func subscribeViewModel() {
+        viewModel.showAlert = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.showAlert()
+            }
+        }
     }
 }

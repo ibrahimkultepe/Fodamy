@@ -16,7 +16,6 @@
 		9C37542D29B273F10037EE08 /* PlaceOnWindowTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37542C29B273F10037EE08 /* PlaceOnWindowTransition.swift */; };
 		9C37542F29B274080037EE08 /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37542E29B274080037EE08 /* PushTransition.swift */; };
 		9C37543129B274240037EE08 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37543029B274240037EE08 /* Transition.swift */; };
-		9C4B5CF82A8106D400C8B4C7 /* CommentSectionAlertRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B5CF72A8106D400C8B4C7 /* CommentSectionAlertRoute.swift */; };
 		9C69FB7529B14732000D17C3 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69FB7429B14732000D17C3 /* UIComponents.framework */; };
 		9C69FB8D29B147F5000D17C3 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69FB8C29B147F5000D17C3 /* Utilities.framework */; };
 		9C69FBA529B14882000D17C3 /* DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C69FBA429B14882000D17C3 /* DataProvider.framework */; };
@@ -94,7 +93,6 @@
 		9C37542C29B273F10037EE08 /* PlaceOnWindowTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOnWindowTransition.swift; sourceTree = "<group>"; };
 		9C37542E29B274080037EE08 /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
 		9C37543029B274240037EE08 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
-		9C4B5CF72A8106D400C8B4C7 /* CommentSectionAlertRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSectionAlertRoute.swift; sourceTree = "<group>"; };
 		9C69FB7129B14692000D17C3 /* Fodamy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fodamy-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C69FB7429B14732000D17C3 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C69FB8C29B147F5000D17C3 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,7 +192,6 @@
 		9C37542029B272EB0037EE08 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
-				9C4B5CF62A81067F00C8B4C7 /* Route */,
 				9C37542929B273C70037EE08 /* Transitions */,
 				9C37542429B273840037EE08 /* Core */,
 				9C37542129B273010037EE08 /* Routers */,
@@ -239,14 +236,6 @@
 				9CE25C4929B912D3000DD905 /* WalkthroughRoute.swift */,
 			);
 			path = Walkthrough;
-			sourceTree = "<group>";
-		};
-		9C4B5CF62A81067F00C8B4C7 /* Route */ = {
-			isa = PBXGroup;
-			children = (
-				9C4B5CF72A8106D400C8B4C7 /* CommentSectionAlertRoute.swift */,
-			);
-			path = Route;
 			sourceTree = "<group>";
 		};
 		9C4E7C8C2A045A3700E81EFF /* MainNavigationController */ = {
@@ -691,7 +680,6 @@
 				9CD021A12A5F57270030324B /* CommentEditRouter.swift in Sources */,
 				9C8462D12A3873FE00ECB614 /* LoginViewController.swift in Sources */,
 				9CB8006429F17B600014E95C /* TabBarViewController.swift in Sources */,
-				9C4B5CF82A8106D400C8B4C7 /* CommentSectionAlertRoute.swift in Sources */,
 				9CEB70972A2DF3610092B320 /* RegisterRouter.swift in Sources */,
 				9C8462D02A3873FE00ECB614 /* LoginRouter.swift in Sources */,
 				9C37542D29B273F10037EE08 /* PlaceOnWindowTransition.swift in Sources */,

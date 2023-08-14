@@ -69,13 +69,22 @@ extension CommentSectionViewModel {
         postRecipeComment(commentText: commentText)
     }
     
-    func moreButtonTapped(indexPath: IndexPath) {
-        router.presentEditDeleteAlert(edit: { [weak self] in
+    func moreButtonTapped(indexPath: IndexPath, viewController: UIViewController) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let editAction = UIAlertAction(title: L10n.CommentSectionViewModel.alertControllerEditAction, style: .default) {
+            [weak self] _ in
             self?.editButtonTapped(indexPath: indexPath)
-        },
-                                      delete: { [weak self] in
+        }
+        let deleteAction = UIAlertAction(title: L10n.CommentSectionViewModel.alertControllerDeleteAction, style: .destructive) { [weak self] _ in
             self?.deleteRecipeComment(indexPath: indexPath)
-        })
+        }
+        let cancelAction = UIAlertAction(title: L10n.CommentSectionViewModel.alertControllerCancelAction, style: .cancel)
+
+        alertController.addAction(editAction)
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        viewController.present(alertController, animated: true, completion: nil)
     }
     
     private func editButtonTapped(indexPath: IndexPath) {

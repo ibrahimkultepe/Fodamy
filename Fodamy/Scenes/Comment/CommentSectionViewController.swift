@@ -148,7 +148,7 @@ extension CommentSectionViewController: UICollectionViewDataSource {
         
         cellItem.moreButtonTapped = { [weak self] in
             guard let self = self else { return }
-            self.viewModel.moreButtonTapped(indexPath: indexPath)
+            self.viewModel.moreButtonTapped(indexPath: indexPath, viewController: self)
         }
         
         cell.setCellItem(viewModel: cellItem)
@@ -239,7 +239,6 @@ extension CommentSectionViewController {
         viewModel.deleteRecipeCommentDidSuccess = { [weak self] indexPath in
             guard let self = self else { return }
             self.collectionView.deleteItems(at: [indexPath])
-            self.viewModel.getRecipeComment(showLoading: false)
             self.collectionView.reloadData()
             self.viewModel.postNotification()
         }

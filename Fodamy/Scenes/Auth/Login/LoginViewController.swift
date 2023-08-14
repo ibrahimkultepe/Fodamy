@@ -5,6 +5,8 @@
 //  Created by İbrahim Kültepe on 13.06.2023.
 //
 
+import UIKit
+
 final class LoginViewController: BaseViewController<LoginViewModel> {
     
     private let dismissButton = UIButtonBuilder()
@@ -53,7 +55,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         .titleColor(.appRed)
         .titleFont(.font(.nunitoSemiBold, size: .large))
         .build()
-    
+
     private let validation = Validation()
     
     override func viewDidLoad() {
@@ -70,11 +72,12 @@ extension LoginViewController {
     private func addSubviews() {
         view.addSubview(dismissButton)
         dismissButton.edgesToSuperview(excluding: [.left, .bottom], insets: .init(top: 20, left: 0, bottom: 0, right: 20), usingSafeArea: true)
-        dismissButton.size(.init(width: 24, height: 24))
+        dismissButton.height(24)
+        dismissButton.width(24)
         
         view.addSubview(titleLabel)
         titleLabel.topToBottom(of: dismissButton).constant = 75.75
-        titleLabel.edgesToSuperview(excluding: [.top, .bottom], insets: .top(44), usingSafeArea: true)
+        titleLabel.edgesToSuperview(excluding: [.top, .bottom], insets: .init(top: 44, left: 0, bottom: 0, right: 0), usingSafeArea: true)
         titleLabel.height(22)
         
         view.addSubview(stackView)

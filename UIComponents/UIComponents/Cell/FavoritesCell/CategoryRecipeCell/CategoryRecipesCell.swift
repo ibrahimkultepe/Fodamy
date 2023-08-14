@@ -48,7 +48,7 @@ extension CategoryRecipesCell {
     private func addSubviews() {
         contentView.addSubview(recipeImageView)
         recipeImageView.edgesToSuperview(excluding: .bottom)
-        recipeImageView.size(.init(width: 154, height: 120))
+        recipeImageView.size(CGSize(width: 154, height: 120))
         
         contentView.addSubview(recipeNameAndCommentAndLikeLabelStackView)
         recipeNameAndCommentAndLikeLabelStackView.topToBottom(of: recipeImageView).constant = 12

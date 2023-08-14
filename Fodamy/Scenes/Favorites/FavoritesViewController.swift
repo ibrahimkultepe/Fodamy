@@ -18,9 +18,6 @@ final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
     
     private let keychain = KeychainSwift()
     
-    private var lastOffsetY: CGFloat = 0
-    private var originalTabBarFrame: CGRect?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         addNavigationBarLogo()
@@ -57,7 +54,6 @@ extension FavoritesViewController {
         collectionView.delegate = self
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-        originalTabBarFrame = tabBarController?.tabBar.frame
     }
     
     private func addLogoutButton() {
@@ -99,22 +95,6 @@ extension FavoritesViewController: UIScrollViewDelegate {
         if contentOffsetY > (contentHeight - viewHeight) && viewModel.isPagingEnabled && !viewModel.isRequestEnabled {
             viewModel.getFavoritesData(showLoading: false)
         }
-        
-        if scrollView.contentOffset.y <= lastOffsetY {
-            if let tabBarFrame = originalTabBarFrame {
-                UIView.animate(withDuration: 0.5) {
-                    self.tabBarController?.tabBar.frame = tabBarFrame
-                }
-            }
-        } else {
-            UIView.animate(withDuration: 0.5) {
-                self.tabBarController?.tabBar.frame.origin.y = self.view.frame.height
-            }
-        }
-    }
-    
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        lastOffsetY = scrollView.contentOffset.y
     }
 }
 

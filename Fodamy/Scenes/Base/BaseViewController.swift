@@ -5,6 +5,8 @@
 //  Created by İbrahim Kültepe on 26.02.2023.
 //
 
+import UIKit
+
 class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewController.LoadingProtocols {
     
     typealias LoadingProtocols = LoadingProtocol & ActivityIndicatorProtocol
@@ -53,7 +55,7 @@ extension BaseViewController {
         view.addSubview(tryAgainButton)
         tryAgainButton.centerInSuperview()
         tryAgainButton.backgroundColor = .appRed
-        tryAgainButton.size(.init(width: 200, height: 50))
+        tryAgainButton.size(CGSize(width: 200, height: 50))
         tryAgainButton.setTitle(L10n.Base.errorButtonTitle, for: .normal)
         tryAgainButton.addTarget(self, action: #selector(tryAgainButtonTapped), for: .touchUpInside)
     }

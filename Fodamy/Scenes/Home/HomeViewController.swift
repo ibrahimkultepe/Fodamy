@@ -51,7 +51,7 @@ extension HomeViewController {
         addChild(pageViewController)
         pageViewController.didMove(toParent: self)
         pageViewController.view.topToBottom(of: segmentedControl)
-        pageViewController.view.edgesToSuperview(excluding: .top)
+        pageViewController.view.edgesToSuperview(excluding: .top, usingSafeArea: true)
     }
 }
 

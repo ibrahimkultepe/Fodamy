@@ -56,8 +56,9 @@
 "Register.passwordTextField" = "Şifre";
 "Register.bottomLabel" = "Hesabın mı var ?";
 "Register.loginButton" = "Giriş yap";
-"Register.showSuccessToast" = "Üyelik İşleminiz Başarılı.";
-"Register.optionalMessage" = "Kullanıcımız";
+"Register.alertControllerTitle" = "Üyelik işleminiz başarılı.";
+"Register.alertControllerMesssage" = "Yemek tariflerine hoşgeldiniz.";
+"Register.alertControllerAcceptAction" = "Tamam";
 
 //MARK: - Login
 "Login.titleLabel" = "Giriş Yap";
@@ -72,7 +73,9 @@
 "ForgotPassword.titleLabel" = "Parolanızı Sıfırlayın";
 "ForgotPassword.emailTextField" = "E-mail Adresi";
 "ForgotPassword.forgotPasswordButton" = "Parolayı Sıfırla";
-"ForgotPassword.showSuccessToast" = "Parolanız Sıfırlandı. E-mailinizi kontrol edip, paralonızı değiştirebilirsiniz.";
+"ForgotPassword.alertControllerTitle" = "Parolanız Sıfırlandı.";
+"ForgotPassword.alertControllerMesssage" = "E-mailinizi kontrol edip, paralonızı değiştirebilirsiniz.";
+"ForgotPassword.alertControllerAcceptAction" = "Tamam";
 
 //MARK: - Validation
 "Validation.isValidEmail" = "Lütfen geçerli bir email adresi giriniz.";

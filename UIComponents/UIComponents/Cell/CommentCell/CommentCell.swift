@@ -81,7 +81,7 @@ extension CommentCell {
         
         contentView.addSubview(moreButton)
         moreButton.leadingToTrailing(of: userView).constant = 10
-        moreButton.size(.init(width: 15, height: 10))
+        moreButton.size(CGSize(width: 15, height: 10))
         moreButton.topToSuperview().constant = 10
         moreButton.trailingToSuperview().constant = -15
     }

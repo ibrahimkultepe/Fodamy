@@ -5,6 +5,8 @@
 //  Created by İbrahim Kültepe on 8.03.2023.
 //
 
+import UIKit
+
 protocol WalkthroughRoute {
     func placeOnWindowWalkthrough()
 }
