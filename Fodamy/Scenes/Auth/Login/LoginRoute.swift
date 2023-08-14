@@ -16,7 +16,7 @@ extension LoginRoute where Self: RouterProtocol {
         let viewModel = LoginViewModel(router: router)
         let viewController = LoginViewController(viewModel: viewModel)
         let navController = UINavigationController(rootViewController: viewController)
-
+        
         let transition = ModalTransition()
         router.viewController = viewController
         router.openTransition = transition

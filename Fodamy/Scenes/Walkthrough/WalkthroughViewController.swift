@@ -5,8 +5,6 @@
 //  Created by İbrahim Kültepe on 8.03.2023.
 //
 
-import UIKit
-
 final class WalkthroughViewController: BaseViewController<WalkthroughViewModel> {
      
     private let vectorButton = UIButtonBuilder()
@@ -15,13 +13,9 @@ final class WalkthroughViewController: BaseViewController<WalkthroughViewModel> 
         .tintColor(.appCinder)
         .build()
     
-    private let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(WalkthroughCollectionViewCell.self)
-        return collectionView
-    }()
+    private let collectionView = UICollectionViewBuilder()
+        .scrollDirection(.horizontal)
+        .build()
     
     private let pageControl = UIPageControlBuilder()
         .pageIndicatorTintColor(.appRed.withAlphaComponent(0.2))
@@ -51,12 +45,11 @@ extension WalkthroughViewController {
     private func addSubviews() {
         view.addSubview(vectorButton)
         vectorButton.edgesToSuperview(excluding: [.left, .bottom], insets: .init(top: 20, left: 0, bottom: 0, right: 20), usingSafeArea: true)
-        vectorButton.height(24)
-        vectorButton.width(24)
+        vectorButton.size(.init(width: 24, height: 24))
         
         view.addSubview(collectionView)
         collectionView.topToBottom(of: vectorButton).constant = 75.75
-        collectionView.edgesToSuperview(excluding: [.top, .bottom] ,insets: .init(top: 0, left: 0, bottom: 0, right: 0), usingSafeArea: true)
+        collectionView.edgesToSuperview(excluding: [.top, .bottom], usingSafeArea: true)
         
         view.addSubview(pageControl)
         pageControl.topToBottom(of: collectionView)
@@ -73,6 +66,7 @@ extension WalkthroughViewController {
 extension WalkthroughViewController {
     
     private func configureContent() {
+        collectionView.register(WalkthroughCollectionViewCell.self)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.isPagingEnabled = true
@@ -155,9 +149,5 @@ extension WalkthroughViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 0, left: 0, bottom: 0, right: 0)
     }
 }

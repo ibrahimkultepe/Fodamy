@@ -5,8 +5,6 @@
 //  Created by İbrahim Kültepe on 16.06.2023.
 //
 
-import UIKit
-
 final class ForgotPasswordViewController: BaseViewController<ForgotPasswordViewModel> {
     
     private let titleLabel = UILabelBuilder()
@@ -35,7 +33,6 @@ final class ForgotPasswordViewController: BaseViewController<ForgotPasswordViewM
         addSubviews()
         configureContent()
         setLocalize()
-        subscribeViewModel()
     }
 }
 
@@ -64,16 +61,6 @@ extension ForgotPasswordViewController {
         emailTextField.iconImage = .icMail
         emailTextField.autocapitalizationType = .none
     }
-    
-    private func showSuccessAlertController() {
-        let alertController = UIAlertController(title: L10n.ForgotPassword.alertControllerTitle, message: L10n.ForgotPassword.alertControllerMesssage, preferredStyle: .alert)
-        let acceptAction = UIAlertAction(title: L10n.ForgotPassword.alertControllerAcceptAction, style: .default) { [weak self] _ in
-            self?.viewModel.dismissVC()
-          }
-        
-        alertController.addAction(acceptAction)
-        present(alertController, animated: true, completion: nil)
-    }
 }
 
 // MARK: - SetLocalize
@@ -95,18 +82,5 @@ extension ForgotPasswordViewController {
         guard validation.isValidEmail(email) else { return }
 
         viewModel.forgotPasswordRequest(email: email)
-    }
-}
-
-// MARK: - SubscribeViewModel
-extension ForgotPasswordViewController {
-    
-    private func subscribeViewModel() {
-        viewModel.didSuccessPasswordReset = { [weak self] in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.showSuccessAlertController()
-            }
-        }
     }
 }

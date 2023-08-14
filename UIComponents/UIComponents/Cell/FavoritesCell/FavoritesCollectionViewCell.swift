@@ -79,7 +79,7 @@ extension FavoritesCollectionViewCell {
         
         contentView.addSubview(seperator)
         seperator.topToBottom(of: topContainerView)
-        seperator.size(CGSize(width: contentView.frame.width, height: 1))
+        seperator.size(.init(width: contentView.frame.width, height: 1))
         
         contentView.addSubview(recipeCollectionView)
         recipeCollectionView.topToBottom(of: seperator)

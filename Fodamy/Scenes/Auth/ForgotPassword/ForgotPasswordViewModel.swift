@@ -12,9 +12,7 @@ protocol ForgotPasswordViewEventSource {}
 protocol ForgotPasswordViewProtocol: ForgotPasswordViewDataSource, ForgotPasswordViewEventSource {}
 
 final class ForgotPasswordViewModel: BaseViewModel<ForgotPasswordRouter>, ForgotPasswordViewProtocol {
-    
-    var didSuccessPasswordReset: VoidClosure?
-    
+        
     func dismissVC() {
         router.close()
     }
@@ -31,7 +29,8 @@ extension ForgotPasswordViewModel {
             self.hideLoading?()
             switch result {
             case .success:
-                self.didSuccessPasswordReset?()
+                self.showSuccessToast?(L10n.ForgotPassword.showSuccessToast)
+                self.dismissVC()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }

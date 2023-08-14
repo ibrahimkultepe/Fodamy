@@ -5,8 +5,6 @@
 //  Created by İbrahim Kültepe on 5.06.2023.
 //
 
-import DataProvider
-
 protocol RegisterViewDataSource {}
 
 protocol RegisterViewEventSource {}
@@ -14,8 +12,6 @@ protocol RegisterViewEventSource {}
 protocol RegisterViewProtocol: RegisterViewDataSource, RegisterViewEventSource {}
 
 final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtocol {
-    
-    var showAlert: VoidClosure?
     
     func showLoginVC(){
         router.close()
@@ -32,8 +28,10 @@ extension RegisterViewModel {
             guard let self = self else { return }
             self.hideActivityIndicatorView?()
             switch result {
-            case .success:
-                self.showAlert?()
+            case .success(let response):
+                self.showSuccessToast?("\(response.user.username ?? L10n.Register.optionalMessage), " +
+                                       L10n.Register.showSuccessToast)
+                self.showLoginVC()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }

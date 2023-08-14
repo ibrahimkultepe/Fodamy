@@ -15,6 +15,9 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         .backgroundColor(.appWhite)
         .build()
     
+    private var lastOffsetY: CGFloat = 0
+    private var originalTabBarFrame: CGRect?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
@@ -45,6 +48,7 @@ extension RecipesViewController {
         collectionView.delegate = self
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        originalTabBarFrame = tabBarController?.tabBar.frame
     }
 }
 
@@ -68,6 +72,22 @@ extension RecipesViewController: UIScrollViewDelegate {
         if contentOffsetY > (contentHeight - viewHeight) && viewModel.isPagingEnabled && !viewModel.isRequestEnabled {
             viewModel.getRecipeData(showLoading: false)
         }
+        
+        if scrollView.contentOffset.y <= lastOffsetY {
+            if let tabBarFrame = originalTabBarFrame {
+                UIView.animate(withDuration: 0.5) {
+                    self.tabBarController?.tabBar.frame = tabBarFrame
+                }
+            }
+        } else {
+            UIView.animate(withDuration: 0.5) {
+                self.tabBarController?.tabBar.frame.origin.y = self.view.frame.height
+            }
+        }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        lastOffsetY = scrollView.contentOffset.y
     }
 }
 

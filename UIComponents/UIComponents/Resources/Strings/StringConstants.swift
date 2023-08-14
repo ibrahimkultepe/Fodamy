@@ -45,16 +45,12 @@ public enum L10n {
   }
 
   public enum ForgotPassword {
-    /// Tamam
-    public static let alertControllerAcceptAction = L10n.tr("Modules", "ForgotPassword.alertControllerAcceptAction")
-    /// E-mailinizi kontrol edip, paralonızı değiştirebilirsiniz.
-    public static let alertControllerMesssage = L10n.tr("Modules", "ForgotPassword.alertControllerMesssage")
-    /// Parolanız Sıfırlandı.
-    public static let alertControllerTitle = L10n.tr("Modules", "ForgotPassword.alertControllerTitle")
     /// E-mail Adresi
     public static let emailTextField = L10n.tr("Modules", "ForgotPassword.emailTextField")
     /// Parolayı Sıfırla
     public static let forgotPasswordButton = L10n.tr("Modules", "ForgotPassword.forgotPasswordButton")
+    /// Parolanız Sıfırlandı. E-mailinizi kontrol edip, paralonızı değiştirebilirsiniz.
+    public static let showSuccessToast = L10n.tr("Modules", "ForgotPassword.showSuccessToast")
     /// Parolanızı Sıfırlayın
     public static let titleLabel = L10n.tr("Modules", "ForgotPassword.titleLabel")
   }
@@ -123,20 +119,18 @@ public enum L10n {
   }
 
   public enum Register {
-    /// Tamam
-    public static let alertControllerAcceptAction = L10n.tr("Modules", "Register.alertControllerAcceptAction")
-    /// Yemek tariflerine hoşgeldiniz.
-    public static let alertControllerMesssage = L10n.tr("Modules", "Register.alertControllerMesssage")
-    /// Üyelik işleminiz başarılı.
-    public static let alertControllerTitle = L10n.tr("Modules", "Register.alertControllerTitle")
     /// Hesabın mı var ?
     public static let bottomLabel = L10n.tr("Modules", "Register.bottomLabel")
     /// E-mail Adresi
     public static let emailTextField = L10n.tr("Modules", "Register.emailTextField")
     /// Giriş yap
     public static let loginButton = L10n.tr("Modules", "Register.loginButton")
+    /// Kullanıcımız
+    public static let optionalMessage = L10n.tr("Modules", "Register.optionalMessage")
     /// Şifre
     public static let passwordTextField = L10n.tr("Modules", "Register.passwordTextField")
+    /// Üyelik İşleminiz Başarılı.
+    public static let showSuccessToast = L10n.tr("Modules", "Register.showSuccessToast")
     /// Üye Ol
     public static let signUpButton = L10n.tr("Modules", "Register.signUpButton")
     /// Üye Ol
